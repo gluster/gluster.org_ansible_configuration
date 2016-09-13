@@ -35,7 +35,7 @@ munin.gluster.org
 ansible_python_interpreter=/usr/local/bin/python
 
 [freebsd]
-freebsd0.cloud.gluster.org 
+freebsd0.cloud.gluster.org
 
 
 [managed_by_ssh:vars]
@@ -43,11 +43,12 @@ ansible_connection=ssh
 ansible_ssh_user=root
 
 [managed_by_ssh]
-freebsd0.cloud.gluster.org 
+freebsd0.cloud.gluster.org
 myrmicinae.rht.gluster.org
 builder1.rht.gluster.org
 builder2.rht.gluster.org
 supercolony.gluster.org
+dev.gluster.org
 build.gluster.org
 
 [jenkins_builders_rackspace:vars]
@@ -57,7 +58,7 @@ location=rackspace
 location=rht
 
 [jenkins_builders_rackspace]
-freebsd0.cloud.gluster.org 
+freebsd0.cloud.gluster.org
 slave0.cloud.gluster.org
 slave1.cloud.gluster.org
 slave20.cloud.gluster.org
@@ -84,8 +85,8 @@ builder2.rht.gluster.org
 jenkins_builders_rht
 jenkins_builders_rackspace
 
-#[gerrit]
-#dev.gluster.org
+[gerrit]
+dev.gluster.org
 
 [jenkins_master]
 build.gluster.org

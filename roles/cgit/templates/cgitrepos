@@ -1,0 +1,17 @@
+# {{ ansible_managed }}
+{% if git_repositories is defined and scan_path is not True %}
+{% for repo in git_repositories %}
+{% if not repo.private is defined or not repo.private %}
+repo.url={% if repo.url is defined %}
+{{ repo.url }}
+{% else %}
+{{ repo.name }}
+{% endif %}
+repo.path={{ git_repositories_dir}}/{{ repo.name }}
+repo.desc={{ repo.desc }}
+repo.owner={{ repo.owner }}
+{% endif %}
+{% endfor %}
+{% elif scan_path is True %}
+scan-dir={{ git_repositories_dir }}/
+{% endif %}

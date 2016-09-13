@@ -8,4 +8,4 @@
 - template: mode=0644 src=cgitrepos  dest=/etc/cgitrepos
 
 - copy: mode=0644 src=cgit.httpd.conf  dest=/etc/httpd/conf.d/cgit.conf
-  notify: restart httpd
+  notify: verify config and restart httpd

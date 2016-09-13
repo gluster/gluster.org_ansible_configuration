@@ -9,7 +9,3 @@
 
 - copy: mode=0644 src=cgit.httpd.conf  dest=/etc/httpd/conf.d/cgit.conf
   notify: restart httpd
-
-# TODO clean once the mess with domain name is solved
-- template: src=vhost.conf dest=/etc/httpd/conf.d/git.theopensourceway.org.conf
-  notify: restart httpd

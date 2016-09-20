@@ -48,6 +48,9 @@
   - python-requests
   - python-flask
   - python-prettytable
+# used for build-jobs testing
+  - python-virtualenv
+  - python-argparse
 
 - package: state=present name={{ item }}
   name: Install jenkins builder FreeBSD packages

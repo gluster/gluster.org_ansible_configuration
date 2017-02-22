@@ -9,12 +9,13 @@
 - package: state=present name=centos-release-scl
   name: Enable SCL
   when: "{{'jenkins_builders_rht' in groups}}"
-  tags: python
 
-- package: state=present name=python27
-  name: Intall python 2.7
+- package: state=present name={{item}}
+  name: Add packages specific to rht builders
+  with_items:
+  - python 2.7
+  - python-libcloud
   when: "{{'jenkins_builders_rht' in groups}}"
-  tags: python
 
 - package: state=present name={{ item }}
   name: Install jenkins builder Linux packages

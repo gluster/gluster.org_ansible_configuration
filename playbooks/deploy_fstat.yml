@@ -1,20 +1,3 @@
----
-- hosts: haplometrosis.rht.gluster.org
+- hosts: fstat.rht.gluster.org
   roles:
-  - role: guest_virt_install
-    name: fstat.rht.gluster.org
-    volgroup: data
-    disk_size: 10
-    mem_size: 1024
-    num_cpus: 1
-    distribution: Centos
-    version: 7
-    bridge: virbr1
-    sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
-    network:
-      bootproto: static
-      ip: 8.43.85.173/24
-      gateway: 8.43.85.254
-      nameservers:
-      - 8.8.8.8
-      - 8.8.4.4
+  - role: fstat

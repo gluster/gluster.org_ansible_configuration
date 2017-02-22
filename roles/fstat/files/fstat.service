@@ -1,0 +1,18 @@
+[Unit]
+Description=fstat daemon
+Requires=fstat.socket
+After=network.target
+
+[Service]
+PIDFile=/run/fstat/pid
+User=fstat
+Group=fstat
+WorkingDirectory=/fstat/code
+RuntimeDirectory=fstat
+ExecStart=/fstat/env/bin/gunicorn --pid /run/fstat/pid fstat:app
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

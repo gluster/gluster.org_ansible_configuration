@@ -1,0 +1,10 @@
+[Unit]
+Description=fstat socket
+
+[Socket]
+ListenStream=/run/fstat/socket
+ListenStream=0.0.0.0:9000
+ListenStream=[::]:8000
+
+[Install]
+WantedBy=sockets.target

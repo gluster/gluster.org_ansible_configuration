@@ -64,6 +64,9 @@
   - python-argparse
 # used for utils/create-files.py
   - pyxattr
+# used for cli
+  - ncurses-devel
+  - readline
 
 - package:
     state: present

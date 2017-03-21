@@ -13,7 +13,7 @@
 
 - include: setup_disk_{{ location }}.yml
   when: ansible_system == 'Linux' and location
- 
+
 - include: setup_lvm_config.yml
   when: ansible_system == 'Linux'
 
@@ -22,10 +22,10 @@
 
 - include: workaround_kb_2313911.yml
   when: ansible_os_family == 'RedHat' and ansible_distribution_major_version == '6'
- 
+
 - include: gluster_qa_scripts.yml
 
-- name: Deploy sudoers config for jenkins 
+- name: Deploy sudoers config for jenkins
   copy:
     dest: /{% if ansible_system == 'FreeBSD'%}usr/local/{% endif %}etc/sudoers.d/sudoers_jenkins
     src: sudoers_jenkins
@@ -67,11 +67,30 @@
   - /archives/log
   - /archives/logs
 
+- name: Setup permissions for /home/jenkins/root
+  file:
+    path: /home/jenkins/root/workspace
+    recurse: yes
+    owner: jenkins
+    group: jenkins
+    mode: g+s
+
+- name: Setup group acl for /home/jenkins/root
+  acl:
+    path: /home/jenkins/root/workspace
+    entity: jenkins
+    etype: group
+    permissions: rwx
+    recursive: yes
+    default: yes
+    state: present
+
+
 - name: Symlink /d/build to /build
   file: src=/d/build dest=/build state=link
 
 - name: Link nginx config
-  file: 
+  file:
     src: /opt/qa/nginx/default.conf
     dest: /{% if ansible_system == 'FreeBSD'%}usr/local/{% endif %}etc/nginx/conf.d/archives.conf
     state: link

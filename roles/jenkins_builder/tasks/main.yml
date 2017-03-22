@@ -74,6 +74,7 @@
     owner: jenkins
     group: jenkins
     mode: g+s
+  when: ansible_system == 'Linux'
 
 - name: Setup group acl for /home/jenkins/root
   acl:
@@ -84,7 +85,7 @@
     recursive: yes
     default: yes
     state: present
-
+  when: ansible_system == 'Linux'
 
 - name: Symlink /d/build to /build
   file: src=/d/build dest=/build state=link

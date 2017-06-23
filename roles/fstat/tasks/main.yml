@@ -31,30 +31,16 @@
     name: fstat
     enabled: True
     state: started
+
 - name: Configure Cron tab centos
   cron:
-    name: fstat centos
+    name: fstat {{item.name}}
     minute: "0"
     hour: "1"
-    job: "/fstat/env/bin/python /fstat/code/manage.py process_jobs -n 3 -j centos6-regression"
+    job: "/fstat/env/bin/python /fstat/code/manage.py process_jobs -n 3 -j {{item.job}}"
 
-- name: Configure Cron tab for netbsd
-  cron:
-    name: fstat netbsd
-    minute: "0"
-    hour: "1"
-    job: "/fstat/env/bin/python /fstat/code/manage.py process_jobs -n 3 -j netbsd7-regression"
-
-- name: Configure Cron tab for regression-test-burn-in
-  cron:
-    name: fstat regression-test-burn-in
-    minute: "0"
-    hour: "1"
-    job: "/fstat/env/bin/python /fstat/code/manage.py process_jobs -n 3 -j regression-test-burn-in"
-
-- name: Configure Cron tab for regression-with-multiplex
-  cron:
-    name: fstat regression-with-multiplex
-    minute: "0"
-    hour: "1"
-    job: "/fstat/env/bin/python /fstat/code/manage.py process_jobs -n 3 -j regression-with-multiplex"
+  with_items:
+    - { name: 'centos', job: 'centos6-regression' }
+    - { name: 'netbsd', job: 'netbsd7-regression' }
+    - { name: 'regression-test-burn-in', job: 'regression-test-burn-in' }
+    - { name: 'regression-with-multiplex', job: 'regression-with-multiplex' }

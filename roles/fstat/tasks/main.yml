@@ -38,7 +38,6 @@
     minute: "0"
     hour: "1"
     job: "/fstat/env/bin/python /fstat/code/manage.py process_jobs -n 3 -j {{item.job}}"
-
   with_items:
     - { name: 'centos', job: 'centos6-regression' }
     - { name: 'netbsd', job: 'netbsd7-regression' }

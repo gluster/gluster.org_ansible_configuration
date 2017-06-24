@@ -32,7 +32,7 @@
     enabled: True
     state: started
 
-- name: Configure Cron tab centos
+- name: Configure Crontab
   cron:
     name: fstat {{item.name}}
     minute: "0"

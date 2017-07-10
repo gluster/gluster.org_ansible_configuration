@@ -1,17 +1,35 @@
 ---
+- user: name={{user}}
+  sudo: yes
+
 - name: Install required packages
-  package:
+  yum:
     state: present
     name: "{{ item }}"
   with_items:
-  - python-virtualenv
-  - gcc
-  - git
+    - python-virtualenv
+    - gcc
+    - git
 
-# TODO create the directory /fstat, do the git checkout
-# automate update
-# set configuration file, and database creation
+# TODO set configuration file, and database creation
 # and selinux boolean
+
+- name: create fstat directory
+  file: path=/fstat/code state=directory
+
+- name: create virtualenv if it does not exists
+  command: virtualenv /fstat/venv
+
+- name: clone or update fstat repo
+  git:
+    repo: https://github.com/gluster/fstat
+    dest: /fstat/code
+
+- name: install dependencies
+  pip:
+    requirements=/fstat/code/requirements.txt
+    virtualenv=/fstat/venv
+
 - name: Add tmpfiles snippet
   template:
     dest: /etc/tmpfiles.d/fstat.conf
@@ -37,7 +55,7 @@
     name: fstat {{item.name}}
     minute: "0"
     hour: "1"
-    job: "/fstat/env/bin/python /fstat/code/manage.py process_jobs -n 3 -j {{item.job}}"
+    job: "/fstat/venv/bin/python /fstat/code/manage.py process_jobs -n 3 -j {{item.job}}"
   with_items:
     - { name: 'centos', job: 'centos6-regression' }
     - { name: 'netbsd', job: 'netbsd7-regression' }

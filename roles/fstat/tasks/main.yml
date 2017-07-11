@@ -1,9 +1,9 @@
 ---
-- user: name={{user}}
-  sudo: yes
+- user:
+    name: "{{user}}"
 
 - name: Install required packages
-  yum:
+  package:
     state: present
     name: "{{ item }}"
   with_items:
@@ -15,10 +15,16 @@
 # and selinux boolean
 
 - name: create fstat directory
-  file: path=/fstat/code state=directory
+  file:
+    path: /fstat/code state=directory
+
+- name: Check if virtualenv exists
+  local_action: stat path=/fstat/venv
+  register: venv
 
 - name: create virtualenv if it does not exists
   command: virtualenv /fstat/venv
+  when: not venv.stat.exists
 
 - name: clone or update fstat repo
   git:

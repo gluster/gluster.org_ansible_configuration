@@ -8,6 +8,7 @@
   - dbench
   - yajl
   - sudo
+  - gcc  
 
 - package:
     state: present
@@ -25,6 +26,7 @@
   - cppcheck
   - clang
   - clang-analyzer
+  - lcov  
   when: '"jenkins_builders_rht" in group_names and ansible_distribution == "CentOS"'
 
 - package:

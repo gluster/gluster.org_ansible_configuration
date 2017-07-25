@@ -19,12 +19,12 @@
     path: /fstat/code state=directory
 
 - name: Check if virtualenv exists
-  local_action: stat path=/fstat/venv
-  register: venv
+  local_action: stat path=/fstat/env
+  register: env
 
 - name: create virtualenv if it does not exists
-  command: virtualenv /fstat/venv
-  when: not venv.stat.exists
+  command: virtualenv /fstat/env
+  when: not env.stat.exists
 
 - name: clone or update fstat repo
   git:
@@ -34,7 +34,7 @@
 - name: install dependencies
   pip:
     requirements=/fstat/code/requirements.txt
-    virtualenv=/fstat/venv
+    virtualenv=/fstat/env
 
 - name: Add tmpfiles snippet
   template:
@@ -61,7 +61,7 @@
     name: fstat {{item.name}}
     minute: "0"
     hour: "1"
-    job: "/fstat/venv/bin/python /fstat/code/manage.py process_jobs -n 3 -j {{item.job}}"
+    job: "/fstat/env/bin/python /fstat/code/manage.py process_jobs -n 3 -j {{item.job}}"
   with_items:
     - { name: 'centos', job: 'centos6-regression' }
     - { name: 'netbsd', job: 'netbsd7-regression' }

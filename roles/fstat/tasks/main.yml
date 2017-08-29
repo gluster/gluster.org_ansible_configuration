@@ -19,10 +19,11 @@
     path: /fstat/code state=directory
 
 - name: Check if virtualenv exists
-  local_action: stat path=/fstat/env
+  stat:
+    path: /fstat/env
   register: env
 
-- name: create virtualenv if it does not exists
+- name: creates virtualenv if it does not exists
   command: virtualenv /fstat/env
   when: not env.stat.exists
 

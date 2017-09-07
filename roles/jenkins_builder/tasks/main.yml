@@ -1,6 +1,7 @@
 ---
 - include: pkgs.yml
 - include: authroot_georep.yml
+- include: jenkins_credential.yml
 
 - include: disable_ipv6_linux.yml
   when: ansible_system == 'Linux'

@@ -1,0 +1,5 @@
+---
+- hosts: http.int.rht.gluster.org
+  roles:
+    - scp_http_int
+

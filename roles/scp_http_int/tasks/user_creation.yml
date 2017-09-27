@@ -1,0 +1,6 @@
+---
+- user: name=logs state=present
+  name: Creates a user
+
+- file: path=/home/logs/glusterfs-logs state=directory
+  name: Creates folder for logs

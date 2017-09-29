@@ -1,5 +1,12 @@
 ---
 - hosts: http.int.rht.gluster.org
   roles:
-    - scp_http_int
+  - role: scp_http_int
+  - role: httpd
+    website_domain: http.int.rht.gluster.org
+    document_root: "/home/logs/glusterfs-logs"
+    aliases:
+    - url: "glusterfs-logs"
+      path: "/home/logs/glusterfs-logs"
+    use_letsencrypt: True
 

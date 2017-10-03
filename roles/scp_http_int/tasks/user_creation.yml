@@ -1,6 +1,14 @@
 ---
-- user: name=logs state=present
-  name: Creates a user
+- name: Creates a user
+  user:
+    name: "{{ user }}"
+    state: present
+    comment: "User for collecting all the logs from jenkins server"
 
-- file: path=/home/logs/glusterfs-logs state=directory
-  name: Creates folder for logs
+- name: Creates folder for logs
+  file:
+    path: /var/www/glusterfs-logs
+    state: directory
+    owner: "{{ user }}"
+    mode: 0644
+

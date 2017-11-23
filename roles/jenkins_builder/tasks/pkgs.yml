@@ -69,6 +69,8 @@
   - python-argparse
 # used for utils/create-files.py
   - pyxattr
+# used for regression testing
+  - attr
 # used for cli
   - ncurses-devel
   - readline-devel
@@ -90,7 +92,7 @@
   - gmake
 # our build script do not seems to work with clang, due to some weird
 # argp issue
-  - gcc   
+  - gcc
 # adding because it is present on freebsd0.cloud, for parity
   - gsed
 

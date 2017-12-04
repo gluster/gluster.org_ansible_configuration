@@ -7,7 +7,7 @@
 
 - name: Creates folder for logs
   file:
-    path: /var/www/glusterfs-logs
+    path: "{{ scp_dest }}"
     state: directory
     owner: "{{ user }}"
     mode: 0644

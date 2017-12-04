@@ -2,10 +2,15 @@
 - hosts: http.int.rht.gluster.org
   roles:
   - role: scp_http_int
+    target_name: ci-logs
+    scp_dest: /var/www/glusterfs-logs
+  - role: scp_http_int
+    scp_dest: /var/www/bits
+    user: _bits-gluster
+    target_name: bits
   - role: httpd
     website_domain: http.int.rht.gluster.org
     document_root: /var/www/glusterfs-logs
   - role: httpd_enable_index
     website_domain: bits.int.rht.gluster.org
     document_root: /var/www/bits
-

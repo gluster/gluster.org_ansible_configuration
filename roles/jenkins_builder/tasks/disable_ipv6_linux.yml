@@ -1,13 +1,13 @@
 ---
 # current regression test suite do not support ipv6, so we have to disable
 # it
-- lineinfile: 
+- lineinfile:
     dest: /etc/sysconfig/network-scripts/ifcfg-eth0
     regexp: ^IPV6INIT=
     line: IPV6INIT=no
   name: Disable ipv6 in eth0 config
 
-- lineinfile: 
+- lineinfile:
     dest: /etc/sysconfig/network
     regexp: ^NETWORKING_IPV6=
     line: NETWORKING_IPV6=no
@@ -22,8 +22,10 @@
   - net.ipv6.conf.all.disable_ipv6
   - net.ipv6.conf.default.disable_ipv6
   name: Disable ipv6 in sysctl
+  notify:
+  - run dracut
 
-# use "install ipv6 /bin/true", since that's what ip6tables check to see if 
+# use "install ipv6 /bin/true", since that's what ip6tables check to see if
 # ipv6 is disabled. See reload function on /etc/init.d/ip6tables on RHEL 6.
 - copy:
     dest: /etc/modprobe.d/ipv6.conf

@@ -1,0 +1,7 @@
+- name: Copy SSH public key to node
+  authorized_key:
+    user: jenkins
+    state: present
+    key: "{{ item }}"
+  with_file:
+  - jenkins_rax.pub

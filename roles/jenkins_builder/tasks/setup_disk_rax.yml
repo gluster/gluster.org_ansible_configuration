@@ -1,0 +1,16 @@
+- name: Create the data file
+  command: fallocate -l 10G /var/data
+  args:
+    creates: /var/data
+
+- name: Format data file to xfs
+  filesystem:
+    fstype: xfs
+    dev: /var/data
+
+- name: Mount /d
+  mount:
+    path: /d
+    src: /var/data
+    fstype: xfs
+    state: present

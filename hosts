@@ -45,7 +45,6 @@ int_rht_gluster_org
 [munin]
 munin.gluster.org
 
-
 [freebsd:vars]
 ansible_python_interpreter=/usr/local/bin/python
 
@@ -62,11 +61,18 @@ mune.rht.gluster.org
 proxy01.rht.gluster.org
 proxy02.rht.gluster.org
 
+[jenkins_builders_rax:vars]
+location=rax
+
 [jenkins_builders_rackspace:vars]
 location=rackspace
 
 [jenkins_builders_rht:vars]
 location=rht
+
+[jenkins_builders_rax]
+builder100.cloud.gluster.org
+builder101.cloud.gluster.org
 
 [jenkins_builders_rackspace]
 freebsd0.cloud.gluster.org
@@ -121,11 +127,10 @@ builder37.int.rht.gluster.org
 builder38.int.rht.gluster.org
 builder39.int.rht.gluster.org
 
-
-
 [jenkins_builders:children]
 jenkins_builders_rht
 jenkins_builders_rackspace
+jenkins_builders_rax
 
 [gerrit]
 #dev.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8.43.85.171:21 root@myrmicinae.rht.gluster.org"'

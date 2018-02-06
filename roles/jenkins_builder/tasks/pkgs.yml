@@ -114,3 +114,7 @@
   name: Remove package that cause trouble with the regression suite
   with_items:
   - qemu-img
+  - glusterfs-libs
+  - glusterfs
+  - glusterfs-api
+  - glusterfs-client-xlators

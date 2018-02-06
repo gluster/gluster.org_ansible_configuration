@@ -9,7 +9,7 @@
   when: ansible_system == 'FreeBSD'
 
 - include: setup_rackspace_network.yml
-  when: ansible_system == 'Linux' and location == 'rackspace'
+  when: ansible_system == 'Linux' and (location == 'rackspace' or location == 'rax')
 
 - include: setup_disk_{{ location }}.yml
   when: ansible_system == 'Linux' and location
@@ -36,6 +36,16 @@
   user:
     name: jenkins
     groups: wheel
+
+- import_tasks: setup_auth_rax.yml
+  when: location == 'rax'
+
+- name: Start and enable rpc-statd
+  service:
+    name: rpc-statd
+    enabled: true
+    state: started
+  when: location == 'rax'
 
 #TODO add the fingerprint of review.gluster.org to user jenkins
 # so it doesn't block

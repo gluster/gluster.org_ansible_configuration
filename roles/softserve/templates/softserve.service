@@ -1,0 +1,15 @@
+[Unit]
+Description=backend server for softserve
+After=network.target
+
+[Service]
+Type=simple
+PIDFile=/run/softserve/softserve.pid
+WorkingDirectory=/softserve/code/
+ExecStart=/softserve/env/bin/gunicorn --pid /run/softserve/softserve.pid -w 4 softserve:app
+User={{ user }}
+
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

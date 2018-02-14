@@ -1,0 +1,6 @@
+---
+- name: Create systemd tmpfile
+  shell: systemd-tmpfiles --create /etc/tmpfiles.d/fstat.conf
+
+- name: Reload systemd
+  shell: systemctl daemon-reload

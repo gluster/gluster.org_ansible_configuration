@@ -1,0 +1,46 @@
+---
+- name: Install required packages
+  package:
+    state: present
+    name: "{{ item }}"
+  with_items:
+  - python-virtualenv
+  - gcc
+  - git
+
+- name: Add tmpfiles snippet
+  template:
+    dest: /etc/tmpfiles.d/softserve.conf
+    src: softserve.tmpfiles.conf
+  notify: Create systemd tmpfile
+
+- name: Add gunicorn systemd service
+  template:
+    dest: /etc/systemd/system/softserve.service
+    src: softserve.service
+  notify: Reload systemd
+
+- name: Start the softserve service
+  service:
+    name: softserve
+    enabled: True
+    state: started
+
+- name: Create the project directory
+  file:
+    path: '/softserve'
+    state: directory
+    mode: 0755
+
+- name: Configure Crontab
+  cron:
+    name: "shutdown check"
+    minute: "30"
+    job: "/softserve/env/bin/flask shutdown_check"
+
+- name: Pull source from the repo
+  git:
+    repo: 'https://github.com/gluster/softserve.git'
+    dest:  '/softserve'
+    version: HEAD
+  notify: Reload systemd

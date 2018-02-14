@@ -1,6 +1,6 @@
 ---
 - name: Create systemd tmpfile
-  shell: systemd-tmpfiles --create /etc/tmpfiles.d/fstat.conf
+  shell: systemd-tmpfiles --create /etc/tmpfiles.d/softserve.conf
 
 - name: Reload systemd
-  shell: systemctl daemon-reload
+  systemd: daemon_reload=yes

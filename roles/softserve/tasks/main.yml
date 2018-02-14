@@ -7,6 +7,8 @@
   - python-virtualenv
   - gcc
   - git
+  - python-devel
+  - postgresql-devel
 
 - name: Add tmpfiles snippet
   template:
@@ -28,19 +30,25 @@
 
 - name: Create the project directory
   file:
-    path: '/softserve'
+    path: '/home/softserve'
     state: directory
     mode: 0755
+
+- name: Create virtual env and install dependencies
+  pip:
+    virtualenv: '/home/softserve/env'
+    requirements: '/home/softserve/dev-requirements.txt'
+    virtualenv_python: python3.4
 
 - name: Configure Crontab
   cron:
     name: "shutdown check"
-    minute: "30"
-    job: "/softserve/env/bin/flask shutdown_check"
+    minute: "5"
+    job: "/home/softserve/env/bin/flask shutdown_check"
 
 - name: Pull source from the repo
   git:
     repo: 'https://github.com/gluster/softserve.git'
-    dest:  '/softserve'
+    dest:  '/home/softserve'
     version: HEAD
   notify: Reload systemd

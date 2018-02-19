@@ -20,8 +20,8 @@
   file:
     path: "{{ destination }}"
     state: directory
-    owner: softserve
-    group: softserve
+    owner: "{{ user }}"
+    group: "{{ user }}"
     recurse: yes
 
 - name: Clone the code
@@ -44,6 +44,8 @@
     src: softserve.service
   notify: Reload systemd
 
+- meta: flush_handlers
+
 - name: Creating and activating venv
   pip:
     chdir: "{{ destination}}/code"
@@ -62,12 +64,15 @@
   template:
     dest: "{{ destination }}/code/instance/application.cfg"
     src: application.cfg
+  no_log: true
 
 - name: Database migration
-  command: FLASK_APP=manage.py flask db upgrade
+  shell: "{{ destination }}/env/bin/flask db upgrade"
+  environment:
+    FLASK_APP: manage.py
   args:
     chdir: "{{ destination }}/code"
-
+    
 - name: Configure Crontab
   cron:
     name: "shutdown check"

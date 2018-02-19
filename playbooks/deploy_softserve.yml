@@ -1,4 +1,4 @@
 ---
-- hosts: softserve.gluster.org
+- hosts: softserve.rht.gluster.org
   roles:
     - role: softserve

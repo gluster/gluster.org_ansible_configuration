@@ -5,8 +5,8 @@ After=network.target
 [Service]
 Type=simple
 PIDFile=/run/softserve/softserve.pid
-WorkingDirectory=/srv/softserve
-ExecStart=/softserve/env/bin/gunicorn --pid /run/softserve/softserve.pid -w 4 softserve:app
+WorkingDirectory={{ destination }}
+ExecStart={{ destination }}/env/bin/gunicorn --pid /run/softserve/softserve.pid -w 4 softserve:app
 User={{ user }}
 
 PrivateTmp=true

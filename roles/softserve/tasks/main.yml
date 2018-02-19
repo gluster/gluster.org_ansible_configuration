@@ -1,4 +1,9 @@
 ---
+- name: Create a user
+  user:
+    name: "{{ user }}"
+    state: present
+
 - name: Install required packages
   package:
     state: present
@@ -9,11 +14,28 @@
   - git
   - python-devel
   - postgresql-devel
+  - mock
+
+- name: Create the project directory
+  file:
+    path: "{{ destination }}"
+    state: directory
+    owner: softserve
+    group: softserve
+    recurse: yes
+
+- name: Clone the code
+  git:
+    repo: 'https://github.com/gluster/softserve.git'
+    dest:  '{{ destination }}/code'
+    version: HEAD
+    update: yes
+    force: yes
 
 - name: Add tmpfiles snippet
   template:
     dest: /etc/tmpfiles.d/softserve.conf
-    src: softserve.tmpfiles.conf
+    src: softserve.tmpfile.conf
   notify: Create systemd tmpfile
 
 - name: Add gunicorn systemd service
@@ -22,33 +44,40 @@
     src: softserve.service
   notify: Reload systemd
 
+- name: Creating and activating venv
+  pip:
+    chdir: "{{ destination}}/code"
+    virtualenv: "{{ destination }}/env"
+    virtualenv_site_packages: yes
+    name: setuptools
+    extra_args: --upgrade
+
+- name: Installing the dependencies
+  pip:
+    chdir: "{{ destination }}/code"
+    virtualenv: "{{ destination}}/env"
+    requirements:  "{{ destination}}/code/requirements-prod.txt"
+
+- name: Copy the config file to the softserve folder
+  template:
+    dest: "{{ destination }}/code/instance/application.cfg"
+    src: application.cfg
+
+- name: Database migration
+  command: FLASK_APP=manage.py flask db upgrade
+  args:
+    chdir: "{{ destination }}/code"
+
+- name: Configure Crontab
+  cron:
+    name: "shutdown check"
+    minute: "*/5"
+    job: "/srv/softserve/env/bin/flask shutdown_check"
+
 - name: Start the softserve service
   service:
     name: softserve
     enabled: True
     state: started
 
-- name: Create the project directory
-  file:
-    path: '/home/softserve'
-    state: directory
-    mode: 0755
-
-- name: Create virtual env and install dependencies
-  pip:
-    virtualenv: '/home/softserve/env'
-    requirements: '/home/softserve/dev-requirements.txt'
-    virtualenv_python: python3.4
-
-- name: Configure Crontab
-  cron:
-    name: "shutdown check"
-    minute: "5"
-    job: "/home/softserve/env/bin/flask shutdown_check"
-
-- name: Pull source from the repo
-  git:
-    repo: 'https://github.com/gluster/softserve.git'
-    dest:  '/home/softserve'
-    version: HEAD
-  notify: Reload systemd
+- meta: flush_handlers

@@ -27,7 +27,7 @@
 - name: Clone the code
   git:
     repo: 'https://github.com/gluster/softserve.git'
-    dest:  '{{ destination }}/code'
+    dest: '{{ destination }}/code'
     version: HEAD
     update: yes
     force: yes
@@ -58,7 +58,7 @@
   pip:
     chdir: "{{ destination }}/code"
     virtualenv: "{{ destination}}/env"
-    requirements:  "{{ destination}}/code/requirements-prod.txt"
+    requirements: "{{ destination}}/code/requirements-prod.txt"
 
 - name: Copy the config file to the softserve folder
   template:
@@ -72,7 +72,7 @@
     FLASK_APP: manage.py
   args:
     chdir: "{{ destination }}/code"
-    
+
 - name: Configure Crontab
   cron:
     name: "shutdown check"

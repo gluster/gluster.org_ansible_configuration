@@ -15,6 +15,7 @@
   - python-devel
   - postgresql-devel
   - mock
+  - redis
 
 - name: Create the project directory
   file:
@@ -38,6 +39,12 @@
     src: softserve.tmpfile.conf
   notify: Create systemd tmpfile
 
+- name: Add celery systemd service
+  template:
+    dest: /etc/systemd/system/softserve-celery.service
+    src: softserve-celery.service
+  notify: Reload systemd
+
 - name: Add gunicorn systemd service
   template:
     dest: /etc/systemd/system/softserve.service
@@ -45,6 +52,12 @@
   notify: Reload systemd
 
 - meta: flush_handlers
+
+- name: Start redis server
+  service:
+    name: redis
+    state: started
+    enabled: True
 
 - name: Creating and activating venv
   pip:

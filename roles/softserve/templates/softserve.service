@@ -1,6 +1,7 @@
 [Unit]
 Description=backend server for softserve
 After=network.target
+Requires=softserve-celery.service
 
 [Service]
 Type=simple

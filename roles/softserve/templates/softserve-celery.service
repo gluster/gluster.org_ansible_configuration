@@ -1,0 +1,14 @@
+[Unit]
+Description=celery task service for softserve
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory={{ destination }}/code
+ExecStart={{ destination }}/env/bin/celery -A softserve.celery worker -E
+User={{ user }}
+
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

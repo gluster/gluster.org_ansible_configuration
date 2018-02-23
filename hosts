@@ -30,11 +30,13 @@ myrmicinae.rht.gluster.org
 formicary.rht.gluster.org
 
 fstat.rht.gluster.org
+softserve.rht.gluster.org
 postgresql.rht.gluster.org
 proxy.rht.gluster.org
 gerrit-stage.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8.43.85.174:2222 root@myrmicinae.rht.gluster.org"'
 jenkins-stage.rht.gluster.org
 bugziller.rht.gluster.org
+softserve.rht.gluster.org
 
 #build.gluster.org
 gerrit-new.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8.43.85.171:2222 root@myrmicinae.rht.gluster.org"'
@@ -73,13 +75,17 @@ location=rht
 [jenkins_builders_rax]
 builder100.cloud.gluster.org
 builder101.cloud.gluster.org
+builder102.cloud.gluster.org
+builder103.cloud.gluster.org
+builder104.cloud.gluster.org
+builder105.cloud.gluster.org
+builder106.cloud.gluster.org
+builder107.cloud.gluster.org
+builder108.cloud.gluster.org
+builder109.cloud.gluster.org
 
 [jenkins_builders_rackspace]
 freebsd0.cloud.gluster.org
-slave21.cloud.gluster.org
-slave22.cloud.gluster.org
-slave23.cloud.gluster.org
-slave24.cloud.gluster.org
 
 [jenkins_builders_rht]
 freebsd10.3.int.rht.gluster.org

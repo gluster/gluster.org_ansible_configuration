@@ -8,7 +8,7 @@
   lineinfile:
     state: absent
     dest: /etc/hosts
-    regexp: "^(10\\.|2001:)"
+    regexp: "^(10\\.|2001:|::1)"
 
 - name: Setup hosts file so that IP is in /etc/hosts
   lineinfile:

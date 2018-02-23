@@ -1,0 +1,14 @@
+---
+- hosts: haplometrosis.rht.gluster.org
+  roles:
+  - role: guest_virt_install
+    name: softserve.rht.gluster.org
+    system_disk_size: 10
+    mem_size: 1024
+    distribution: Centos
+    version: 7
+    bridge: "{{ bridge_public }}"
+    network:
+      bootproto: static
+      ip: 8.43.85.186/24
+      gateway: 8.43.85.254

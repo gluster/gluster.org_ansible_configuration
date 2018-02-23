@@ -25,6 +25,10 @@
     mod_sec_detection_only: True
 
   - role: httpd_proxy
+    website_domain: softserve.gluster.org
+    reverse_proxy: http://softserve.rht.gluster.org/
+
+  - role: httpd_proxy
     website_domain: fstat.gluster.org
     reverse_proxy: http://fstat.rht.gluster.org/
     server_aliases:

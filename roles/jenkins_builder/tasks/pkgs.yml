@@ -79,6 +79,7 @@
   - bc
 # required for https://review.gluster.org/#/c/18532/
   - libcurl-devel
+  - lcov
 
 - package:
     state: present

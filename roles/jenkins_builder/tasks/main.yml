@@ -106,7 +106,7 @@
     src: /opt/qa/nginx/default.conf
     dest: /{% if ansible_system == 'FreeBSD'%}usr/local/{% endif %}etc/nginx/conf.d/archives.conf
     state: link
-  notify: restart nginx
+  notify: verify config and restart nginx
 
 - name: Set selinux context for nginx
   command: semanage fcontext -a -t public_content_t {{ item }}(/.*)?

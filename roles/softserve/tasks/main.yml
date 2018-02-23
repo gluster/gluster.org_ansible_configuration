@@ -65,6 +65,7 @@
     dest: "{{ destination }}/code/instance/application.cfg"
     src: application.cfg
   no_log: true
+  notify: Restart softserve backend
 
 - name: Database migration
   shell: "{{ destination }}/env/bin/flask db upgrade"

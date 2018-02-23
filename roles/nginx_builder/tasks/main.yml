@@ -2,7 +2,7 @@
 - template:
     dest: "{{ nginx_prefix }}etc/nginx/nginx.conf"
     src: nginx.conf
-  notify: restart nginx
+  notify: verify config and restart nginx
 
 # since nginx is used on the builder and we remove ipv6
 # we need to remove the default config who is using  ipv6
@@ -11,4 +11,4 @@
     dest: /etc/nginx/conf.d/default.conf
     content: ""
   when: ansible_system == 'Linux'
-  notify: restart nginx
+  notify: verify config and restart nginx

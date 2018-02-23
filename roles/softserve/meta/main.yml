@@ -1,0 +1,5 @@
+---
+dependencies:
+- role: nginx_gunicorn
+  vhost_name: "{{ ansible_nodename }}"
+

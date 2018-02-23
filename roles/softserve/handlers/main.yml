@@ -4,3 +4,8 @@
 
 - name: Reload systemd
   systemd: daemon_reload=yes
+
+- name: Restart softserve backend
+  service:
+    name: softserve
+    state: restarted

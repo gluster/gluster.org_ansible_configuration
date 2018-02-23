@@ -3,5 +3,14 @@
   roles:
   - role: postgresql
     listen_addresses: "localhost,8.43.85.170"
+    databases_auth:
+    - name: "fstat"
+      address: "8.43.85.173/32"
+    - name: "gerrit"
+      address: "8.43.85.171/32"
+    - name: "gerrit_stage"
+      address: "8.43.85.174/32"
+    - name: "softserve"
+      address: "8.43.85.186/32"
   - role: postgresql_backups
 

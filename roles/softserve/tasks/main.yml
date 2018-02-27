@@ -15,6 +15,7 @@
   - python-devel
   - postgresql-devel
   - mock
+  - redis
 
 - name: Create the project directory
   file:
@@ -51,6 +52,12 @@
   notify: Reload systemd
 
 - meta: flush_handlers
+
+- name: Start redis server
+  service:
+    name: redis
+    state: started
+    enabled: True
 
 - name: Creating and activating venv
   pip:

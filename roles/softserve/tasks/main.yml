@@ -84,7 +84,7 @@
   cron:
     name: "shutdown check"
     minute: "*/5"
-    job: "/srv/softserve/env/bin/flask shutdown_check"
+    job: "FLASK_APP=/srv/softserve/code/manage.py /srv/softserve/env/bin/flask shutdown_check"
 
 - name: Start the softserve service
   service:

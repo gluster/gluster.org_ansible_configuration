@@ -1,17 +1,42 @@
 ---
+- user:
+    name: "{{user}}"
+
 - name: Install required packages
   package:
     state: present
     name: "{{ item }}"
   with_items:
-  - python-virtualenv
-  - gcc
-  - git
+    - python-virtualenv
+    - gcc
+    - git
 
-# TODO create the directory /fstat, do the git checkout
-# automate update
-# set configuration file, and database creation
+# TODO set configuration file, and database creation
 # and selinux boolean
+
+- name: create fstat directory
+  file:
+    path: /fstat/code state=directory
+
+- name: Check if virtualenv exists
+  stat:
+    path: /fstat/env
+  register: env
+
+- name: creates virtualenv if it does not exists
+  command: virtualenv /fstat/env
+  when: not env.stat.exists
+
+- name: clone or update fstat repo
+  git:
+    repo: https://github.com/gluster/fstat
+    dest: /fstat/code
+
+- name: install dependencies
+  pip:
+    requirements=/fstat/code/requirements.txt
+    virtualenv=/fstat/env
+
 - name: Add tmpfiles snippet
   template:
     dest: /etc/tmpfiles.d/fstat.conf

@@ -12,6 +12,7 @@
   - autoconf
   - libtool
   - bison
+  - make
 
 - package:
     state: present
@@ -88,6 +89,8 @@
   when: ansible_system == 'Linux' and ansible_distribution == 'Fedora'
   with_items:
   - libtirpc-devel
+  - libtirpc
+  - rpcgen
 
 - package:
     state: present

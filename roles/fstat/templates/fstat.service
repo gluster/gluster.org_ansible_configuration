@@ -9,7 +9,7 @@ PIDFile=/run/fstat/fstat.pid
 WorkingDirectory=/fstat/code/
 ExecStart=/fstat/env/bin/gunicorn --pid /run/fstat/fstat.pid -w 4 fstat:app
 User={{ user }}
-
+Environment=SENTRY_DSN={{ fstat_config['sentry_dsn'] }}
 PrivateTmp=true
 
 [Install]

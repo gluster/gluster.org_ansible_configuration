@@ -4,9 +4,9 @@
     state: present
     name: "{{ item }}"
   with_items:
-  - python-virtualenv
-  - gcc
-  - git
+    - python-virtualenv
+    - gcc
+    - git
 
 # TODO create the directory /fstat, do the git checkout
 # automate update
@@ -29,7 +29,7 @@
 - name: Start the fstat service
   service:
     name: fstat
-    enabled: True
+    enabled: true
     state: started
 
 - name: Configure Crontab
@@ -37,9 +37,9 @@
     name: fstat {{item.name}}
     minute: "0"
     hour: "1"
-    job: "/fstat/env/bin/python /fstat/code/manage.py process_jobs -n 3 -j {{item.job}}"
+    job: "SENTRY_DSN=\"{{fstat_config['sentry_dsn']}}\" /fstat/env/bin/python /fstat/code/manage.py process_jobs -n 3 -j {{item.job}}"
   with_items:
-    - { name: 'centos', job: 'centos7-regression' }
-    - { name: 'regression-test-burn-in', job: 'regression-test-burn-in' }
-    - { name: 'regression-test-with-multiplex', job: 'regression-test-with-multiplex' }
-    - { name: 'line-coverage', job: 'line-coverage' }
+    - {name: 'centos', job: 'centos7-regression'}
+    - {name: 'regression-test-burn-in', job: 'regression-test-burn-in'}
+    - {name: 'regression-test-with-multiplex', job: 'regression-test-with-multiplex'}
+    - {name: 'line-coverage', job: 'line-coverage'}

@@ -1,0 +1,4 @@
+- hosts: image_builder
+  include_role:
+    name: jenkins_builder
+    tasks_from: basic_instance.yml

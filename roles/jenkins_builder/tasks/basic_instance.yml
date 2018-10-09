@@ -1,0 +1,10 @@
+---
+- include: pkgs.yml
+
+- include: authroot_georep.yml
+
+- include: disable_ipv6_linux.yml
+  when: ansible_system == 'Linux'
+
+- include: setup_rackspace_network.yml
+  when: ansible_system == 'Linux' and (location == 'rackspace' or location == 'rax')

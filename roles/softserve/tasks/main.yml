@@ -81,7 +81,7 @@
     password: "{{ softserve_config['db_pass'] }}"
   become: true
   become_user: postgres
-  delegate_to: "{{ softserve_config['db_server'] }}"
+  delegate_to: "{{ softserve_config['db_host'] }}"
 
 - name: Create database for softserve
   postgresql_db:
@@ -90,7 +90,7 @@
     owner: "{{ softserve_config['db_user'] }}"
   become: true
   become_user: postgres
-  delegate_to : "{{ softserve_config['db_server'] }}"
+  delegate_to : "{{ softserve_config['db_host'] }}"
 
 - name: Database migration
   shell: "{{ destination }}/env/bin/flask db upgrade"

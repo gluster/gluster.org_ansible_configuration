@@ -75,6 +75,14 @@
   no_log: true
   notify: Restart softserve backend
 
+- name: Create database for softserve
+  postgresql_db:
+    name: softserve
+    login_host: "{{ softserve_config['db_host'] }}"
+    login_user: "{{ softserve_config['db_user'] }}"
+    login_password: "{{ softserve_config['db_pass'] }}"
+    state: present
+
 - name: Database migration
   shell: "{{ destination }}/env/bin/flask db upgrade"
   environment:

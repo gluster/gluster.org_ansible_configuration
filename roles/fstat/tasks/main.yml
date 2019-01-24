@@ -29,12 +29,6 @@
     update: yes
     force: yes
 
-    #- name: Add tmpfiles snippet
-    #template:
-    #dest: /etc/tmpfiles.d/fstat.conf
-    #src: fstat.tmpfiles.conf
-    #notify: Create fstat systemd tmpfile
-
 - name: Add gunicorn systemd service
   template:
     dest: /etc/systemd/system/fstat.service
@@ -81,7 +75,13 @@
   become_user: postgres
   delegate_to : "{{ fstat_config['db_host'] }}"
 
-  #TODO: selinux boolean
+- name: Database migration
+  shell: "{{ destination }}/env/bin/flask db upgrade"
+  environment:
+    FLASK_APP: manage.py
+  args:
+    chdir: "{{ destination }}/code"
+
 - name: Start the fstat service
   service:
     name: fstat

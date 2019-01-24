@@ -4,3 +4,8 @@
 
 - name: Reload systemd
   shell: systemctl daemon-reload
+
+- name: Restart fstat backend
+  service:
+    name: fstat
+    state: restarted

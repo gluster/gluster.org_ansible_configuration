@@ -5,9 +5,8 @@ After=network.target
 
 [Service]
 Type=simple
-PIDFile=/run/fstat/fstat.pid
 WorkingDirectory=/fstat/code/
-ExecStart=/fstat/env/bin/gunicorn --pid /run/fstat/fstat.pid -w 4 fstat:app
+ExecStart=/fstat/env/bin/gunicorn -w 4 fstat:app
 User={{ user }}
 Environment=SENTRY_DSN={{ fstat_config['sentry_dsn'] }}
 PrivateTmp=true

@@ -1,0 +1,7 @@
+---
+dependencies:
+- role: nginx_gunicorn
+  vhost_name: "{{ ansible_nodename }}"
+  vhost_aliases:
+  - fstat.gluster.org
+  - fstat.test.gluster.org

@@ -1,4 +1,9 @@
 ---
+- name: Create a user
+  user:
+    name: "{{ user }}"
+    state: present
+
 - name: Install required packages
   package:
     state: present
@@ -8,15 +13,27 @@
     - gcc
     - git
 
-# TODO create the directory /fstat, do the git checkout
-# automate update
-# set configuration file, and database creation
-# and selinux boolean
-- name: Add tmpfiles snippet
-  template:
-    dest: /etc/tmpfiles.d/fstat.conf
-    src: fstat.tmpfiles.conf
-  notify: Create fstat systemd tmpfile
+- name: Create the project directory
+  file:
+    path: "{{ destination }}"
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    recurse: yes
+
+- name: Clone the code
+  git:
+    repo: 'https://github.com/gluster/fstat.git'
+    dest: '{{ destination }}/code'
+    version: HEAD
+    update: yes
+    force: yes
+
+    #- name: Add tmpfiles snippet
+    #template:
+    #dest: /etc/tmpfiles.d/fstat.conf
+    #src: fstat.tmpfiles.conf
+    #notify: Create fstat systemd tmpfile
 
 - name: Add gunicorn systemd service
   template:
@@ -26,6 +43,45 @@
 
 - meta: flush_handlers
 
+- name: Creating and activating venv
+  pip:
+    chdir: "{{ destination}}/code"
+    virtualenv: "{{ destination }}/env"
+    virtualenv_site_packages: yes
+    name: setuptools
+    extra_args: --upgrade
+
+- name: Installing the dependencies
+  pip:
+    chdir: "{{ destination }}/code"
+    virtualenv: "{{ destination}}/env"
+    requirements: "{{ destination}}/code/production.txt"
+
+- name: Copy the config file to the fstat folder
+  template:
+    dest: "{{ destination }}/code/instance/application.cfg"
+    src: application.cfg
+  no_log: true
+  notify: Restart fstat backend
+
+- name: create fstat DB user
+  postgresql_user:
+    name: "{{ fstat_config['db_user'] }}"
+    password: "{{ fstat_config['db_pass'] }}"
+  become: true
+  become_user: postgres
+  delegate_to: "{{ fstat_config['db_host'] }}"
+
+- name: Create database for fstat
+  postgresql_db:
+    name: "{{ fstat_config['db_name'] }}"
+    state: present
+    owner: "{{ fstat_config['db_user'] }}"
+  become: true
+  become_user: postgres
+  delegate_to : "{{ fstat_config['db_host'] }}"
+
+  #TODO: selinux boolean
 - name: Start the fstat service
   service:
     name: fstat

@@ -1,0 +1,12 @@
+mail.backend: 'smtp'
+
+system.secret-key: {{ secret_key.stdout }}
+redis.clusters:
+  default:
+    hosts:
+      0:
+        host: 127.0.0.1
+        port: 6379
+filestore.backend: 'filesystem'
+filestore.options:
+  location: '{{ destination }}/upload'

@@ -1,0 +1,111 @@
+---
+- name: Create a user
+  user:
+    name: "{{ user }}"
+    state: present
+
+- name: Install required packages
+  package:
+    state: present
+    name:
+    - python-virtualenv
+    - gcc
+    - gcc-c++
+
+- name: Create the directory holding code and venv
+  file:
+    state: directory
+    name: "{{ destination }}"
+
+- name: Installing the dependencies
+  pip:
+    chdir: "{{ destination }}/code"
+    virtualenv: "{{ destination}}/env"
+    virtualenv_site_packages: yes
+    name: sentry
+    extra_args: --upgrade
+  notify: 
+  - Migrate DB
+  - Restart services
+# TODO use a partition backed 
+- name: Create directory that hold uploaded files
+  file:
+    state: directory
+    name: "{{ destination }}/upload"
+
+- name: Create /etc/sentry
+  file:
+    state: directory
+    name: /etc/sentry
+
+
+- name: Generate a secret_key 
+  shell: uuidgen > /etc/sentry/secret_key
+  args: 
+    creates: /etc/sentry/secret_key
+
+- name: Read the secret key
+  command: cat /etc/sentry/secret_key
+  changed_when: False
+  register: secret_key
+
+- name: Deploy the config.yml file
+  template:
+    dest: /etc/sentry/config.yml
+    src: config.yml
+  notify: Restart services
+
+- name: Deploy the sentry.conf.py file
+  template:
+    dest: /etc/sentry/sentry.conf.py
+    src: sentry.conf.py
+  notify: Restart services
+
+- name: Create sentry DB user
+  postgresql_user:
+    name: "{{ sentry_config['db_user'] }}"
+    password: "{{ sentry_config['db_pass'] }}"
+  become: true
+  become_user: postgres
+  delegate_to: "{{ sentry_config['db_host'] }}"
+
+- name: Create database for sentry
+  postgresql_db:
+    name: "{{ sentry_config['db_name'] }}"
+    state: present
+    owner: "{{ sentry_config['db_user'] }}"
+  become: true
+  become_user: postgres
+  delegate_to : "{{ sentry_config['db_host'] }}"
+  notify:
+  - Migrate DB
+
+- name: Create the extension for sentry
+  postgresql_ext:
+    name: citext
+    db: "{{ sentry_config['db_name'] }}"
+  become: true
+  become_user: postgres
+  delegate_to : "{{ sentry_config['db_host'] }}"
+
+- name: Create the service files
+  template:
+    dest: "/etc/systemd/system/sentry-{{ item }}.service"
+    src: "sentry-service.service"
+  notify: Reload systemd
+  with_items:
+  - worker
+  - web
+  - cron
+
+- meta: flush_handlers
+
+- name: Start the services
+  service:
+    name: "sentry-{{ item }}"
+    enabled: true
+    state: started
+  with_items:
+  - worker
+  - web
+  - cron

@@ -1,0 +1,14 @@
+# {{ ansible_managed }}
+[Unit]
+Description=Sentry {{ item }}
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/srv/sentry/env/bin/sentry run {{ item }}
+Environment=SENTRY_CONF=/etc/sentry
+User={{ user }}
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

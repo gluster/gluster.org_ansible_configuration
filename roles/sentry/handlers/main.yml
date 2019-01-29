@@ -1,0 +1,25 @@
+---
+- name: Migrate DB
+  shell: /srv/sentry/env/bin/sentry  upgrade --noinput
+  environment:
+    SENTRY_CONF: /etc/sentry 
+
+- name: Restart services
+  service:
+    name: sentry-web
+    state: restarted
+  notify: Restart sentry worker
+
+- name: Restart sentry worker
+  service:
+    name: sentry-worker
+    state: restarted
+  notify: Restart sentry cron
+
+- name: Restart sentry cron
+  service:
+    name: sentry-cron
+    state: restarted
+
+- name: Reload systemd
+  shell: systemctl daemon-reload

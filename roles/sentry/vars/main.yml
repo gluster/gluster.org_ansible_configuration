@@ -1,0 +1,2 @@
+destination: /srv/sentry
+user: _sentry

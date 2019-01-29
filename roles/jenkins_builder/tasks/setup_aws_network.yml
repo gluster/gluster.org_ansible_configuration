@@ -28,3 +28,9 @@
     state: present
     dest: /etc/dhcp/dhclient.conf
     line: "supersede domain-name-servers 8.8.8.8;"
+
+- name: Make sure that search do not come to interfer
+  copy:
+    dest: /etc/dhcp/dhclient.d/comment_search.sh
+    src: comment_search.sh
+    mode: 0755

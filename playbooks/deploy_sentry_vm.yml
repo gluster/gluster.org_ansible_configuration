@@ -15,3 +15,9 @@
       nameservers:
       - 172.24.1.60
       - 172.24.1.61
+
+- hosts: sentry.int.rht.gluster.org
+  roles:
+  - role: swap_file
+    size: 2G
+    path: /var/swap

@@ -109,3 +109,10 @@
   - worker
   - web
   - cron
+
+- name: Open the firewall on port 9000
+  firewalld:
+    state: enabled
+    immediate: True
+    permanent: True
+    port: 9000/tcp

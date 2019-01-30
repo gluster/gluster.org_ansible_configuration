@@ -75,7 +75,6 @@
     backends:
     - munin.int.rht.gluster.org
 
-# TODO move internally
   - role: nginx_proxy_vhost
     domain: bugs.gluster.org
     backends:
@@ -86,3 +85,7 @@
     backends:
     - download.rht.gluster.org
 
+  - role: nginx_proxy_vhost
+    domain: sentry.gluster.org
+    backends:
+    - sentry.int.rht.gluster.org:9000

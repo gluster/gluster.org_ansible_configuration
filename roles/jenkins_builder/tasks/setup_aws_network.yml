@@ -5,16 +5,30 @@
 
 - name: Setup hosts file so that IP is in /etc/hosts
   lineinfile:
-    state: present
+    state: absent
     dest: /etc/hosts
     line: "127.0.0.1 {{ ansible_hostname }}"
+
+- name: Setup hosts file so that IP is in /etc/hosts
+  lineinfile:
+    state: absent
+    dest: /etc/hosts
+    line: "127.0.0.1 {{ inventory_hostname }}"
+    insertbefore: BOF
+
+
+- name: Setup hosts file so that IP is in /etc/hosts
+  lineinfile:
+    state: present
+    dest: /etc/hosts
+    line: "{{ansible_default_ipv4['address'] }} {{ ansible_hostname }}"
     insertbefore: BOF
 
 - name: Setup hosts file so that IP is in /etc/hosts
   lineinfile:
     state: present
     dest: /etc/hosts
-    line: "127.0.0.1 {{ inventory_hostname }}"
+    line: "{{ansible_default_ipv4['address'] }} {{ inventory_hostname }}"
     insertbefore: BOF
 
 - name: Remove the IPV6 entry

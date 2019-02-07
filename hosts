@@ -82,8 +82,11 @@ location=aws
 builder[100:109].cloud.gluster.org
 
 [jenkins_builders_aws]
-builder200.aws.gluster.org ansible_host=13.59.193.177
-builder3.aws.gluster.org ansible_host=18.220.218.132
+builder200.aws.gluster.org ansible_host=18.224.202.57
+builder201.aws.gluster.org ansible_host=18.220.12.156
+builder202.aws.gluster.org ansible_host=18.224.214.2
+builder203.aws.gluster.org ansible_host=18.223.151.97
+builder204.aws.gluster.org ansible_host=18.224.199.184
 
 [jenkins_builders_rht]
 freebsd10.3.int.rht.gluster.org

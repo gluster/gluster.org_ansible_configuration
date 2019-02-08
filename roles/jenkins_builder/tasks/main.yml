@@ -38,7 +38,7 @@
     - mock
     password: "{{ jenkins_user_password |default(omit) }}"
 
-- import_tasks: setup_auth_rax.yml
+- import_tasks: setup_auth.yml
   when: location == 'aws'
 
 - name: Start and enable rpc-statd

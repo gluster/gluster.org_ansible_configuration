@@ -73,16 +73,17 @@ location=rht
 
 [jenkins_builders_aws:vars]
 location=aws
+ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@logs.aws.gluster.org"'
 
 [jenkins_builders_aws]
-builder200.aws.gluster.org ansible_host=18.224.202.57
-builder201.aws.gluster.org ansible_host=18.220.12.156
-builder202.aws.gluster.org ansible_host=18.224.214.2
-builder203.aws.gluster.org ansible_host=18.223.151.97
-builder204.aws.gluster.org ansible_host=18.224.199.184
-builder205.aws.gluster.org ansible_host=18.223.123.181
-builder206.aws.gluster.org ansible_host=3.16.165.41
-builder207.aws.gluster.org ansible_host=18.224.212.103
+builder200.aws.gluster.org ansible_host=172.31.39.241
+builder201.aws.gluster.org ansible_host=172.31.37.1
+builder202.aws.gluster.org ansible_host=172.31.32.219
+builder203.aws.gluster.org ansible_host=172.31.44.188
+builder204.aws.gluster.org ansible_host=172.31.44.76
+builder205.aws.gluster.org ansible_host=172.31.41.183
+builder206.aws.gluster.org ansible_host=172.31.46.61
+builder207.aws.gluster.org ansible_host=172.31.32.100
 
 [jenkins_builders_rht]
 freebsd10.3.int.rht.gluster.org

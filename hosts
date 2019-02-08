@@ -68,18 +68,11 @@ chrono.rht.gluster.org
 [debian]
 builder50.int.rht.gluster.org
 
-[jenkins_builders_rax:vars]
-location=rax
-
-
 [jenkins_builders_rht:vars]
 location=rht
 
 [jenkins_builders_aws:vars]
 location=aws
-
-[jenkins_builders_rax]
-builder[106:109].cloud.gluster.org
 
 [jenkins_builders_aws]
 builder200.aws.gluster.org ansible_host=18.224.202.57
@@ -96,7 +89,6 @@ builder[0:49].int.rht.gluster.org
 
 [jenkins_builders:children]
 jenkins_builders_rht
-jenkins_builders_rax
 jenkins_builders_aws
 
 [container_pipeline_builders]
@@ -115,7 +107,6 @@ jenkins-stage.rht.gluster.org
 jenkins-el7.rht.gluster.org
 
 [download]
-#download01.rax.gluster.org
 download.rht.gluster.org
 
 [web]

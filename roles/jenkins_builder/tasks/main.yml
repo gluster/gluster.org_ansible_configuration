@@ -8,9 +8,6 @@
 - include: disable_ipv6_freebsd.yml
   when: ansible_system == 'FreeBSD'
 
-- include: setup_rackspace_network.yml
-  when: ansible_system == 'Linux' and location == 'rax'
-
 - include: setup_aws_network.yml
   when: ansible_system == 'Linux' and location == 'aws'
 
@@ -42,14 +39,14 @@
     password: "{{ jenkins_user_password |default(omit) }}"
 
 - import_tasks: setup_auth_rax.yml
-  when: location == 'rax' or location == 'aws'
+  when: location == 'aws'
 
 - name: Start and enable rpc-statd
   service:
     name: rpc-statd
     enabled: true
     state: started
-  when: location == 'rax' or location == 'aws'
+  when: location == 'aws'
 
 #TODO add the fingerprint of review.gluster.org to user jenkins
 # so it doesn't block

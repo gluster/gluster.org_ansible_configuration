@@ -82,6 +82,7 @@ builder203.aws.gluster.org ansible_host=18.223.151.97
 builder204.aws.gluster.org ansible_host=18.224.199.184
 builder205.aws.gluster.org ansible_host=18.223.123.181
 builder206.aws.gluster.org ansible_host=3.16.165.41
+builder207.aws.gluster.org ansible_host=18.224.212.103
 
 [jenkins_builders_rht]
 freebsd10.3.int.rht.gluster.org

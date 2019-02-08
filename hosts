@@ -79,7 +79,7 @@ location=rht
 location=aws
 
 [jenkins_builders_rax]
-builder[100:109].cloud.gluster.org
+builder[106:109].cloud.gluster.org
 
 [jenkins_builders_aws]
 builder200.aws.gluster.org ansible_host=18.224.202.57

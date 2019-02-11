@@ -6,4 +6,4 @@
   - role: scp_http_int
     target_name: aws-logs
     scp_dest: /var/www/glusterfs-logs
-
+    use_letsencrypt: True 

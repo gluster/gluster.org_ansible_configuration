@@ -171,6 +171,12 @@ sentry.int.rht.gluster.org
 [int_rht_gluster_org:vars]
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gluster.org"'
 
+[int_aws_gluster_org]
+builder200.int.aws.gluster.org
+
+[int_aws_gluster_org:vars]
+ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@logs.aws.gluster.org"'
+
 # group for servers using the proxy as a test
 [set_proxy]
 builder6.int.rht.gluster.org

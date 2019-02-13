@@ -6,16 +6,15 @@
   with_file:
   - misc_main.pub
   - misc_backup.pub
-  - nigel.pub
   - deepshikha.pub
   - ant-queen.pub
  
-# key generated on a yubikey
 - name: Remove old keys
   authorized_key:
     user: root
     key: "{{ item }}"
     state: absent
   with_file:
+  - nigel.pub
   - misc_nano_old.pub
   - misc_tpm_old.pub

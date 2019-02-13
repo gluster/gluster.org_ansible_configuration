@@ -7,7 +7,6 @@
   - misc_main.pub
   - misc_backup.pub
   - deepshikha.pub
-  - ant-queen.pub
   - ant-queen-2019.pub
  
 - name: Remove old keys
@@ -16,6 +15,7 @@
     key: "{{ item }}"
     state: absent
   with_file:
+  - ant-queen.pub
   - nigel.pub
   - misc_nano_old.pub
   - misc_tpm_old.pub

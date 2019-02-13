@@ -8,6 +8,7 @@
   - misc_backup.pub
   - deepshikha.pub
   - ant-queen.pub
+  - ant-queen-2019.pub
  
 - name: Remove old keys
   authorized_key:

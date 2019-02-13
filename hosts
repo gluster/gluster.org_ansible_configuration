@@ -76,14 +76,7 @@ location=aws
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@logs.aws.gluster.org"'
 
 [jenkins_builders_aws]
-builder200.aws.gluster.org ansible_host=172.31.39.241
-builder201.aws.gluster.org ansible_host=172.31.37.1
-builder202.aws.gluster.org ansible_host=172.31.32.219
-builder203.aws.gluster.org ansible_host=172.31.44.188
-builder204.aws.gluster.org ansible_host=172.31.44.76
-builder205.aws.gluster.org ansible_host=172.31.41.183
-builder206.aws.gluster.org ansible_host=172.31.46.61
-builder207.aws.gluster.org ansible_host=172.31.32.100
+builder[200:207].int.aws.gluster.org
 
 [jenkins_builders_rht]
 freebsd10.3.int.rht.gluster.org
@@ -172,7 +165,7 @@ sentry.int.rht.gluster.org
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gluster.org"'
 
 [int_aws_gluster_org]
-builder200.int.aws.gluster.org
+builder[200:207].int.aws.gluster.org
 
 [int_aws_gluster_org:vars]
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@logs.aws.gluster.org"'
@@ -194,4 +187,5 @@ signer.int.rht.gluster.org
 [monitoring_from_inside:children]
 int_rht_gluster_org
 
-
+[not_monitored:children]
+int_aws_gluster_org

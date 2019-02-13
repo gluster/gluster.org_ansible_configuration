@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: all:!not_monitored
   roles:
   - role: nagios_monitored
     nagios_server: nagios.int.rht.gluster.org

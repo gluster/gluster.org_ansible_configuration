@@ -2,4 +2,4 @@
 - name: Install bastion ssh keys
   authorized_key:
     user: root
-    key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+    key: "{{ lookup('file', '~/.ssh/id_ecdsa.pub') }}"

@@ -42,4 +42,8 @@
     processes:
     - {name: postgres}
 
-
+- hosts: http.int.rht.gluster.org:munin.int.rht.gluster.org
+  roles:
+  - role: nagios_monitored_nrpe_process
+    processes:
+    - {name: httpd}

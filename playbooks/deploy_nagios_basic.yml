@@ -39,7 +39,7 @@
   - role: nagios_monitored_nrpe_process
     nagios_server: nagios.int.rht.gluster.org
     nagios_ip: 8.43.85.181
-     processes:
+    processes:
     - {name: postgres}
 
 

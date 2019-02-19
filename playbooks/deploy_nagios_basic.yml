@@ -27,3 +27,11 @@
     nagios_ip: 8.43.85.181
     processes:
     - {name: postgrey}
+
+- hosts: postgresql.int.rht.gluster.org
+  roles:
+  - role: nagios_monitored_nrpe_process
+    processes:
+    - {name: postgres}
+
+

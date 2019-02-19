@@ -7,14 +7,10 @@
 - hosts: munin.int.rht.gluster.org
   roles:
   - role: nagios_monitored_nrpe
-    nagios_server: nagios.int.rht.gluster.org
-    nagios_ip: 172.24.1.63
 
 - hosts: squid_unbound
   roles:
   - role: nagios_monitored_nrpe_process
-    nagios_server: nagios.int.rht.gluster.org
-    nagios_ip: 172.24.1.63
     processes:
     - {name: unbound}
     - {name: squid}
@@ -23,8 +19,6 @@
 - hosts: monitoring_from_inside:!freebsd:!debian 
   roles:
   - role: nagios_monitored_nrpe_selinux
-    nagios_server: nagios.int.rht.gluster.org
-    nagios_ip: 172.24.1.63
 
 - hosts: supercolony.rht.gluster.org
   roles:

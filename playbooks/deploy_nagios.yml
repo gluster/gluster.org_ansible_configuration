@@ -17,6 +17,7 @@
 #    - {host: ci-logs.gluster.org, use_ssl: True}
     - {host: fstat.gluster.org, use_ssl: True}
     - {host: lists.gluster.org, use_ssl: True}
+    - {host: logs.aws.gluster.org, use_ssl: True}
     # beware, this one requires the host to be declared first
     smtp_servers:
     - supercolony.rht.gluster.org

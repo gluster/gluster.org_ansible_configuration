@@ -1,0 +1,17 @@
+- hosts: myrmicinae.rht.gluster.org
+  roles:
+  - role: guest_openvpn
+    vars:
+      name: openvpn01.int.rht.gluster.org
+    network:
+      ip: 172.24.1.68/24
+      gateway: 172.24.1.181
+
+- hosts: formicary.rht.gluster.org
+  roles:
+  - role: guest_openvpn
+    vars:
+      name: openvpn02.int.rht.gluster.org
+    network:
+      ip: 172.24.1.69/24
+      gateway: 172.24.1.181

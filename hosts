@@ -141,6 +141,9 @@ mune.rht.gluster.org
 squid01.int.rht.gluster.org
 squid02.int.rht.gluster.org
 
+[openvpn]
+openvpn0[1:2].int.rht.gluster.org
+
 [int_rht_gluster_org]
 signer.int.rht.gluster.org
 freebsd10.3.int.rht.gluster.org
@@ -160,6 +163,7 @@ postgresql.int.rht.gluster.org
 softserve.int.rht.gluster.org
 fstat.int.rht.gluster.org
 sentry.int.rht.gluster.org
+openvpn0[1:2].int.rht.gluster.org
 
 [int_rht_gluster_org:vars]
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gluster.org"'

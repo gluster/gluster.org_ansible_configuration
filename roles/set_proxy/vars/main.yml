@@ -1,1 +1,3 @@
-proxy: http://squid.int.rht.gluster.org:3128/
+proxy_port: 3128
+proxy_server: squid.int.rht.gluster.org
+proxy: http://{{ proxy_server}}:{{ proxy_port }}/

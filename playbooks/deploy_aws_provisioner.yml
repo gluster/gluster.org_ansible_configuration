@@ -1,0 +1,4 @@
+---
+- hosts: aws_provisioner
+  roles:
+  - role: aws_provisioner

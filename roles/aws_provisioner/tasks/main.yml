@@ -19,10 +19,11 @@
     value: "{{ aws_secret_key }}"
   no_log: True
 
-- ec2_key:
-    name: bastion_keypair
-    key_material: "{{ lookup('file', '/home/ansible_admin/.ssh/id_ecdsa.pub') }}"
-    aws_region: "{{ aws_region }}" 
-  environment:
-    https_proxy: http://squid.int.rht.gluster.org:3128/
+#enable when EC2 support ecdsa one day...
+#- ec2_key:
+#    name: bastion_keypair
+#    key_material: "{{ lookup('file', '/home/ansible_admin/.ssh/id_ecdsa.pub') }}"
+#    aws_region: "{{ aws_region }}" 
+#  environment:
+#    https_proxy: http://squid.int.rht.gluster.org:3128/
   

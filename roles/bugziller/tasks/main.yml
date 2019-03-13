@@ -5,6 +5,14 @@
     state: installed
   with_items:
   - python2-bugzilla
+  - python2-pip
+
+- name: Install pip package
+  pip:
+    name:
+    - github3.py
+  become_user: "{{ user }}"
+  become_method: su
 
 - name: Copy a login script
   template:

@@ -1,3 +1,5 @@
 - hosts: bugziller
   roles:
-  - role: gluster_qa_scripts
+  # TODO make sure that jenkins user is properly setup
+  - role: bugziller
+    user: jenkins

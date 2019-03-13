@@ -1,0 +1,21 @@
+---
+- name: Install needed packages
+  package:
+    name: "{{ item }}"
+    state: installed
+  with_items:
+  - python2-bugzilla
+
+- name: Copy a login script
+  template:
+    dest: /usr/local/bin/login_bugzilla.sh
+    src: login_bugzilla.sh
+    mode: 0700
+  no_log: True
+ 
+- name: Set a cronjob
+  cron:
+    name: Log jenkins on bugzilla if needed
+    user: root
+    special_time: hourly
+    job: "/usr/local/bin/login_bugzilla.sh"

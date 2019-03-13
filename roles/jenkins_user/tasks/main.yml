@@ -1,0 +1,20 @@
+# TODO /home should be 755
+- name: Create jenkins user
+  user:
+    name: jenkins
+    password: "{{ jenkins_user_password |default(omit) }}"
+
+- name: Install jenkins builder jdk for RHEL/Centos/Fedora
+  package:
+    state: present
+    name:
+    - java-1.8.0-openjdk
+  when: ansible_distribution == 'RedHat' or ansible_distribution == 'CentOS' or ansible_distribution == 'Fedora'
+
+- package:
+    state: present
+    name:
+    - openjdk8-jre
+  name: Install jenkins builder FreeBSD packages
+  when: ansible_system == 'FreeBSD'
+

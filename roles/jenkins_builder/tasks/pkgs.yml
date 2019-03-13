@@ -117,7 +117,6 @@
   with_items:
   - cmockery2
   - perl5
-  - openjdk8-jre
   - sqlite3
   - pkgconf
   - liburcu
@@ -133,13 +132,6 @@
   - e2fsprogs-libuuid
 # requested on https://bugzilla.redhat.com/show_bug.cgi?id=1609347
   - argp-standalone
-
-- name: Install jenkins builder jdk for RHEL/Centos/Fedora
-  package:
-    state: present
-    name:
-    - java-1.8.0-openjdk
-  when: ansible_distribution == 'RedHat' or ansible_distribution == 'CentOS' or ansible_distribution == 'Fedora'
 
 - name: Remove package that cause trouble with the regression suite
   package:

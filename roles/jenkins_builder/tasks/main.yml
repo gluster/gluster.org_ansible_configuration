@@ -30,13 +30,12 @@
     src: sudoers_jenkins
 
 # TODO /home should be 755
-- name: Create jenkins user
+- name: Add jenkins user to group
   user:
     name: jenkins
     groups:
     - wheel
     - mock
-    password: "{{ jenkins_user_password |default(omit) }}"
 
 - import_tasks: setup_auth.yml
   when: location == 'aws'

@@ -12,3 +12,9 @@
     network:
       ip: 172.24.1.54/24
       gateway: 172.24.1.181
+
+- hosts: bugziller.int.rht.gluster.org
+  roles:
+  - role: swap_file
+    size: 1G
+    path: /var/swap

@@ -1,0 +1,12 @@
+/etc/unbound/log/*.log {
+    weekly
+    rotate 10
+    missingok
+    notifempty
+    compress
+    sharedscripts
+    postrotate
+        service unbound reload
+    endscript
+}
+

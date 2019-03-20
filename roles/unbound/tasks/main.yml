@@ -13,6 +13,11 @@
 # include partition
 - import_tasks: partition_disk.yml
 
+- name: Rotate the log
+  copy:
+    src: unboung_logs.logrotate
+    dest: /etc/logrotate.d/unboung_logs
+
 - name: Open firewall for DNS
   firewalld: 
     service: dns

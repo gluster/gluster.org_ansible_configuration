@@ -1,0 +1,5 @@
+- include: disable_ipv6_linux.yml
+  when: ansible_system == 'Linux'
+
+- include: disable_ipv6_freebsd.yml
+  when: ansible_system == 'FreeBSD'

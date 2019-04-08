@@ -1,5 +1,6 @@
 ---
 dependencies:
+- { role: disable_ipv6 }
 - { role: lvm_config }
 - { role: gluster_qa_scripts }
 - { role: jenkins_user }

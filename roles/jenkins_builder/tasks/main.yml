@@ -2,12 +2,6 @@
 - include: pkgs.yml
 - include: authroot_georep.yml
 
-- include: disable_ipv6_linux.yml
-  when: ansible_system == 'Linux'
-
-- include: disable_ipv6_freebsd.yml
-  when: ansible_system == 'FreeBSD'
-
 - include: setup_aws_network.yml
   when: ansible_system == 'Linux' and location == 'aws'
 

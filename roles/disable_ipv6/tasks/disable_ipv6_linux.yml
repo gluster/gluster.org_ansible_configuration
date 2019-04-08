@@ -18,7 +18,7 @@
 # see https://lists.gluster.org/pipermail/gluster-infra/2019-April/005519.html
 - copy:
     dest: /etc/dracut.conf.d/disable_ipv6.conf
-    content: '#hostonly="yes"'
+    content: 'hostonly="yes"'
 
 - sysctl:
     name: "{{ item }}"

@@ -29,7 +29,13 @@
     name: jenkins
     groups:
     - wheel
+
+- name: Add jenkins user to group
+  user:
+    name: jenkins
+    groups:
     - mock
+  when: ansible_os_family == 'RedHat'
 
 - import_tasks: setup_auth.yml
   when: location == 'aws'

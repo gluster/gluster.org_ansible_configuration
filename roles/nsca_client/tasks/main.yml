@@ -1,7 +1,7 @@
 ---
 - package:
     name: nsca-client
-    state: installed
+    state: present
 
 - template:
     dest: /etc/send_nsca.cfg

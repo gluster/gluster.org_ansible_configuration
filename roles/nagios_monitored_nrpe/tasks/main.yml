@@ -1,7 +1,7 @@
 ---
 - name: Install NRPE and plugins
   package:
-    state: installed
+    state: present
     name:
     - nrpe
     - nagios-plugins-load

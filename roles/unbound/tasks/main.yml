@@ -2,7 +2,7 @@
 - name: Install unbound
   package:
     name: unbound
-    state: installed
+    state: present
 
 - name: Deploy unbound configuration
   template:

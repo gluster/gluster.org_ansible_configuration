@@ -1,6 +1,6 @@
 - name: Install rdiff-backup
   package:
-    state: installed
+    state: present
     name: rdiff-backup
 
 - name: Create local user to make backups

@@ -47,3 +47,9 @@
   - role: nagios_monitored_nrpe_process
     processes:
     - {name: httpd}
+
+- hosts: jenkins_builders_rht
+  roles:
+  - role: nagios_monitored_nrpe_connect_ssh
+    ssh_targets:
+    - name: review.gluster.org

@@ -11,6 +11,7 @@
     - nagios-plugins-file_age
     - nagios-plugins-swap
     - nagios-plugins-mailq
+    - nagios-plugins-ssh
 
 - name: Fix allowed_hosts in NRPE
   lineinfile:

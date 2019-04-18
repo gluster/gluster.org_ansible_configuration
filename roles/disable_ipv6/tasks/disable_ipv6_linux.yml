@@ -2,10 +2,10 @@
 # current regression test suite do not support ipv6, so we have to disable
 # it
 - lineinfile:
-    dest: /etc/sysconfig/network-scripts/ifcfg-eth0
+    dest: "/etc/sysconfig/network-scripts/ifcfg-{{ ansible_default_ipv4.interface }}"
     regexp: ^IPV6INIT=
     line: IPV6INIT=no
-  name: Disable ipv6 in eth0 config
+  name: "Disable ipv6 in ifcfg"
 
 - lineinfile:
     dest: /etc/sysconfig/network

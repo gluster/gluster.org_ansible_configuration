@@ -29,12 +29,14 @@
     name: jenkins
     groups:
     - wheel
+  when: ansible_os_family != 'RedHat'
 
 - name: Add jenkins user to group
   user:
     name: jenkins
     groups:
     - mock
+    - wheel
   when: ansible_os_family == 'RedHat'
 
 - import_tasks: setup_auth.yml

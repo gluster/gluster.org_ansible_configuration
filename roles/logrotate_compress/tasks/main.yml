@@ -1,0 +1,7 @@
+---
+- name: Make sure logrotate compress the log
+  lineinfile:
+    state: present
+    dest: /etc/logrotate.conf
+    line: "compress"
+

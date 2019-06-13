@@ -40,3 +40,4 @@
     # since emails are private
     email_aliases: "{{ mail_aliases }}"
     devnull_domain: review.gluster.org
+    mail_domain: gluster.org

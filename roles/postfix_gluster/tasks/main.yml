@@ -33,3 +33,11 @@
      dest: /etc/postfix/mailman.aliases
      src: mailman.aliases
   notify: postalias mailman
+
+- name: Set virtual aliases
+  template:
+     dest: /etc/postfix/virtual.aliases
+     src: virtual.aliases
+  notify: postalias virtual
+
+

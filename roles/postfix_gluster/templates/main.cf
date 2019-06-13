@@ -43,6 +43,11 @@ smtpd_recipient_restrictions = permit_mynetworks
   reject_rbl_client {{ blacklist }}
 {% endfor %}
 
+{% if devnull_domain is defined %}
+virtual_alias_domains = {{ devnull_domain }}
+virtual_alias_maps = hash:/etc/postfix/virtual.aliases 
+{% endif %}
+
 smtp_use_tls = yes
 
 sample_directory = /usr/share/doc/postfix-2.6.6/samples

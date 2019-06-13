@@ -27,4 +27,4 @@
   notify: verify config and restart httpd
 
 - include: dnsbl_blacklist.yml
-  when: dnsbl_mailman 
+  when: dnsbl_mailman|bool

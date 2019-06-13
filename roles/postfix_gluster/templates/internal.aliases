@@ -34,4 +34,4 @@ www:            root
 ftp:            root
 
 mailer-daemon:  postmaster
-
+davenull:       /dev/null

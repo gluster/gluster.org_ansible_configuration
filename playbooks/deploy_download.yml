@@ -11,3 +11,5 @@
   - role: httpd_download
     website_domain: download.gluster.org
     document_root: /var/www/html
+  - role: logrotate_compress
+    

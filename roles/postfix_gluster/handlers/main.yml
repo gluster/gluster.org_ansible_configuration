@@ -15,6 +15,6 @@
     chdir: /etc/postfix
 
 - name: postalias virtual
-  command: postalias virtual.aliases
+  command: postmap virtual.aliases
   args:
     chdir: /etc/postfix

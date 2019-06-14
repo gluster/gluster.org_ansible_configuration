@@ -11,7 +11,7 @@ append_dot_mydomain = no
 
 readme_directory = /usr/share/doc/postfix-2.6.6/README_FILES
 mynetworks = 127.0.0.0/8
-myorigin = {{ ansible_domain }} 
+myorigin = {{mail_domain }} 
 mydestination = {{ ansible_fqdn }}, {{ ansible_domain }}, localhost, {{ mail_domain }}
 #relayhost = 
 mailbox_command = procmail -a "$EXTENSION"

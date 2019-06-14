@@ -4,4 +4,4 @@
     state: present
     dest: /etc/logrotate.conf
     line: "compress"
-
+    regexp: "^compress"

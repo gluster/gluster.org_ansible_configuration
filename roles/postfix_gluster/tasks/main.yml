@@ -39,5 +39,5 @@
      dest: /etc/postfix/virtual.aliases
      src: virtual.aliases
   notify: postalias virtual
-  when: devnull_domain is defined
+  when: devnull_domains is defined
 

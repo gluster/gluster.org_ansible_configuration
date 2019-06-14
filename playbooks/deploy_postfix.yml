@@ -39,5 +39,6 @@
     # see private repo for the vars, on hostvars/supercolony
     # since emails are private
     email_aliases: "{{ mail_aliases }}"
-    devnull_domain: review.gluster.org
+    devnull_domains: 
+    - review.gluster.org
     mail_domain: gluster.org

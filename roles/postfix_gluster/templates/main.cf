@@ -43,8 +43,8 @@ smtpd_recipient_restrictions = permit_mynetworks
   reject_rbl_client {{ blacklist }}
 {% endfor %}
 
-{% if devnull_domain is defined %}
-virtual_alias_domains = {{ devnull_domain }}
+{% if devnull_domains is defined %}
+virtual_alias_domains = {{ devnull_domains |join(', ') }}
 virtual_alias_maps = hash:/etc/postfix/virtual.aliases 
 {% endif %}
 

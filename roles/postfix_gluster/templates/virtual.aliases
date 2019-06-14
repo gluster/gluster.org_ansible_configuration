@@ -1,1 +1,3 @@
-@{{ devnull_domain }}    davenull
+{% for d in devnull_domains %}
+@{{ d }}    davenull
+{% endfor %}

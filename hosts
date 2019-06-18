@@ -202,3 +202,10 @@ int_aws_gluster_org
 
 [aws_provisioner]
 ant-queen.int.rht.gluster.org
+
+# group for server having access to the jenkins password
+[jenkins_user:children]
+bugziller
+jenkins_builders_rht
+
+

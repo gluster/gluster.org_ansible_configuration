@@ -1,5 +1,5 @@
 - name: Enable stackguard on FreeBSD
   sysctl:
     name: security.bsd.stack_guard_page
-    value: 1
+    value: "1"
     state: present

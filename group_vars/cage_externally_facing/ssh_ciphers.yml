@@ -1,0 +1,8 @@
+ssh_ciphers_filter:
+  ciphers:
+    to_remove_re:
+    - arcfour
+    - cbc
+  macs:
+    to_remove_re:
+    - md5

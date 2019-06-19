@@ -2,6 +2,7 @@
   roles:
   - base
   - role: openssh
+      filters: "{{ ssh_ciphers_filter |default([]) }}"
     when: ansible_fqdn != 'gerrit-new.rht.gluster.org'
   - role: selinux
     when: ansible_system == 'Linux' and ansible_distribution != 'Debian'

@@ -3,6 +3,7 @@
   - openssh
 
 - hosts: cage_externally_facing
+  roles:
   - role: openssh
     filters: "{{ ssh_ciphers_filter }}"
     when: ansible_fqdn != 'gerrit-new.rht.gluster.org'

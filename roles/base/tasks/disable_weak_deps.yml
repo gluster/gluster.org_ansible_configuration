@@ -3,4 +3,4 @@
     path: /etc/dnf/dnf.conf
     section: main
     option: install_weak_deps
-    value: False
+    value: "False"

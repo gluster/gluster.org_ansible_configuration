@@ -21,11 +21,6 @@ pleometrosis.rht.gluster.org
 nagios.int.rht.gluster.org
 
 [community_cage]
-haplometrosis.rht.gluster.org
-pleometrosis.rht.gluster.org
-myrmicinae.rht.gluster.org
-formicary.rht.gluster.org
-
 fstat.rht.gluster.org
 softserve.rht.gluster.org
 postgresql.rht.gluster.org
@@ -41,6 +36,7 @@ supercolony.rht.gluster.org
 [community_cage:children]
 int_rht_gluster_org
 proxy
+virt_hosts
 firewall_rht
 
 [munin]

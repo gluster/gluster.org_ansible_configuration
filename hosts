@@ -20,7 +20,12 @@ pleometrosis.rht.gluster.org
 [nagios]
 nagios.int.rht.gluster.org
 
-[community_cage]
+[cage_externally_facing:children]
+proxy
+virt_hosts
+firewall_rht
+
+[cage_externally_facing]
 fstat.rht.gluster.org
 softserve.rht.gluster.org
 postgresql.rht.gluster.org
@@ -33,11 +38,11 @@ gerrit-new.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8
 download.rht.gluster.org
 supercolony.rht.gluster.org
 
+
+
 [community_cage:children]
 int_rht_gluster_org
-proxy
-virt_hosts
-firewall_rht
+cage_externally_facing
 
 [munin]
 munin.int.rht.gluster.org

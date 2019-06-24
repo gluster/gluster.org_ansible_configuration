@@ -83,9 +83,6 @@
     - mercurial
     - bzr
     - golang
-    # packages for python3 environment
-    - python3-devel
-    - python3-prettytable
   when: ansible_system == 'Linux'
 
 - name: Install jenkins builder Fedora packages
@@ -110,6 +107,9 @@
     state: present
     name:
     - python-argparse
+    # packages for python3 environment
+    - python36-devel
+    - python36-prettytable
   when: ansible_system == 'Linux' and ansible_distribution == 'Centos'
 
 - package:

@@ -1,0 +1,8 @@
+- file: 
+    path: "/etc/systemd/system/{{ unit }}.d/"
+    state: directory
+
+- template:
+    dest: "/etc/systemd/system/{{ unit }}.d/requires_{{ requires }}.conf"
+    src: "requires.conf"
+  notify: Reload systemd

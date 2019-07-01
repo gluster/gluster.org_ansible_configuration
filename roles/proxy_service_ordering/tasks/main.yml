@@ -1,0 +1,16 @@
+---
+# on Fedora 29, we sometime have issue at boot
+# keepalived shouldn't start if nginx do not start
+# nginx shouldn't start if the proper path are not
+#  mounted
+# path are not mounted if gluster start before network
+# so we need to 
+- include_tasks: add_requires.yml
+  vars: 
+    unit: keepalived.service
+    requires: nginx.service
+
+- include_tasks: add_requires.yml
+  vars: 
+    unit: nginx.service
+    requires: srv-letsencrypt.mount

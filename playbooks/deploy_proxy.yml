@@ -89,3 +89,5 @@
     domain: sentry.gluster.org
     backends:
     - sentry.int.rht.gluster.org:9000
+
+  - role: proxy_service_ordering

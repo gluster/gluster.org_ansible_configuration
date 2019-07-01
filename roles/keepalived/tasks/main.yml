@@ -36,4 +36,4 @@
 - name: Make sure services can start and listen to the floating ips
   sysctl:
     name: net.ipv4.ip_nonlocal_bind
-    value: 1
+    value: "1"

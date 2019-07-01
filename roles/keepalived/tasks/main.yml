@@ -25,7 +25,7 @@
     mode: 0755
 
 - include_tasks: firewalld.yml
-  when: use_firewalld
+  when: use_firewalld|bool
 
 - name: Start service
   service:

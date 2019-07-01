@@ -11,7 +11,7 @@
   notify: Restart conntrackd
 
 - include_tasks: firewalld.yml
-  when: use_firewalld
+  when: use_firewalld|bool
 
 # TODO remove it once policy is fixed upstream, and in Fedora (likely 29)
 # https://github.com/fedora-selinux/selinux-policy-contrib/pull/66

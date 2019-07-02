@@ -57,3 +57,8 @@
 - hosts: proxy
   roles:
   - role: nagios_monitored_nrpe_gluster_volume
+  - role: nagios_monitored_nrpe_process
+    processes:
+    - {name: nginx}
+    - {name: keepalived}
+    - {name: glusterd}

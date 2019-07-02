@@ -1,0 +1,27 @@
+#!/usr/bin/python3
+# run gluster volume status
+
+import subprocess
+import re
+import sys
+step=0
+
+for gv in subprocess.check_output(['gluster', 'volume', 'list']).split(b' '):
+    gv = gv.decode()[:-1]
+    for l in subprocess.check_output(['gluster', 'volume', 'status', gv]).decode().split('\n'):
+        if l.startswith('--------'):
+            step += 1
+            continue
+        l = l.strip()
+        if l == '':
+            step += 1
+            continue
+
+        if step == 1:
+            status = re.compile('\s+').split(l)[-2]
+            if status != 'Y':
+                print('Error on volume %s, see gluster volume status'.format(gv))
+                sys.exit(2)
+
+print("Gluster volumes ok")
+sys.exit(0)

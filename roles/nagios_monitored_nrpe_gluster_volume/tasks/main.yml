@@ -1,0 +1,32 @@
+---
+- name: Deploy the check_gluster_volume script
+  copy:
+    dest: /usr/local/bin/check_gluster_volume
+    src: check_gluster_volume
+    mode: 0755 
+    owner: root
+    group: root
+    setype: nagios_unconfined_plugin_exec_t
+
+- name: Set the file context for check_gluster_volume
+  sefcontext:
+    target: /usr/local/bin/check_gluster_volume
+    setype: nagios_unconfined_plugin_exec_t
+    state: present
+
+- name: Add the nrpe config for check_gluster_volume
+  copy:
+    dest: /etc/nrpe.d/check_gluster_volume.cfg
+    src: check_gluster_volume.cfg
+    mode: 0644
+    owner: root
+    group: nrpe
+  notify: Restart nrpe
+
+- name: Deploy NRPE check on nagios server for gluster volume
+  template:
+    dest: /etc/nagios/conf.d/{{ inventory_hostname }}_nrpe_gluster_volume.cfg
+    src: nrpe_gluster_volume.cfg
+  delegate_to: "{{ item }}"
+  notify: Verify config and restart nagios
+  with_items: "{{ nagios_server }}"

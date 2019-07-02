@@ -64,7 +64,7 @@
     immediate: True
     state: enabled
     rich_rule: 'rule family="ipv4" port port=5666 protocol=tcp source address="{{ nagios_ip }}" accept'
-    zone: "{{ nrpe_fw_zone | omit }}"
+    zone: "{{ nrpe_fw_zone | default(omit) }}"
   when: ansible_distribution == 'Fedora' or ansible_distribution_major_version == '7'
 
 - name: Deploy NRPE check on nagios server

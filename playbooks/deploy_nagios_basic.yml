@@ -55,6 +55,8 @@
     - name: review.gluster.org
 
 - hosts: proxy
+  vars:
+    nrpe_fw_zone: "gluster_internal"
   roles:
   - role: nagios_monitored_nrpe_gluster_volume
   - role: nagios_monitored_nrpe_process

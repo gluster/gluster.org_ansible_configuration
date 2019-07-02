@@ -162,8 +162,8 @@ ant-queen.int.rht.gluster.org
 bugziller.int.rht.gluster.org
 http.int.rht.gluster.org
 webbuilder.int.rht.gluster.org
-squid01.int.rht.gluster.org
-squid02.int.rht.gluster.org
+squid0[12].int.rht.gluster.org
+proxy0[12].int.rht.gluster.org
 nagios.int.rht.gluster.org
 munin.int.rht.gluster.org
 postgresql.int.rht.gluster.org

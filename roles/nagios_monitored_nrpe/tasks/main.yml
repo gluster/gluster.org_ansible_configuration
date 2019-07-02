@@ -12,6 +12,14 @@
     - nagios-plugins-swap
     - nagios-plugins-mailq
     - nagios-plugins-ssh
+  when: ansible_system == 'Linux'
+
+- name: Install NRPE3
+  package:
+    state: present
+    name:
+    - nrpe3
+  when: ansible_system == 'FreeBSD'
 
 - name: Fix allowed_hosts in NRPE
   lineinfile:

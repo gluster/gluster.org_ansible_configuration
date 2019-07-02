@@ -77,7 +77,7 @@ location=aws
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@logs.aws.gluster.org"'
 
 [jenkins_builders_aws]
-builder[200:207].int.aws.gluster.org
+builder[200:209].int.aws.gluster.org
 
 [jenkins_builders_rht]
 freebsd10.3.int.rht.gluster.org

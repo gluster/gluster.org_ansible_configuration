@@ -8,9 +8,15 @@
 - include_tasks: add_requires.yml
   vars: 
     unit: keepalived.service
-    requires: nginx.service
+    bindsto: nginx.service
 
 - include_tasks: add_requires.yml
   vars: 
     unit: nginx.service
-    requires: srv-letsencrypt.mount
+    mount: /srv/letsencrypt
+
+- include_tasks: add_requires.yml
+  vars: 
+    unit: glusterd.service
+    requires: NetworkManager-wait-online.service
+

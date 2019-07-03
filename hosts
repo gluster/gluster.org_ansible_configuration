@@ -186,6 +186,8 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@logs.aws.gluster.
 builder6.int.rht.gluster.org
 builder7.int.rht.gluster.org
 builder8.int.rht.gluster.org
+builder41.int.rht.gluster.org
+builder48.int.rht.gluster.org
 freebsd10.3.int.rht.gluster.org
 ant-queen.int.rht.gluster.org
 munin.int.rht.gluster.org

@@ -6,9 +6,9 @@ import re
 import sys
 step=0
 
-for gv in subprocess.check_output(['gluster', 'volume', 'list']).split(b' '):
+for gv in subprocess.check_output(['sudo', '/usr/sbin/gluster', 'volume', 'list']).split(b' '):
     gv = gv.decode()[:-1]
-    for l in subprocess.check_output(['gluster', 'volume', 'status', gv]).decode().split('\n'):
+    for l in subprocess.check_output(['sudo', '/usr/sbin/gluster', 'volume', 'status', gv]).decode().split('\n'):
         if l.startswith('--------'):
             step += 1
             continue

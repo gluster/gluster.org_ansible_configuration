@@ -1,0 +1,4 @@
+nrpe ALL=(ALL) NOPASSWD: /usr/sbin/gluster volume list
+nrpe ALL=(ALL) NOPASSWD: /usr/sbin/gluster volume status [[\:alpha\:]]*
+
+

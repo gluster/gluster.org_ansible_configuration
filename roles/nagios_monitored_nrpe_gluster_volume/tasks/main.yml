@@ -23,6 +23,11 @@
     group: nrpe
   notify: Restart nrpe
 
+- name: Deploy the sudo configuration
+  copy:
+    dest: /etc/sudoers.d/check_gluster_volume
+    src: check_gluster_volume.sudo
+
 - name: Deploy NRPE check on nagios server for gluster volume
   template:
     dest: /etc/nagios/conf.d/{{ inventory_hostname }}_nrpe_gluster_volume.cfg

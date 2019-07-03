@@ -1,0 +1,4 @@
+- name: Deploy resolv.conf
+  template:
+    src: resolv.conf
+    dest: /etc/resolv.conf

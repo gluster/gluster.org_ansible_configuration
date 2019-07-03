@@ -1,6 +1,6 @@
 - hosts: int_rht_gluster_org:!squid_unbound 
   roles:
-  - name: resolvconf
+  - role: resolvconf
     nameservers:
     - 172.24.1.60
     - 172.24.1.61

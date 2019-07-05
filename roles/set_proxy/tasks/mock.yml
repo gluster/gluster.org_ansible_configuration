@@ -1,0 +1,15 @@
+- name: Verify if the config for mock exist
+  stat:
+    path: /etc/mock/site-defaults.cfg
+  register: mock
+
+- name: Set proxy for mock
+  lineinfile:
+    path: /etc/mock/site-defaults.cfg
+    state: present
+    line: "config_opts['{{ item }}'] = '{{ proxy }}'"
+  with_items:
+  - http
+  - ftp
+  - https
+  when: mock.stat.isreg is defined 

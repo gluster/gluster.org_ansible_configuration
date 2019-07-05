@@ -7,4 +7,10 @@
   vars:
     interface: eth0
 
-
+- name: Set interfaces file on Debian
+  interfaces_file:
+    iface: ens3
+    option: 'dns-nameservers'
+    value: "{{nameservers |join(' ') }}"
+    state: present
+  when: ansible_os_family == 'Debian'

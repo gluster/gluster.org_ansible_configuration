@@ -1,0 +1,8 @@
+# set in dnf.conf
+- name: Set proxy for DNF
+  ini_file:
+    path: /etc/dnf/dnf.conf
+    section: main
+    option: proxy
+    value: "{{ proxy }}"
+  when: ansible_pkg_mgr == 'dnf'

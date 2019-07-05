@@ -1,0 +1,8 @@
+# set for git
+- name: Configure git to use the proxy
+  git_config:
+    name: http.proxy
+    scope: system
+    value: "{{ proxy }}"
+# ignore if git is not installed
+  ignore_errors: True

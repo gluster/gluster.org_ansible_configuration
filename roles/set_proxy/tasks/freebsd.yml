@@ -1,0 +1,7 @@
+# set for freebsd
+- name: Set proxy for pkg
+  lineinfile:
+    path: /etc/pkg/proxy.conf
+    state: present
+    line: "pkg_env: { http_proxy: \"{{ proxy }}\", }"
+  when: ansible_pkg_mgr == 'pkg'

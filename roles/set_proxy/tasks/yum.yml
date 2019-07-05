@@ -1,0 +1,17 @@
+# set in yum.conf
+- name: Set proxy for YUM
+  ini_file:
+    path: /etc/yum.conf
+    section: main
+    option: proxy
+    value: "{{ proxy }}"
+  when: ansible_pkg_mgr == 'yum'
+
+# can't be removed on EL 7
+- name: Disable yum plugin
+  ini_file:
+    path: /etc/yum/pluginconf.d/fastestmirror.conf
+    section: main
+    option: enabled
+    value: "0"
+  when: ansible_pkg_mgr == 'yum'

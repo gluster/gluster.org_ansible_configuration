@@ -1,0 +1,21 @@
+# check if boto is installed
+- name: Check if we have a boto configuration
+  stat:
+    path: /etc/boto.cfg
+  register: boto_cfg
+
+- name: Configure boto to use the proxy
+  ini_file:
+    path: /etc/boto.cfg
+    section: Boto
+    option: proxy
+    value: "{{ proxy_server }}"
+  when: boto_cfg.stat.exists
+
+- name: Configure boto to use the proxy
+  ini_file:
+    path: /etc/boto.cfg
+    section: Boto
+    option: proxy_port
+    value: "{{ proxy_port }}"
+  when: boto_cfg.stat.exists

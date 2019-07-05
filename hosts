@@ -200,7 +200,7 @@ munin.int.rht.gluster.org
 webbuilder.int.rht.gluster.org
 http.int.rht.gluster.org
 signer.int.rht.gluster.org
-webbuilder.int.rht.gluster.org
+bugziller.int.rht.gluster.org
 
 # group for server whose monitoring (munin/nagios) come from inside
 # used for IP filtering

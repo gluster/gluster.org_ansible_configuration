@@ -1,0 +1,13 @@
+- name: Check if there is a interface file
+  stat: 
+    path: "/etc/sysconfig/network-scripts/ifcfg-{{ interface }}"
+  register: file
+
+- name: Add in ifcfg-eth0
+  lineinfile:
+    path: "/etc/sysconfig/network-scripts/ifcfg-{{ interface }}"
+    line: "DNS{{ item.0 + 1 }}={{ item.1}}"
+    state: present
+    regexp: "^DNS{{ item.0 + 1 }}"
+  with_indexed_items: "{{ nameservers }}"
+  when: file.stat.isreg is defined

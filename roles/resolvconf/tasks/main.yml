@@ -2,3 +2,9 @@
   template:
     src: resolv.conf
     dest: /etc/resolv.conf
+
+- include_tasks: ifcfg.yml
+  vars:
+    interface: eth0
+
+

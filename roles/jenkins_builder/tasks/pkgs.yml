@@ -83,6 +83,8 @@
     - mercurial
     - bzr
     - golang
+    # for running ansible file modules on builders
+    - libselinux-python
   when: ansible_system == 'Linux'
 
 - name: Install jenkins builder Fedora packages

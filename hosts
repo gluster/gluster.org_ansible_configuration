@@ -176,7 +176,7 @@ openvpn0[1:2].int.rht.gluster.org
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gluster.org"'
 
 [int_aws_gluster_org]
-builder[200:207].int.aws.gluster.org
+builder[200:210].int.aws.gluster.org
 
 [int_aws_gluster_org:vars]
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@logs.aws.gluster.org"'

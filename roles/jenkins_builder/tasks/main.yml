@@ -23,6 +23,12 @@
     dest: /{% if ansible_system == 'FreeBSD'%}usr/local/{% endif %}etc/sudoers.d/sudoers_jenkins
     src: sudoers_jenkins
 
+- name: Fix BZ#1728687 on Fedora
+  copy:
+    content: "Defaults always_set_home\n"
+    dest: /etc/sudoers.d/sudoers_fix_home_fedora
+  when: ansible_distribution == 'Fedora'
+
 # TODO /home should be 755
 - name: Add jenkins user to group
   user:

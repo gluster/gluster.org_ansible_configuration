@@ -48,12 +48,12 @@
 - import_tasks: setup_auth.yml
   when: location == 'aws'
 
-- name: Start and enable rpc-statd
-  service:
-    name: rpc-statd
-    enabled: true
-    state: started
-  when: location == 'aws'
+#- name: Start and enable rpc-statd
+#  service:
+#    name: rpc-statd
+#    enabled: true
+#    state: started
+#  when: location == 'aws'
 
 #TODO add the fingerprint of review.gluster.org to user jenkins
 # so it doesn't block

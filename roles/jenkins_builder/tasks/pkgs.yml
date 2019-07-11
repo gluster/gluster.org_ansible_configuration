@@ -11,7 +11,7 @@
     - autoconf
     - libtool
     - bison
-
+    
 - name: Enable SCL
   package:
     state: present
@@ -83,6 +83,8 @@
     - mercurial
     - bzr
     - golang
+    # required for pstack, used to be pulled by rpm-build
+    - gdb
   when: ansible_system == 'Linux'
 
 - name: Install jenkins builder Fedora packages

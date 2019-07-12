@@ -101,7 +101,8 @@
     - libtsan
 # needed for bugs report (need to be ported to python 3)
     - python2-bugzilla
-
+# python3 pyxattr package needed  to run few tests in line coverage job
+    - python3-pyxattr
   when: ansible_system == 'Linux' and ansible_distribution == 'Fedora'
 
 - name: Install jenkins builder Centos packages

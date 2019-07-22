@@ -124,6 +124,16 @@
   - /archives
   when: ansible_system == 'Linux' and location != 'aws'
 
+# disable nfs server, as it seems to not interact well with the test suite.
+# I am not sure what we are supposed to do, since gluster kinda do manage
+# stuff on its own, so that's worth a try
+# this caused some trouble with ./tests/basic/afr/tarissue.t 
+- name: Disable nfs-server service 
+  service:
+    name: nfs-server
+    state: disabled
+  when: ansible_system == 'Linux'
+
 - sysctl:
     name: "{% if ansible_system == 'FreeBSD' %}kern.corefile{% else %}kernel.core_pattern{% endif %}"
     value: "/%e-%p.core"

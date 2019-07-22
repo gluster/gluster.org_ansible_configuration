@@ -133,7 +133,7 @@
   - role: guest_jenkins_builder_int_rht
     number: 44
     distribution: Fedora
-    version: 28
+    version: 30
   - role: guest_jenkins_builder_int_rht
     number: 50
     distribution: Debian

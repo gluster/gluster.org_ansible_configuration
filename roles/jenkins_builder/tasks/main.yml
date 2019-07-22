@@ -131,7 +131,7 @@
 - name: Disable nfs-server service 
   service:
     name: nfs-server
-    state: disabled
+    enabled: False
   when: ansible_system == 'Linux'
 
 - sysctl:

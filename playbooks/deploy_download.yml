@@ -3,13 +3,9 @@
   - package:
         state: present
         name: createrepo
-  # temporary until freeipa is properly setup
-  - copy:
-      dest: /etc/sudoers.d/kkeithle
-      content: "kkeithle ALL= ALL"
   roles:
   - role: httpd_download
     website_domain: download.gluster.org
     document_root: /var/www/html
   - role: logrotate_compress
-    
+  - role: download_users

@@ -1,0 +1,8 @@
+# faire une boucle sur chaque utilisateur
+# si l'utilisateur a expiré, le retirer
+# sinon, le créer
+
+- include_tasks: create_user.yml
+  loop: "{{ users|dict2items }}"
+
+# deal with sudo

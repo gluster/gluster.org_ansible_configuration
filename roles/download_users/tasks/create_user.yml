@@ -1,0 +1,23 @@
+- name: Create user 
+  user:
+    state: "{% if item.value.expires < ansible_date_time.epoch %}present{% else %}absent{% endif %}"
+    name: '{{ item.key }}'
+    expires: '{{ item.value.expires }}'
+
+- name: Add ssh key
+  authorized_key:
+    key: "{{ lookup('file', item.key + '.pub') }}"
+    user: '{{ item.key }}'
+  when: item.value.expires < ansible_date_time.epoch
+
+- name: Add sudo configuration
+  copy:
+    dest: '/etc/sudoers.d/{{ item.key }}'
+    content: "{{ item.key }} ALL= ALL"
+  when: item.value.expires < ansible_date_time.epoch
+
+- name: Remove sudo config
+  file:
+    path: '/etc/sudoers.d/{{ item.key }}'
+    state: absent
+  when: item.value.expires > ansible_date_time.epoch

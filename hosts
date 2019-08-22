@@ -90,6 +90,9 @@ jenkins_builders_aws
 [container_pipeline_builders]
 builder[40:49].int.rht.gluster.org
 
+[debian_builders]
+builder50.int.rht.gluster.org
+
 [aws]
 logs.aws.gluster.org
 

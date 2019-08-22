@@ -1,0 +1,10 @@
+- name: Install packages needed to build
+  package:
+    state: present
+    name:
+    - build-essential
+    - pbuilder
+    - devscripts 
+    - reprepro
+    - debhelper 
+    - dpkg-sig

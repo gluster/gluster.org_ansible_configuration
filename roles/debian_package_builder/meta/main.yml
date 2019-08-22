@@ -1,0 +1,4 @@
+---
+dependencies:
+- role: gluster_qa_scripts
+- role: jenkins_user

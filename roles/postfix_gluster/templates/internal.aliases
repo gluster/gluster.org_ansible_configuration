@@ -17,7 +17,7 @@ cfp:            root
 workshop:       root
 
 forge-admin:    root
-list-admin:     root
+list-admin:     root,miperez
 
 # aliases for rfc 2142
 # https://www.ietf.org/rfc/rfc2142.txt

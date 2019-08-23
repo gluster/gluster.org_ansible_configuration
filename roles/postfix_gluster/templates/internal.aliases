@@ -9,7 +9,7 @@ jclift:         justin
 deb.packages:   semiosis
 lzuckerman:     semiosis
 gerrithub:      ndevos
-events:         avati,johnmark,vijay,amye
+events:         vijay,miperez
 
 privacy:        tlc
 #switch to events ? TODO

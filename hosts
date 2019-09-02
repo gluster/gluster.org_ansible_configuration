@@ -222,5 +222,5 @@ ant-queen.int.rht.gluster.org
 [jenkins_user:children]
 bugziller
 jenkins_builders_rht
-
+debian_builders
 

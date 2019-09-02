@@ -18,3 +18,10 @@
   name: Install jenkins builder FreeBSD packages
   when: ansible_system == 'FreeBSD'
 
+- package:
+    state: present
+    name:
+    - openjdk-8-jre-headless
+  name: Install jenkins builder Debian/Ubuntu packages
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+

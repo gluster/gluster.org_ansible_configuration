@@ -113,7 +113,7 @@
     # packages for python3 environment
     - python36-devel
     - python36-prettytable
-  when: ansible_system == 'Linux' and ansible_distribution == 'Centos'
+  when: ansible_system == 'Linux' and ansible_distribution == 'CentOS'
 
 - package:
     state: present

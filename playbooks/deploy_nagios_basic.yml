@@ -48,6 +48,10 @@
     processes:
     - {name: httpd}
 
+- hosts: bastion
+  roles:
+  - role: nagios_monitored_nrpe_process
+ 
 - hosts: jenkins_builders_rht
   roles:
   - role: nagios_monitored_nrpe_connect_ssh

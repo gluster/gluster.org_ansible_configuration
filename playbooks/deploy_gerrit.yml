@@ -1,11 +1,11 @@
 # commented for now, since gerrit prod is not managed
 # by ansible
-#- hosts: gerrit
-#  roles:
+- hosts: gerrit
+  roles:
+  - role: xinetd
 #  - role: cgit
 #    git_repositories_dir: /review/review.gluster.org/git/
 #    scan_path: true
-#  - role: xinetd
 #  - role: gerrit
 #    gerrit_replication:
 #    - repo: glusterfs

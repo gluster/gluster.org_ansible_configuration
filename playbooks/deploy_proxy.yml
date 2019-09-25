@@ -20,74 +20,76 @@
     group: proxy
     interface: eth1
 
-#  - role: nginx_proxy_vhost
-#    domain: docs.gluster.org
-#    backends:
-#    - gluster.readthedocs.io
+  - role: nginx_proxy_vhost
+    domain: docs.gluster.org
+    backends:
+    - gluster.readthedocs.io
+
+  - role: nginx_proxy_vhost
+    domain: bits.gluster.org
+    backends:
+    - bits.int.rht.gluster.org
+
+  - role: nginx_proxy_vhost
+    domain: ci-logs.gluster.org
+    backends:
+    - http.int.rht.gluster.org
+
+  - role: nginx_proxy_vhost
+    domain: fstat.gluster.org
+    backends:
+    - fstat.rht.gluster.org
+
+  - role: nginx_proxy_vhost
+    domain: failurestat.gluster.org
+    backends:
+    - fstat.rht.gluster.org
+
+  - role: nginx_proxy_vhost
+    domain: softserve.gluster.org
+    backends:
+    - softserve.rht.gluster.org
+
+  - role: nginx_proxy_vhost
+    domain: softserve.test.gluster.org
+    backends:
+    - softserve.int.rht.gluster.org
+
+  - role: nginx_proxy_vhost
+    domain: fstat.test.gluster.org
+    backends:
+    - fstat.int.rht.gluster.org
+
+  - role: nginx_proxy_vhost
+    domain: planet.gluster.org
+    backends:
+    - planet.int.rht.gluster.org
+
+  - role: nginx_proxy_vhost
+    domain: nagios.gluster.org
+    backends:
+    - nagios.int.rht.gluster.org
+
+  - role: nginx_proxy_vhost
+    domain: munin.gluster.org
+    backends:
+    - munin.int.rht.gluster.org
+
+  - role: nginx_proxy_vhost
+    domain: bugs.gluster.org
+    backends:
+    - bugs.int.rht.gluster.org
+
+  - role: nginx_proxy_vhost
+    domain: download.gluster.org
+    backends:
+    - download.rht.gluster.org
+
+  - role: nginx_proxy_vhost
+    domain: sentry.gluster.org
+    backends:
+    - sentry.int.rht.gluster.org:9000
 #
-#  - role: nginx_proxy_vhost
-#    domain: bits.gluster.org
-#    backends:
-#    - bits.int.rht.gluster.org
-#
-#  - role: nginx_proxy_vhost
-#    domain: ci-logs.gluster.org
-#    backends:
-#    - http.int.rht.gluster.org
-#
-#  - role: nginx_proxy_vhost
-#    domain: fstat.gluster.org
-#    backends:
-#    - fstat.rht.gluster.org
-#
-#  - role: nginx_proxy_vhost
-#    domain: failurestat.gluster.org
-#    backends:
-#    - fstat.rht.gluster.org
-#
-#  - role: nginx_proxy_vhost
-#    domain: softserve.gluster.org
-#    backends:
-#    - softserve.rht.gluster.org
-#
-#  - role: nginx_proxy_vhost
-#    domain: softserve.test.gluster.org
-#    backends:
-#    - softserve.int.rht.gluster.org
-#
-#  - role: nginx_proxy_vhost
-#    domain: fstat.test.gluster.org
-#    backends:
-#    - fstat.int.rht.gluster.org
-#
-#  - role: nginx_proxy_vhost
-#    domain: planet.gluster.org
-#    backends:
-#    - planet.int.rht.gluster.org
-#
-#  - role: nginx_proxy_vhost
-#    domain: nagios.gluster.org
-#    backends:
-#    - nagios.int.rht.gluster.org
-#
-#  - role: nginx_proxy_vhost
-#    domain: munin.gluster.org
-#    backends:
-#    - munin.int.rht.gluster.org
-#
-#  - role: nginx_proxy_vhost
-#    domain: bugs.gluster.org
-#    backends:
-#    - bugs.int.rht.gluster.org
-#
-#  - role: nginx_proxy_vhost
-#    domain: download.gluster.org
-#    backends:
-#    - download.rht.gluster.org
-#
-#  - role: nginx_proxy_vhost
-#    domain: sentry.gluster.org
-#    backends:
-#    - sentry.int.rht.gluster.org:9000
-#
-  - role: proxy_service_ordering
+# removed, since that part no longer work and I didn't
+# leave enough comment to understand how I fixed it
+#  - role: proxy_service_ordering

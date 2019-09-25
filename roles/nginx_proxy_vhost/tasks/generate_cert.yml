@@ -13,7 +13,6 @@
   openssl_certificate:
     path: "{{ certificate_path }}"
     privatekey_path: "{{ privatekey_path }}"
-    csr_path: "{{ csr_path }}"
     valid_in: "{{ 60 * 60 * 24 * 10 }}"
     provider: assertonly
   ignore_errors: True

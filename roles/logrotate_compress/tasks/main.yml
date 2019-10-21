@@ -5,3 +5,4 @@
     dest: /etc/logrotate.conf
     line: "compress"
     regexp: "^compress"
+    insertbefore: BOF

@@ -1,7 +1,7 @@
 # {{ ansible_managed }}
 NAME="{{ interface }}"
 DEVICE="{{ interface }}"
-HWADDR="{{ hostvars[inventory_hostname]['ansible_' + interface]['macaddress'] }}"
+HWADDR="{{ hostvars[inventory_hostname]['ansible_' + interface]['macaddress'] | upper  }}"
 ONBOOT=yes
 NETBOOT=yes
 UUID="{{ (ansible_fqdn + interface) | to_uuid }}"

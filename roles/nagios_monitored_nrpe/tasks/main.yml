@@ -6,7 +6,7 @@
     - nrpe
     - nagios-plugins-load
     - nagios-plugins-uptime
-    - nagios-plugins-check-updates
+    #- nagios-plugins-check-updates
     - nagios-plugins-procs
     - nagios-plugins-file_age
     - nagios-plugins-swap

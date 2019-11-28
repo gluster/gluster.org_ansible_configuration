@@ -24,7 +24,6 @@
     name:
     - python27
     - python-libcloud
-    - cppcheck
     - clang
     - clang-analyzer
     - python-docopt
@@ -76,6 +75,9 @@
     - libcurl-devel
     # required for pstack, used to be pulled by rpm-build
     - gdb
+  when: ansible_system == 'Linux'
+
+- include: pkgs_job_cppcheck.yml
   when: ansible_system == 'Linux'
 
 - include: pkgs_job_rpms.yml

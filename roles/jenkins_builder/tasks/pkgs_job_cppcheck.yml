@@ -1,0 +1,5 @@
+- name: Add packages for cppcheck job
+  package:
+    state: present
+    name:
+    - cppcheck

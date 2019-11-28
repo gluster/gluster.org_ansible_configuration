@@ -55,8 +55,6 @@
     - librdmacm-devel
     - libaio-devel
     - clang-analyzer
-    # needed to make rpm
-    - rpm-build
     - xfsprogs
     # used for testing eventing
     - python-requests
@@ -79,6 +77,9 @@
     - libcurl-devel
     # required for pstack, used to be pulled by rpm-build
     - gdb
+  when: ansible_system == 'Linux'
+
+- include: pkgs_job_rpms.yml
   when: ansible_system == 'Linux'
 
 - include: pkgs_job_lcov.yml

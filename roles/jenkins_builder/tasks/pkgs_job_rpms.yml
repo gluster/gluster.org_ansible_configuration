@@ -1,0 +1,8 @@
+# lcov also need the same as smoke test
+- name: Add packages for rpm build job
+  package:
+    state: present
+    name:
+    - rpm-build
+    - mock 
+

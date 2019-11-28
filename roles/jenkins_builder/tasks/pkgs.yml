@@ -78,11 +78,6 @@
     # required for https://review.gluster.org/#/c/18532/
     - libcurl-devel
     - lcov
-    # for GD2 testing, https://bugzilla.redhat.com/show_bug.cgi?id=1617996
-    - subversion
-    - mercurial
-    - bzr
-    - golang
     # required for pstack, used to be pulled by rpm-build
     - gdb
   when: ansible_system == 'Linux'

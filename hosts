@@ -38,6 +38,22 @@ gerrit-prod.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 
 download.rht.gluster.org
 supercolony.rht.gluster.org
 
+[jenkins_builders_lcov]
+# to be synced from jenkins
+
+builder18.int.rht.gluster.org
+builder19.int.rht.gluster.org
+builder200.aws.gluster.org
+builder201.aws.gluster.org
+builder202.aws.gluster.org
+builder203.aws.gluster.org
+builder204.aws.gluster.org
+builder205.aws.gluster.org
+builder206.aws.gluster.org
+builder207.aws.gluster.org
+builder208.aws.gluster.org
+builder209.aws.gluster.org
+builder210.aws.gluster.org
 
 
 [community_cage:children]

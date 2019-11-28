@@ -1,0 +1,7 @@
+# lcov also need the same as smoke test
+- name: Add packages for lcov job
+  package:
+    state: present
+    name:
+    - lcov
+

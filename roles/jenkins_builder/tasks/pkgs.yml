@@ -77,11 +77,13 @@
     - bc
     # required for https://review.gluster.org/#/c/18532/
     - libcurl-devel
-    - lcov
     # required for pstack, used to be pulled by rpm-build
     - gdb
   when: ansible_system == 'Linux'
 
+- include: pkgs_job_lcov.yml
+  when: '"jenkins_builders_lcov" in group_name'
+  
 - name: Install jenkins builder Fedora packages
   package:
     state: present

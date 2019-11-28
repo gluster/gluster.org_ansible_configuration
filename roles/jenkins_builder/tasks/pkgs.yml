@@ -16,7 +16,7 @@
   package:
     state: present
     name: centos-release-scl
-  when: '"jenkins_builders_rht" in group_names and ansible_distribution == "CentOS"'
+  when: '"jenkins_builders_rht" in group_names and ansible_distribution == "CentOS" and ansible_distribution_major_version == "7"'
 
 - name: Add packages specific to rht builders
   package:

@@ -54,7 +54,6 @@
     - libibverbs-devel
     - librdmacm-devel
     - libaio-devel
-    - clang-analyzer
     - xfsprogs
     # used for testing eventing
     - python-requests

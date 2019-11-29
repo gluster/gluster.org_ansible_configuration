@@ -3,6 +3,12 @@
   set_fact:
     is_master: "{{ ansible_hostname == master }}"
 
+# seems variable defined in a role are not visible in hostvers, while
+# set_fact is
+- name:
+  set_fact:
+    vip_copy: "{{ vip }}"
+
 - name: Generate a random password
   set_fact:
     password: "{{ lookup('password', '~/keepalived_pass' + master + 'length=6') }}"

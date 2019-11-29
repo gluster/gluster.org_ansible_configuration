@@ -43,17 +43,17 @@ supercolony.rht.gluster.org
 
 builder18.int.rht.gluster.org
 builder19.int.rht.gluster.org
-builder200.aws.gluster.org
-builder201.aws.gluster.org
-builder202.aws.gluster.org
-builder203.aws.gluster.org
-builder204.aws.gluster.org
-builder205.aws.gluster.org
-builder206.aws.gluster.org
-builder207.aws.gluster.org
-builder208.aws.gluster.org
-builder209.aws.gluster.org
-builder210.aws.gluster.org
+builder200.int.aws.gluster.org
+builder201.int.aws.gluster.org
+builder202.int.aws.gluster.org
+builder203.int.aws.gluster.org
+builder204.int.aws.gluster.org
+builder205.int.aws.gluster.org
+builder206.int.aws.gluster.org
+builder207.int.aws.gluster.org
+builder208.int.aws.gluster.org
+builder209.int.aws.gluster.org
+builder210.int.aws.gluster.org
 
 
 [community_cage:children]

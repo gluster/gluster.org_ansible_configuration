@@ -84,7 +84,7 @@
   when: ansible_system == 'Linux'
 
 - include: pkgs_job_lcov.yml
-  when: '"jenkins_builders_lcov" in group_name'
+  when: '"jenkins_builders_lcov" in group_names'
   
 - name: Install jenkins builder Fedora packages
   package:

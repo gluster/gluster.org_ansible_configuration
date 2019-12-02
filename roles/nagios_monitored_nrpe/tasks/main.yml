@@ -57,6 +57,7 @@
     state: started
     enabled: yes
 
+# FreeBSD is handled outside of this role
 - name: Open firewall for NRPE (lokkit)
   shell: "lokkit -p 5666:tcp"
   when: ansible_distribution_major_version == '6' and (ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat')

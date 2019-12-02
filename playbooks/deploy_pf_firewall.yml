@@ -5,3 +5,4 @@
     tcp_services:
     - http
     - ssh
+    - 5666

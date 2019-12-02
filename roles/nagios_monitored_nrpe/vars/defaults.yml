@@ -9,3 +9,4 @@ pkg_name:
 - nagios-plugins-ssh
 service_name: nrpe
 conf_location: /etc/nagios/nrpe.cfg
+plugin_location: /usr/lib64/nagios/plugins/

@@ -4,7 +4,6 @@
     src: check_connect_ssh.cfg
     mode: 0644 
     owner: root
-    group: nrpe
   with_items: 
   - "{{ ssh_targets }}"
   notify: Restart nrpe

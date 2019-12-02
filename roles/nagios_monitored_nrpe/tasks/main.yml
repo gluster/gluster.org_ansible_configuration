@@ -28,6 +28,20 @@
     line: "allowed_hosts=127.0.0.1,{{ nagios_ip }}"
   notify: Restart nrpe
 
+- name: Fix include_dir in NRPE on FreeBSD
+  lineinfile:
+    dest: "/usr/local/etc/nrpe.cfg"
+    regexp: "^include_dir="
+    line: "include_dir=/etc/nrpe.d/"
+  notify: Restart nrpe
+  when: ansible_system == 'FreeBSD'
+
+- name: Create dir
+  file:
+    state: directory
+    name: /etc/nrpe.d/
+  when: ansible_system == 'FreeBSD'
+
 - name: Add configuration for default checks
   template:
     dest: /etc/nrpe.d/{{ item.check }}.cfg

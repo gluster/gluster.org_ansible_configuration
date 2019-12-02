@@ -1,7 +1,7 @@
 ---
 - name: Restart nrpe
   service: 
-    name: nrpe
+    name: "{{ service_name }}"
     state: restarted
 
 - name: Reload systemd and restart

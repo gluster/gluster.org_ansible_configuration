@@ -1,36 +1,25 @@
 ---
+- name: Load NRPE vars
+  include_vars: "{{ item }}"
+  with_first_found:
+  - "{{ ansible_system }}.yml"
+  - "defaults.yml"
+
 - name: Install NRPE and plugins
   package:
     state: present
-    name:
-    - nrpe
-    - nagios-plugins-load
-    - nagios-plugins-uptime
-    #- nagios-plugins-check-updates
-    - nagios-plugins-procs
-    - nagios-plugins-file_age
-    - nagios-plugins-swap
-    - nagios-plugins-mailq
-    - nagios-plugins-ssh
-  when: ansible_system == 'Linux'
-
-- name: Install NRPE3
-  package:
-    state: present
-    name:
-    - nrpe3
-  when: ansible_system == 'FreeBSD'
+    name: "{{ pkg_name }}"
 
 - name: Fix allowed_hosts in NRPE
   lineinfile:
-    dest: "/{% if ansible_system == 'FreeBSD'%}usr/local/etc{% else %}etc/nagios{% endif %}/nrpe.cfg"
+    dest: "{{ conf_location }}"
     regexp: "^allowed_hosts="
     line: "allowed_hosts=127.0.0.1,{{ nagios_ip }}"
   notify: Restart nrpe
 
 - name: Fix include_dir in NRPE on FreeBSD
   lineinfile:
-    dest: "/usr/local/etc/nrpe.cfg"
+    dest: "{{ conf_location }}"
     regexp: "^include_dir="
     line: "include_dir=/etc/nrpe.d/"
   notify: Restart nrpe
@@ -64,7 +53,7 @@
 
 - name: Start NRPE service
   service:
-    name: nrpe
+    name: "{{ service_name }}"
     state: started
     enabled: yes
 

@@ -1,0 +1,11 @@
+pkg_name: 
+- nrpe
+- nagios-plugins-load
+- nagios-plugins-uptime
+- nagios-plugins-procs
+- nagios-plugins-file_age
+- nagios-plugins-swap
+- nagios-plugins-mailq
+- nagios-plugins-ssh
+service_name: nrpe
+conf_location: /etc/nagios/nrpe.cfg

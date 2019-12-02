@@ -1,0 +1,4 @@
+pkg_name: 
+- nrpe3
+service_name: nrpe3
+conf_location: /usr/local/etc/nrpe.cfg

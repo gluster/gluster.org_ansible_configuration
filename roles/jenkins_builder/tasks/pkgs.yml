@@ -42,7 +42,6 @@
     - libacl-devel
     - nfs-utils
     - flex
-    - cmockery2-devel
     - perl-Test-Harness
     - openssl-devel
     - lvm2-devel
@@ -118,7 +117,6 @@
   name: Install jenkins builder FreeBSD packages
   when: ansible_system == 'FreeBSD'
   with_items:
-  - cmockery2
   - perl5
   - sqlite3
   - pkgconf

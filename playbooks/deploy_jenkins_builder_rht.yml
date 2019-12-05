@@ -111,8 +111,10 @@
     number: 37
   - role: guest_jenkins_builder_int_rht
     number: 38
+    version: 8
   - role: guest_jenkins_builder_int_rht
     number: 39
+    version: 8
 
   - role: guest_jenkins_builder_int_rht
     number: 40

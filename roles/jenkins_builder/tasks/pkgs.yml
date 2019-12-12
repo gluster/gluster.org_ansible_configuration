@@ -1,10 +1,16 @@
 ---
+- name: Set default version
+  set_fact:
+    python_version: ""
+    pyxattr_pkg: "pyxattr"
+  when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "7"
+
 - name: Install jenkins builder standard packages
   package:
     state: present
     name:
-    - git
-    - dbench
+    - git # needed for checkout
+    - dbench # needed for run-tests
     - yajl
     - sudo
     - automake
@@ -25,41 +31,41 @@
     - python27
     - python-libcloud
     - python-docopt
-  when: '"jenkins_builders_rht" in group_names and ansible_distribution == "CentOS"'
+  when: '"jenkins_builders_rht" in group_names and ansible_distribution == "CentOS" and ansible_distribution_major_version == "7"'
 
 - name: Install jenkins builder Linux packages
   package:
     state: present
     name:
     # used to be pulled by openssl
-    - make
+    - make # needed to run configure
     # needed for some tests
-    - net-tools
+    - net-tools # needed by  ./run-tests.sh
     # used for smoke.sh, for killall
-    - psmisc
-    - libacl-devel
-    - nfs-utils
-    - flex
-    - perl-Test-Harness
-    - openssl-devel
+    - psmisc # used for smoke.sh
+    - libacl-devel # needed for building gluster
+    - nfs-utils # needed for mount.nfs on Linux, needed for regression
+    - flex # needed for building gluster
+    - perl-Test-Harness # needed to run regression
+    - openssl-devel # needed for building gluster
     - lvm2-devel
     - sqlite-devel
-    - libxml2-devel
-    - python-devel
-    - userspace-rcu-devel
+    - libxml2-devel # needed for building gluster
+    - python{{ python_version }}-devel # needed, but python3
+    - userspace-rcu-devel # needed to build gluster
     - libibverbs-devel
     - librdmacm-devel
     - libaio-devel
     - xfsprogs
     # used for testing eventing
-    - python-requests
-    - python-flask
-    - python-prettytable
+    - python{{ python_version }}-requests
+    - python{{ python_version }}-flask
+    - python{{ python_version }}-prettytable
     # used for build-jobs testing
-    - python-virtualenv
+    - python{{ python_version }}-virtualenv
     #  - python-argparse
     # used for utils/create-files.py
-    - pyxattr
+    - "{{ pyxattr_pkg }}"
     # used for regression testing
     - attr
     # used for cli
@@ -73,6 +79,7 @@
     # required for pstack, used to be pulled by rpm-build
     - gdb
   when: ansible_system == 'Linux'
+# libuuid-devel seems to be missing ?
 
 - include: pkgs_job_cppcheck.yml
   when: ansible_system == 'Linux'
@@ -87,11 +94,11 @@
   package:
     state: present
     name:
-    - libtirpc-devel
-    - rpcgen
+    - libtirpc-devel # needed on Centos 8
+    - rpcgen # needed on Centos 8
 # needed for smoke testing on Fedora
 # https://bugzilla.redhat.com/show_bug.cgi?id=1623487
-    - python3-devel
+    - python3-devel # needed on centos 8
     - python3-pylint
     - git-clang-format
     - libtsan
@@ -107,7 +114,7 @@
     # packages for python3 environment
     - python36-devel
     - python36-prettytable
-  when: ansible_system == 'Linux' and ansible_distribution == 'CentOS'
+  when: ansible_system == 'Linux' and ansible_distribution == 'CentOS' and ansible_distribution_major_version == "7"
 
 - package:
     state: present

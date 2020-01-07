@@ -1,0 +1,35 @@
+---
+- name: Install packages
+  package:
+    name: openvpn
+    state: installed
+
+- set_fact:
+    type: client
+  when: remote is defined and remote != inventory_hostname
+
+- import_tasks: server.yml
+  when: type == 'server'
+  delegate_to: "{{ remote }}"
+
+- import_tasks: client.yml
+  when: type == 'client'
+
+- name: Deploy configuration
+  template:
+    src: openvpn.conf
+    dest: "/etc/openvpn/{{ type }}/{{ vpn_name }}.conf"
+  notify: Restart openvpn
+
+# service
+- name: Start service
+  service:
+    name: "openvpn-{{ type }}@{{ vpn_name }}"
+    state: started
+
+- name: Enable routing with sysctl
+  sysctl:
+    name: net.ipv4.ip_forward
+    state: present
+    value: '1'
+ 

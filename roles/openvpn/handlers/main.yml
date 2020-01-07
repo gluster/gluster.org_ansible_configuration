@@ -1,0 +1,4 @@
+- name: Restart openvpn
+  service:
+    name: openvpn-{{ type }}@{{ vpn_name }}
+    state: restarted

@@ -11,4 +11,3 @@
     remotes:
     - { name: 'github', url: 'git@github.com:gluster/gluster.org_ansible_configuration.git'}
   - role: polyinst_tmp
-  - role: manage_aws

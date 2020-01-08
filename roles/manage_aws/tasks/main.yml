@@ -1,5 +1,0 @@
----
-- name: Install boto
-  package:
-    name: python-boto3
-    state: installed

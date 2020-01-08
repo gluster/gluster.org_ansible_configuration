@@ -1,0 +1,31 @@
+---
+# ideally, none of this should be hardcoded
+- name: Associate the log server with the public IP
+  ec2_eip:
+    device_id: i-002ac77efbcca7cc8
+    ip: 18.219.45.211
+
+- name: Create the security group for the 
+  ec2_group:
+    name: ansible-gluster-openvpn-sg
+    description: Ansible managed security group for openvpn/logs nodes
+    vpc_id: "{{ vpc_id }}"
+    region: "{{ aws_region }}"
+    rules:
+    - proto: tcp
+      ports:
+      - 22
+      cidr_ip: 0.0.0.0/0
+      rule_desc: allow all for ssh
+    - proto: tcp
+      ports:
+      - 1194
+      cidr_ip: 0.0.0.0/0
+      rule_desc: allow all for openvpn
+    - proto: tcp
+      ports:
+      - 80
+      - 443
+      cidr_ip: 0.0.0.0/0
+      rule_desc: allow all for web
+

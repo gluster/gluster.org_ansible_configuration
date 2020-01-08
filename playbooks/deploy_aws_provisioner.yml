@@ -4,6 +4,7 @@
   - role: aws_provisioner
   - role: aws_security_group
   - role: aws_ssh_keys
+  - role: aws_logs
   # hack, since boto3 do not support proxy in a configuration file
   # neither do ansible
   # and there isn't a good way to set the proxy just for boto

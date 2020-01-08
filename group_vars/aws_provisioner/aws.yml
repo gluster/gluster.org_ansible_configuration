@@ -1,1 +1,3 @@
 aws_region: us-east-2
+# was externally created
+vpc_id: vpc-732e221b

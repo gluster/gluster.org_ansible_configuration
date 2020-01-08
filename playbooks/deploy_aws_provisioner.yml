@@ -2,3 +2,9 @@
 - hosts: aws_provisioner
   roles:
   - role: aws_provisioner
+  - role: aws_security_group
+  # hack, since boto3 do not support proxy in a configuration file
+  # neither do ansible
+  # and there isn't a good way to set the proxy just for boto
+  environment:
+    https_proxy: "https://squid.int.rht.gluster;org:3128"

@@ -2,6 +2,7 @@
 # ideally, none of this should be hardcoded
 - name: Associate the log server with the public IP
   ec2_eip:
+    region: "{{ aws_region }}"
     device_id: i-002ac77efbcca7cc8
     ip: 18.219.45.211
 

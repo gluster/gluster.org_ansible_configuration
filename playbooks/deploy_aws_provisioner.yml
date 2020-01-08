@@ -7,4 +7,4 @@
   # neither do ansible
   # and there isn't a good way to set the proxy just for boto
   environment:
-    https_proxy: "https://squid.int.rht.gluster;org:3128"
+    https_proxy: "https://squid.int.rht.gluster.org:3128"

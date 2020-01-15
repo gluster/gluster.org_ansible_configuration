@@ -1,0 +1,9 @@
+- name: Postmap transport
+  command: "postmap {{ config_transport | basename }}"
+  args:
+    chdir: /etc/postfix
+
+- name: Restart postfix
+  service:
+     name: postfix
+     state: restarted

@@ -1,0 +1,24 @@
+---
+- name: Install postfix
+  package:
+    name: postfix
+    state: present
+
+- name: Add transport maps
+  lineinfile:
+     path: /etc/postfix/main.cf
+     line: "transport_maps = hash:{{ config_transport }}"
+     state: present
+  notify: Restart postfix
+
+- name: Start the service
+  service:
+    name: postfix
+    enabled: True
+    state: started
+
+- name: Modify transport
+  template:
+    dest: "{{ config_transport }}"
+    src: transport_drop
+  notify: Postmap transport 

@@ -1,0 +1,1 @@
+config_transport: "/etc/postfix/transport_drop_maps"

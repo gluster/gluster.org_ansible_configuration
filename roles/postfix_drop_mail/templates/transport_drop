@@ -1,0 +1,3 @@
+{% for d in mails_to_drop %}
+{{ d }} discard:
+{% endfor %}

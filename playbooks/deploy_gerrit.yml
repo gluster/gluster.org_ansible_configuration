@@ -3,7 +3,8 @@
 - hosts: gerrit-prod.rht.gluster.org
   roles:
   - role: postfix_drop_mail
-    mails_to_drop: "{{ mails_to_drop }}"
+    # mails are in the private repo, so we do not get spammed
+    mails_to_drop: "{{ mails_to_drop_private }}"
   - role: xinetd_git_daemon
     base_path: /review/review.gluster.org/git
 #  - role: cgit

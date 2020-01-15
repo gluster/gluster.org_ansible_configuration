@@ -2,6 +2,8 @@
 # by ansible
 - hosts: gerrit-prod.rht.gluster.org
   roles:
+  - role: postfix_drop_mail
+    mails_to_drop: "{{ mails_to_drop }}"
   - role: xinetd_git_daemon
     base_path: /review/review.gluster.org/git
 #  - role: cgit

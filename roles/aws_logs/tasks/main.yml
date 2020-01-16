@@ -6,6 +6,16 @@
     device_id: i-002ac77efbcca7cc8
     ip: 18.219.45.211
 
+- name: Associate the public IP with the DNS
+  route53:
+    state: present
+    record: logs.aws.gluster.org
+    zone: aws.gluster.org
+    type: A
+    ttl: 7200
+    value: 18.219.45.211
+    wait: yes
+
 - name: Create the security group for the 
   ec2_group:
     name: ansible-gluster-openvpn-sg

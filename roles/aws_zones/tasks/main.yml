@@ -1,0 +1,4 @@
+- name: Create a public zone
+  route53_zone:
+    zone: aws.gluster.org
+    comment: this is an test for now

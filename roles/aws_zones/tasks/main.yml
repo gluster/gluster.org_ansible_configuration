@@ -18,7 +18,7 @@
 - name: Add the VMs to the internal zone
   route53:
     state: present
-    record: "{{ item.tags.Name | split('.')[0] }}.int.aws.gluster.org"
+    record: "{{ item.tags.Name.split('.')[0] }}.int.aws.gluster.org"
     zone: "int.aws.gluster.org"
     type: A
     ttl: 7200

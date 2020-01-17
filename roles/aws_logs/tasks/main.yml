@@ -58,4 +58,12 @@
     fstype: xfs
     dev: /dev/nvme1n1
   delegate_to: logs.aws.gluster.org
+# setup the mount
+
+- name: Mount the new FS
+  mount: 
+    name: /var/www/glusterfs-logs
+    src: /dev/nvme1n1
+    fstype: "xfs"
+    state: mounted
   

@@ -47,6 +47,7 @@
 - name: Add a block device 
   ec2_vol:
     instance: "{{ instance }}"
+    region: "{{ aws_region }}"
     volume_size: 6
     device_name: sdd
 

@@ -1,9 +1,13 @@
 ---
+# TODO add a way to retrieve it
+- set_fact:
+    instance: "i-002ac77efbcca7cc8"
 # ideally, none of this should be hardcoded
+
 - name: Associate the log server with the public IP
   ec2_eip:
     region: "{{ aws_region }}"
-    device_id: i-002ac77efbcca7cc8
+    device_id: "{{ instance }}"
     ip: 18.219.45.211
 
 - name: Associate the public IP with the DNS
@@ -39,4 +43,10 @@
       - 443
       cidr_ip: 0.0.0.0/0
       rule_desc: allow all for web
+
+- name: Add a block device 
+  ec2_vol:
+    instance: "{{ instance }}"
+    volume_size: 6
+    device_name: sdd
 

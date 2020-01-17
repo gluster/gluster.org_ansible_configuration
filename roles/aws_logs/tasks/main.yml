@@ -57,4 +57,5 @@
   filesystem:
     fstype: xfs
     dev: /dev/nvme1n1
+  delegate_to: logs.aws.gluster.org
   

@@ -46,6 +46,7 @@
 
 - name: Add a block device 
   ec2_vol:
+    name: "logs_aws_storage"
     instance: "{{ instance }}"
     region: "{{ aws_region }}"
     volume_size: 6

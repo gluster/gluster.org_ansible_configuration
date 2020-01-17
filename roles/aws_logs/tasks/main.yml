@@ -50,5 +50,11 @@
     instance: "{{ instance }}"
     region: "{{ aws_region }}"
     volume_size: 6
+    #this parameter is ignored, it go on nvme1n1
     device_name: sdd
 
+- name: Create the datadisk
+  filesystem:
+    fstype: xfs
+    dev: /dev/nvme1n1
+  

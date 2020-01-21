@@ -95,20 +95,28 @@
     number: 29
   - role: guest_jenkins_builder_int_rht
     number: 30
+    version: 8
   - role: guest_jenkins_builder_int_rht
     number: 31
+    version: 8
   - role: guest_jenkins_builder_int_rht
     number: 32
+    version: 8
   - role: guest_jenkins_builder_int_rht
     number: 33
+    version: 8
   - role: guest_jenkins_builder_int_rht
     number: 34
+    version: 8
   - role: guest_jenkins_builder_int_rht
     number: 35
+    version: 8
   - role: guest_jenkins_builder_int_rht
     number: 36
+    version: 8
   - role: guest_jenkins_builder_int_rht
     number: 37
+    version: 8
   - role: guest_jenkins_builder_int_rht
     number: 38
     version: 8

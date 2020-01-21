@@ -242,3 +242,5 @@ bugziller
 jenkins_builders_rht
 debian_builders
 
+[softserve]
+softserve.int.rht.gluster.org

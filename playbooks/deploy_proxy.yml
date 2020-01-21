@@ -48,11 +48,6 @@
   - role: nginx_proxy_vhost
     domain: softserve.gluster.org
     backends:
-    - softserve.rht.gluster.org
-
-  - role: nginx_proxy_vhost
-    domain: softserve.test.gluster.org
-    backends:
     - softserve.int.rht.gluster.org
 
   - role: nginx_proxy_vhost

@@ -2,7 +2,7 @@
   roles:
   - role: httpd
     website_domain: supercolony.gluster.org
-    redirect:    https://supercolony.gluster.org/
+    redirect:    https://www.gluster.org/
 
   - role: httpd
     website_domain: gluster.org

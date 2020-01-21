@@ -12,6 +12,8 @@
       address: "8.43.85.174/32"
     - name: "softserve"
       address: "8.43.85.186/32"
+    - name: "softserve"
+      address: "8.43.85.181/32"
   - role: postgresql_backups
   tasks:
   - name: Open firewall for the internal range only

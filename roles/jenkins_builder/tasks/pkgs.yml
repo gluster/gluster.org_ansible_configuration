@@ -89,22 +89,26 @@
 
 - include: pkgs_job_lcov.yml
   when: '"jenkins_builders_lcov" in group_names'
-  
+
+- name: Install jenkins builder Fedora and Centos 8 packages
+  package:
+    state: present
+    name:
+    - libtirpc-devel
+    - libuuid-devel
+    - rpcgen
+  when: ansible_system == 'Linux' and (ansible_distribution == 'Fedora' or ansible_distribution == 'CentOS' and ansible_distribution_major_version == "8")
+
 - name: Install jenkins builder Fedora packages
   package:
     state: present
     name:
-    - libtirpc-devel # needed on Centos 8
-    - rpcgen # needed on Centos 8
 # needed for smoke testing on Fedora
 # https://bugzilla.redhat.com/show_bug.cgi?id=1623487
-    - python3-devel # needed on centos 8
-    - python3-pylint
+    - python3-pylint # not present on Centos 8, so Fedora only
     - git-clang-format
     - libtsan
-# python3 pyxattr package needed  to run few tests in line coverage job
-    - python3-pyxattr
-  when: ansible_system == 'Linux' and ansible_distribution == 'Fedora'
+  when: ansible_system == 'Linux' and (ansible_distribution == 'Fedora')
 
 - name: Install jenkins builder Centos packages
   package:

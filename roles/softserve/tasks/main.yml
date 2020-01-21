@@ -103,7 +103,8 @@
   cron:
     name: "shutdown check"
     minute: "*/5"
-    job: "SENTRY_DSN=\"{{ softserve_config['sentry_dsn']}}\" FLASK_APP=/srv/softserve/code/manage.py /srv/softserve/env/bin/flask shutdown_check"
+    #the code say that the function is shutdown_check, but flask convert to shutdown-check
+    job: "SENTRY_DSN=\"{{ softserve_config['sentry_dsn']}}\" FLASK_APP=/srv/softserve/code/manage.py /srv/softserve/env/bin/flask shutdown-check"
 
 - name: Start the softserve service
   service:

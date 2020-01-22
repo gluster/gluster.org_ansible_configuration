@@ -78,6 +78,8 @@
     - libcurl-devel
     # required for pstack, used to be pulled by rpm-build
     - gdb
+    # required for nfs testing, for 'host'
+    - bind-utils 
   when: ansible_system == 'Linux'
 # libuuid-devel seems to be missing ?
 

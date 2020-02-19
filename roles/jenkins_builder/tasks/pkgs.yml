@@ -145,6 +145,20 @@
 # requested on https://bugzilla.redhat.com/show_bug.cgi?id=1609347
   - argp-standalone
 
+- name: Add Packages specific to debian/ubuntu builders
+  packages:
+    state: absent
+    name:
+    - build-essential #To compile a Debian Package
+    - pbuilder #To setup chroot environment where debian pkg will be built
+    - devscripts #To build debian-package
+    - reprepro #To manage a repository of Debian packages
+    - debhelper #Used by debian/rules
+    - dpkg-sig #To create and verify signature
+    - debootstrap #To install debian base system
+    - chrpath #to modify the dynamic library load path
+  when: '"jenkins_builders_rht" in group_names and ansible_distribution == "Debian/Ubuntu"'
+
 - name: Remove package that cause trouble with the regression suite
   package:
     state: absent

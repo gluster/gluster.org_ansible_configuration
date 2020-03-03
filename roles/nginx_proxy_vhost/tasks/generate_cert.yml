@@ -26,7 +26,5 @@
     provider: acme
     acme_challenge_path: "{{ acme_webroot }}"
     acme_accountkey_path: "{{ acme_key }}"
-    # remove once https://github.com/ansible/ansible/issues/41396 is resolved
-    acme_chain: False
     force: "{{ validity_check.failed }}"
   notify: Reload certificates everywhere

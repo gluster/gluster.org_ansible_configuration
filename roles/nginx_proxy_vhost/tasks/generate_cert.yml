@@ -10,12 +10,10 @@
     commonName: "{{ domain }}"
 
 - name: Check certificate validity for {{ domain }}
-  openssl_certificate:
+  openssl_certificate_info:
     path: "{{ certificate_path }}"
-    privatekey_path: "{{ privatekey_path }}"
-    valid_in: "{{ 60 * 60 * 24 * 10 }}"
-    provider: assertonly
-  ignore_errors: True
+    valid_at: 
+      ten_days: "+10d"
   register: validity_check
 
 - name: Create or renew certificate for {{ domain }}
@@ -26,5 +24,5 @@
     provider: acme
     acme_challenge_path: "{{ acme_webroot }}"
     acme_accountkey_path: "{{ acme_key }}"
-    force: "{{ validity_check.failed }}"
+    force: "{{ not validity_check.valid_at.ten_days }}"
   notify: Reload certificates everywhere

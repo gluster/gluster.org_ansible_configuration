@@ -5,9 +5,9 @@
     vars:
       name: webbuilder.int.rht.gluster.org
     system_disk_size: 10
-    mem_size: 1024
+    mem_size: 2048
     distribution: Fedora
-    version: 31
+    version: 30
     bridge: "{{ bridge_common }}"
     network:
       ip: 172.24.1.58/24

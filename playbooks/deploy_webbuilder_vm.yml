@@ -6,8 +6,8 @@
       name: webbuilder.int.rht.gluster.org
     system_disk_size: 10
     mem_size: 1024
-    distribution: Centos
-    version: 7
+    distribution: Fedora
+    version: 31
     bridge: "{{ bridge_common }}"
     network:
       ip: 172.24.1.58/24

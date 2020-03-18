@@ -1,3 +1,4 @@
 ---
 dependencies:
-- { role: sasldb }
+- role: sasldb
+  user_create: "{{ github_smtp_user }}"

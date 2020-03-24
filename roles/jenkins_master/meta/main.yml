@@ -1,7 +1,7 @@
 ---
 dependencies:
 - role: httpd
-  reverse_proxy: http://127.0.0.1:8080/
+  reverse_proxy: http://127.0.0.1:8080
   use_letsencrypt: True
   mail_domain: gluster.org
   force_tls: True

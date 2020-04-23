@@ -25,6 +25,9 @@
         user = {{ gerrit_user }}
         javaHome = /etc/alternatives/jre
         startupTimeout = {{ gerrit_timeout }}
+        javaOptions = "-Dflogger.backend_factory=com.google.common.flogger.backend.log4j.Log4jBackendFactory#getInstance"
+        javaOptions = "-Dflogger.logging_context=com.google.gerrit.server.logging.LoggingContext#getInstance"
+
 [sshd]
         advertisedaddress = {{ gerrit_domain }}
         listenAddress = *:29418

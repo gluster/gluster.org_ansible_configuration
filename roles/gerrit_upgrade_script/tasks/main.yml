@@ -10,6 +10,6 @@
   copy:
     owner: root
     group: root
-    permissions: 0755
+    mode: 0755
     dest: /usr/local/bin/upgrade_gerrit.sh
     src: upgrade_gerrit.sh

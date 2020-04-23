@@ -2,11 +2,13 @@
 # by ansible
 - hosts: gerrit-prod.rht.gluster.org
   roles:
+  - role: gerrit_upgrade_script 
   - role: postfix_drop_mail
     # mails are in the private repo, so we do not get spammed
     mails_to_drop: "{{ mails_to_drop_private }}"
   - role: xinetd_git_daemon
     base_path: /review/review.gluster.org/git
+  - role: gerrit_upgrade_script
 #  - role: cgit
 #    git_repositories_dir: /review/review.gluster.org/git
 #    scan_path: true

@@ -1,5 +1,6 @@
 - hosts: gerrit-stage.rht.gluster.org
   roles:
+  - role: gerrit_upgrade_script 
   - role: cgit
     git_repositories_dir: /review/review.gluster.org/git/
     scan_path: true

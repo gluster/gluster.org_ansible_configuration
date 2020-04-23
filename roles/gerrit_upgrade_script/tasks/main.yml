@@ -12,4 +12,4 @@
     group: root
     permissions: 0755
     dest: /usr/local/bin/upgrade_gerrit.sh
-    source: upgrade_gerrit.sh
+    src: upgrade_gerrit.sh

@@ -5,7 +5,7 @@ dependencies:
   volgroup: "{{ vm_storage_vg  }}"
   system_disk_size: 10
   data_disk_size: 10
-  mem_size: 1024
+  mem_size: 2048
   num_cpus: 1
   distribution: Fedora
   #version: 28

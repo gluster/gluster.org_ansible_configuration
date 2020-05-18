@@ -3,7 +3,7 @@
     src: replication.config.j2
     dest: "{{ _gerrit_dir }}/etc/replication.config"
     owner: "{{gerrit_user}}"
-    mode: 0755
+    mode: 0644
   notify: restart gerrit
 
 - name: Create the .ssh folder

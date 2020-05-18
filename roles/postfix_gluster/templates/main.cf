@@ -28,6 +28,14 @@ alias_maps = hash:/etc/postfix/external.aliases
 
 smtpd_helo_required = yes
 
+# Auth settings
+smtpd_sasl_auth_enable = yes
+smtpd_sasl_security_options = noanonymous
+smtpd_sasl_type = cyrus
+smtpd_sasl_application_name = smtpd
+smtpd_sasl_local_domain = $mydomain
+
+
 smtpd_recipient_restrictions = permit_mynetworks
   reject_unauth_destination
   reject_unauth_pipelining

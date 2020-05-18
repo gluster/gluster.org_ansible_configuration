@@ -46,3 +46,5 @@
   name: redis
 - src: git+https://gitlab.com/osas/ansible-role-entropy.git
   name: entropy
+- src: git+https://gitlab.com/osas/ansible-role-sasldb.git
+  name: sasldb

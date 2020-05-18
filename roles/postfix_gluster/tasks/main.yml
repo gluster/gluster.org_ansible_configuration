@@ -41,3 +41,8 @@
   notify: postalias virtual
   when: devnull_domains is defined
 
+- name: install SASL configuration
+  copy:
+    src: smtpd.conf
+    dest: /etc/sasl2/smtpd.conf
+

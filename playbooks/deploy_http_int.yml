@@ -1,12 +1,12 @@
 ---
 - hosts: http.int.rht.gluster.org
+  vars:
+    website_domain: planet.gluster.org
   roles:
-  - role: httpd_planet
-    website_domain: planet.int.rht.gluster.org
-    server_aliases:
-    - planet.gluster.org
-    sync_user: deploy_website
-    document_root: /var/www/planet
+  - role: scp_http_int
+    scp_dest: /var/www/glusterfs-planet
+    user: _bits-gluster
+    target_name: bits
 
 - hosts: http.int.rht.gluster.org
   vars:
@@ -43,4 +43,3 @@
     - src: '^/$'
       target: '/gluster-bugs.html'
       match: True
-

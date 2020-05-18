@@ -1,0 +1,15 @@
+- name: Install required packages
+  package:
+    name:
+    - curl
+    - wget
+    - screen
+    state: present
+
+- name: Copy the script to upgrade gerrit
+  copy:
+    owner: root
+    group: root
+    mode: 0755
+    dest: /usr/local/bin/upgrade_gerrit.sh
+    src: upgrade_gerrit.sh

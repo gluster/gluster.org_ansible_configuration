@@ -1,0 +1,6 @@
+type: "t2.medium"
+sg_group: "ansible-gluster-builders-sg"
+zone: 'int.aws.gluster.org'
+# centos 8
+ami: "ami-09ce9977c3c8200c7" 
+#vpc: "732e221b"

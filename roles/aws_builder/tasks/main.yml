@@ -1,0 +1,27 @@
+- name: Check that we declare the right hostname
+  fail:
+    msg: "Wrong hostname"
+  when: "not (hostname | regex_search(zone + '$'))"
+
+- name: Create builder instance
+  ec2_instance:
+    name: "{{ hostname }}"
+    key_name: "ansible_bastion_keypair" 
+#    vpc_subnet_id: "{{ vpc }}"
+    instance_type: "{{ type }}"
+    security_group: "{{ sg_group }}"
+    network:
+      assign_public_ip: true
+    image_id: "{{ ami }}"
+    region: "{{ aws_region }}"
+  register: instance
+
+- name: Add the DNS
+  route53:
+    state: present
+    record: "{{ hostname }}"
+    zone: "{{ zone }}"
+    type: A
+    ttl: 7200
+    value: "{{ instance.instances[0].network_interfaces[0].private_ip_address }}"
+    wait: yes

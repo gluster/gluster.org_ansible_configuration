@@ -1,12 +1,7 @@
 - name: Create a public zone
   route53_zone:
     zone: aws.gluster.org
-    comment: this is an test for now
-
-- name: Create a public zone
-  route53_zone:
-    zone: int.aws.gluster.org
-    comment: this is an test for now
+    comment: "Used in production - Do not change manually"
 
 - name: Get lists of existing VMs
   ec2_instance_info:
@@ -15,11 +10,11 @@
       "tag:Owner": "gluster-infra"
   register: vms
 
-- name: Add the VMs to the internal zone
+- name: Add the VMs to the zone
   route53:
     state: present
     record: "{{ item.tags.Name.split('.')[0] }}.int.aws.gluster.org"
-    zone: "int.aws.gluster.org"
+    zone: "aws.gluster.org"
     type: A
     ttl: 7200
     value: "{{ item.private_ip_address }}"

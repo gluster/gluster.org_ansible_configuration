@@ -1,3 +1,4 @@
 #cloud-config
 disable_root: 0
-
+packages:
+- python36

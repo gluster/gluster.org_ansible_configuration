@@ -10,6 +10,10 @@
   - role: aws_builder
     hostname: builder-c8-1.int.aws.gluster.org
 
+  - role: aws_builder
+    hostname: builder-c8-2.int.aws.gluster.org
+
+
   # hack, since boto3 do not support proxy in a configuration file
   # neither do ansible
   # and there isn't a good way to set the proxy just for boto

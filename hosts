@@ -85,6 +85,7 @@ chrono.rht.gluster.org
 openvpn01.int.rht.gluster.org
 openvpn02.int.rht.gluster.org
 webbuilder.int.rht.gluster.org
+builder-c8-1.int.aws.gluster.org
 
 [debian]
 builder50.int.rht.gluster.org

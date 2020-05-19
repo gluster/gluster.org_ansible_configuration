@@ -25,3 +25,4 @@
     ttl: 7200
     value: "{{ instance.instances[0].network_interfaces[0].private_ip_address }}"
     wait: yes
+    overwrite: yes

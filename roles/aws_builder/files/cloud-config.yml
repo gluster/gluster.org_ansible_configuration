@@ -1,0 +1,3 @@
+#cloud-config
+disable_root: 0
+

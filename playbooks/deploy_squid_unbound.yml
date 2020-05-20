@@ -9,5 +9,8 @@
         address: 172.24.1.62
         prefix: 24
   - squid
-  - unbound
+  - role: unbound
+    private_domains:
+    - int.rht.gluster.org
+    - int.aws.gluster.org
   - unbound_munin

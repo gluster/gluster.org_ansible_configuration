@@ -15,6 +15,11 @@
     image_id: "{{ ami }}"
     region: "{{ aws_region }}"
     user_data: "{{ lookup('file', 'cloud-config.yml') }}"
+    volumes:
+    - device_name: /dev/sda1
+      ebs:
+        volume_size: 16
+        delete_on_termination: true
   register: instance
 
 - name: Add the DNS

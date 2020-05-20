@@ -1,7 +1,7 @@
 ---
 - name: Gather information about Centos 7 AMIs
   ec2_ami_info:
-    region: "{{ region }}"
+    region: "{{ aws_region }}"
     owners: aws-marketplace
     filters:
       architecture: "x86_64"

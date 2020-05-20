@@ -1,0 +1,5 @@
+---
+dependencies:
+- role: aws_builder
+  # centos 8
+  ami: "ami-09ce9977c3c8200c7" 

@@ -7,10 +7,10 @@
   - role: aws_zones
   - role: aws_logs
 
-  - role: aws_builder
+  - role: aws_builder_c8
     hostname: builder-c8-1.int.aws.gluster.org
 
-  - role: aws_builder
+  - role: aws_builder_c8
     hostname: builder-c8-2.int.aws.gluster.org
 
 

@@ -1,5 +1,0 @@
----
-dependencies:
-- role: aws_builder
-  # centos 7 on us-east2
-  ami: "ami-e1496384" 

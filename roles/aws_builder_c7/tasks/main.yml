@@ -1,0 +1,15 @@
+---
+- name: Gather information about Centos 7 AMIs
+  ec2_ami_info:
+    region: "{{ region }}"
+    owners: aws-marketplace
+    filters:
+      architecture: "x86_64"
+      # from centos wiki, for centos 7
+      product-code: "aw0evgkw8e5c1q413zgy5pjce"
+  register: amis
+- set_fact:
+    ami: "{{ (amis.images|last).image_id }}"
+
+- import_role:
+    name: aws_builder

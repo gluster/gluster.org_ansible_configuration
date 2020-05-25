@@ -70,5 +70,6 @@
       name: jenkins_builder_declaration
     vars:
       ip: "{{ public_ip }}"
+      credentials: "{{ aws_credentials }}"
       builder_hostname: "{{ hostname }}"
     delegate_to: "{{ jenkins_master }}"

@@ -1,0 +1,5 @@
+---
+dependencies:
+- role: aws_builder
+  # f32, from https://alt.fedoraproject.org/cloud/
+  ami: "ami-013433c9d0f41da03" 

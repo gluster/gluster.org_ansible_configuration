@@ -28,6 +28,13 @@
   args:
     creates: /usr/local/bin/jenkins-cli.jar
 
+- name: Add the jenkins cli password
+  copy:
+    content: "{{ jenkins_cli_auth }}"
+    dest: /root/.jenkins_cli.conf
+    mode: 0600
+  no_log: True
+
 - name: Add jenkins-cli wrapper
   copy:
     src: jenkins-cli

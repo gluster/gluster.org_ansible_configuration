@@ -30,7 +30,7 @@
   sysctl:
     name: net.ipv4.ip_forward
     state: present
-    value: 1
+    value: '1'
 
 #- name: Remove firewalld
 #  package:

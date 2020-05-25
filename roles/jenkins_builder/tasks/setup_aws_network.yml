@@ -37,11 +37,16 @@
     dest: /etc/hosts
     regexp: "::1.*"
 
+- stat:
+    path: /etc/dhcp/dhclient.conf
+  register: dhclient
+
 - name: Setup DHCP client config so the nameservers are Google DNS servers
   lineinfile:
     state: present
     dest: /etc/dhcp/dhclient.conf
     line: "supersede domain-name-servers 8.8.8.8;"
+  when: dhclient.stat.exists 
 
 - name: Make sure that search do not come to interfer
   copy:

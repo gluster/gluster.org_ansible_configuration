@@ -1,0 +1,3 @@
+# reload jenkins conf
+- name: Reload jenkins configuration
+  command: jenkins-cli reload-configuration

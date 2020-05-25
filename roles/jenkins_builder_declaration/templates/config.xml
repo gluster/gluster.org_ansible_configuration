@@ -1,0 +1,24 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<slave>
+  <name>{{ hostname }}</name>
+  <description>Automatically created with ansible</description>
+  <remoteFS>/home/jenkins/root</remoteFS>
+  <numExecutors>1</numExecutors>
+  <mode>EXCLUSIVE</mode>
+  <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
+  <launcher class="hudson.plugins.sshslaves.SSHLauncher">
+    <host>{{ ip }}</host>
+    <port>22</port>
+    <credentialsId>{{ credentials }}</credentialsId>
+    <launchTimeoutSeconds>210</launchTimeoutSeconds>
+    <maxNumRetries>10</maxNumRetries>
+    <retryWaitTime>15</retryWaitTime>
+    <sshHostKeyVerificationStrategy class="hudson.plugins.sshslaves.verifiers.ManuallyTrustedKeyVerificationStrategy">
+      <requireInitialManualTrust>false</requireInitialManualTrust>
+    </sshHostKeyVerificationStrategy>
+    <tcpNoDelay>true</tcpNoDelay>
+  </launcher>
+  <label>{{ labels | join(' ') }}</label>
+  <nodeProperties/>
+</slave>
+

@@ -3,4 +3,4 @@
 - include_tasks: yum.yml
 - include_tasks: freebsd.yml
 - include_tasks: git.yml
-- include_tasks: boto.yml
+#- include_tasks: boto.yml

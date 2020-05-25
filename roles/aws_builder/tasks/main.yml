@@ -38,6 +38,7 @@
   block:
   - set_fact:
       public_ip: "{{ instance.instances[0].public_ip_address }}"
+      location: aws
 
   - wait_for:
       port: 22

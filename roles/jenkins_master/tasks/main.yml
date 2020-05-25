@@ -22,3 +22,15 @@
     name: httpd_can_network_connect
     state: yes
     persistent: yes
+
+- name: Download jenkins-cli.jar
+  command: wget --no-check-certificate http://127.0.0.1/jnlpJars/jenkins-cli.jar -O /usr/local/bin/jenkins-cli.jar
+  args:
+    creates: /usr/local/bin/jenkins-cli.jar
+
+- name: Add jenkins-cli wrapper
+  copy:
+    src: jenkins-cli
+    dest: /usr/local/bin/jenkins-cli
+    mode: 0755
+    

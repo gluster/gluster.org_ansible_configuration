@@ -52,6 +52,4 @@
 
   - import_role:
       name: jenkins_builder_declaration
-    vars:
-      hostname: "{{ hostname }}"
     delegate_to: jenkins_master

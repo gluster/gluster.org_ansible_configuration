@@ -1,6 +1,6 @@
 ---
 - set_fact:
-    directory: "/var/lib/jenkins/nodes/{{ hostname }}"
+    directory: "/var/lib/jenkins/nodes/{{ builder_hostname }}"
 
 - name: Make sure the directory exist
   file:
@@ -15,7 +15,7 @@
 
 - name: Get the ssh keys
   ssh_keyscan:
-    name: "{{ hostname }}"
+    name: "{{ builder_hostname }}"
     ip: "{{ ip }}"
   register: r
 

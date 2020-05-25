@@ -1,6 +1,6 @@
 <?xml version='1.1' encoding='UTF-8'?>
 <slave>
-  <name>{{ hostname }}</name>
+  <name>{{ builder_hostname }}</name>
   <description>Automatically created with ansible</description>
   <remoteFS>/home/jenkins/root</remoteFS>
   <numExecutors>1</numExecutors>

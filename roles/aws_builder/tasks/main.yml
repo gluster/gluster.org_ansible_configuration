@@ -39,6 +39,8 @@
   - set_fact:
       public_ip: "{{ instance.instances[0].public_ip_address }}"
       location: aws
+      #used by jenkins_builder role
+      inventory_hostname: "{{ hostname }}"
 
   - wait_for:
       port: 22

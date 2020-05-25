@@ -8,7 +8,7 @@
     name: "{{ hostname }}"
     key_name: "ansible_bastion_keypair" 
 #    vpc_subnet_id: "{{ vpc }}"
-    instance_type: "{{ type }}"
+    instance_type: "{{ vm_type }}"
     security_group: "{{ sg_group }}"
     network:
       assign_public_ip: true

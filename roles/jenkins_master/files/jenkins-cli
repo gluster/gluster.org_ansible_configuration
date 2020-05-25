@@ -1,2 +1,3 @@
 #!/bin/bash
-java -jar  /usr/local/bin/jenkins-cli.jar -s http://127.0.0.1:8080/ $*
+[ -f ~/.jenkins_cli.conf ] && export AUTH="-auth @~/.jenkins_cli.conf"
+java -jar  /usr/local/bin/jenkins-cli.jar -s http://127.0.0.1:8080/ $AUTH $*

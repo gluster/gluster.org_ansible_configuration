@@ -3,7 +3,7 @@
 - include: authroot_georep.yml
 
 - include: setup_aws_network.yml
-  when: ansible_system == 'Linux' and location == 'aws'
+  when: ansible_system == 'Linux' and location == 'aws' and inventory_hostname is defined
 
   # Flush dracut changes so it doesn't get lost with an error down the line
 - name: Apply change immediately

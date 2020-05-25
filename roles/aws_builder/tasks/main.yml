@@ -36,11 +36,21 @@
 - name: Prepare the new VM
   when: instance.changed
   block:
+  - wait_for:
+      port: 22
+      host: "{{ instance.instances[0].public_ip_address }}"
+
   - add_host:
       hostname: "{{ hostname }}"
       groups:
       - int_aws_gluster_org
       - jenkins_builders_aws
+
+  - command: "ssh -o 'PreferredAuthentications=publickey' -o StrictHostKeyChecking=no {{ hostname }} id"
+    delegate_to: localhost
+
+  - setup:
+    delegate_to: "{{ hostname }}"
 
   - import_role:
       name: base

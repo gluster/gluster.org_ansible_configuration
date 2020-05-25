@@ -20,7 +20,7 @@
   register: r
 
 - set_fact:
-    key: "{{ r['keys'][type] }}"
+    key: "{{ r['keys'][ssh_key_type] }}"
 
 - name: Add ssh-host-key.xml
   template:

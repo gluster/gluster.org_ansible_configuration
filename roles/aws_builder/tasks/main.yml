@@ -36,18 +36,23 @@
 - name: Prepare the new VM
   when: instance.changed
   block:
+  - set_fact:
+      public_ip: "{{ instance.instances[0].public_ip_address }}"
+
   - wait_for:
       port: 22
-      host: "{{ instance.instances[0].public_ip_address }}"
+      host: "{{ public_ip }}"
 
   - add_host:
       hostname: "{{ hostname }}"
+      ansible_host: "{{ public_ip }}"
       groups:
       - int_aws_gluster_org
       - jenkins_builders_aws
 
-  - command: "ssh -o 'PreferredAuthentications=publickey' -o StrictHostKeyChecking=no {{ hostname }} id"
+  - command: "ssh -o 'PreferredAuthentications=publickey' -o 'StrictHostKeyChecking=no' {{ public_ip }} id"
     delegate_to: localhost
+    ignore_errors: True
 
   - setup:
     delegate_to: "{{ hostname }}"

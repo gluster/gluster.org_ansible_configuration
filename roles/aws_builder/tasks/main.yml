@@ -72,4 +72,4 @@
       name: jenkins_builder_declaration
     vars:
       ip: "{{ public_ip }}"
-    delegate_to: jenkins_master
+    delegate_to: "{{ jenkins_master }}"

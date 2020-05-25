@@ -1,3 +1,4 @@
 type: "t2.medium"
 sg_group: "ansible-gluster-builders-sg"
 zone: 'aws.gluster.org'
+jenkins_master: "jenkins-el7.rht.gluster.org"

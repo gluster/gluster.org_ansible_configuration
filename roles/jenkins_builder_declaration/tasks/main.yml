@@ -1,6 +1,6 @@
 ---
 - set_fact:
-    directory: "/var/lib/jenkins/nodes/{{ builder_hostname }}"
+    directory: "/var/lib/ansible_jenkins/"
 
 - name: Make sure the directory exist
   file:
@@ -9,9 +9,9 @@
 
 - name: Add config.xml
   template: 
-    dest: "{{ directory }}/config.xml"
+    dest: "{{ directory }}/{{ builder_hostname }}.xml"
     src: config.xml
-  notify: Reload jenkins configuration
+  register: config
 
 - name: Get the ssh keys
   ssh_keyscan:
@@ -19,12 +19,15 @@
     ip: "{{ ip }}"
   register: r
 
-- set_fact:
-    key: "{{ r['keys'][ssh_key_type] }}"
 
-- name: Add ssh-host-key.xml
-  template:
-    dest: "{{ directory }}/ssh-host-key.xml"
-    src: ssh-host-key.xml
-  notify: Reload jenkins configuration
+- name: Add the key to jenkins know hosts
+  known_hosts:
+    name: "{{ builder_hostname }}"
+    key: "{{ builder_hostname }},{{ ip }} {{ item }} {{ r['keys'][item] }}  # automatically added by Ansible"
+    path: /etc/ssh/ssh_known_hosts
+    state: present
+  loop: "{{ r['keys'].keys() }}"
 
+- name:
+  shell: "cat {{ directory }}/{{ builder_hostname }}.xml | jenkins-cli create-node {{ builder_hostname }}"
+  when: config.changed

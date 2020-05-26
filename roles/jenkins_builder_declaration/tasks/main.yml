@@ -24,7 +24,7 @@
   known_hosts:
     name: "{{ builder_hostname }}"
     key: "{{ builder_hostname }},{{ ip }} {{ item }} {{ r['keys'][item] }}  # automatically added by Ansible"
-    path: /etc/ssh/ssh_known_hosts
+    path: "~jenkins/.ssh/known_hosts"
     state: present
   loop: "{{ r['keys'].keys() }}"
 

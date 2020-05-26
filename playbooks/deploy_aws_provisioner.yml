@@ -16,9 +16,8 @@
   - role: aws_builder_c7
     hostname: builder-c7-1.int.aws.gluster.org
 
+  - role: aws_builder_f32
+    hostname: builder-f32-1.int.aws.gluster.org
 
-  # hack, since boto3 do not support proxy in a configuration file
-  # neither do ansible
-  # and there isn't a good way to set the proxy just for boto
-#  environment:
-#    https_proxy: "https://squid.int.rht.gluster.org:3128"
+  - role: aws_builder_f32
+    hostname: builder-f32-2.int.aws.gluster.org

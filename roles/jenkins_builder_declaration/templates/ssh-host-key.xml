@@ -1,6 +1,6 @@
 <?xml version='1.1' encoding='UTF-8'?>
 <hudson.plugins.sshslaves.verifiers.HostKey>
-	<algorithm>{{ type }}</algorithm>
+	<algorithm>{{ ssh_key_type }}</algorithm>
 	<key>{{ key }}</key>
 </hudson.plugins.sshslaves.verifiers.HostKey>
 

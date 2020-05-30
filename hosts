@@ -40,6 +40,7 @@ supercolony.rht.gluster.org
 
 [jenkins_builders_lcov]
 # to be synced from jenkins
+builder-c7-1.int.aws.gluster.org
 
 builder18.int.rht.gluster.org
 builder19.int.rht.gluster.org

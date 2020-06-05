@@ -47,6 +47,7 @@
   - add_host:
       hostname: "{{ hostname }}"
       ansible_host: "{{ public_ip }}"
+      ansible_python_interpreter: "{{ python_bin | default(omit) }}"
       groups:
       - int_aws_gluster_org
       - jenkins_builders_aws

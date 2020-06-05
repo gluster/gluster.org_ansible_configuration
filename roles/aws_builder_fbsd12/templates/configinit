@@ -1,0 +1,3 @@
+#!/bin/sh
+echo -e "hostname={{ hostname }}\nec2_fetchkey_user=root\n" >> /etc/rc.conf
+echo -e "PermitRootLogin=without-password\n" >> /etc/ssh/sshd_config

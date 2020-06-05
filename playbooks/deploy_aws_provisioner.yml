@@ -21,3 +21,6 @@
 
   - role: aws_builder_f32
     hostname: builder-f32-2.int.aws.gluster.org
+
+  - role: aws_builder_fbsd12
+    hostname: builder-fbsd12-1.int.aws.gluster.org

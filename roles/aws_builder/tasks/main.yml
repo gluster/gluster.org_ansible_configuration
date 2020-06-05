@@ -14,7 +14,7 @@
       assign_public_ip: true
     image_id: "{{ ami }}"
     region: "{{ aws_region }}"
-    user_data: "{{ lookup('file', 'cloud-config.yml') + '\nfqdn: \"' + hostname + '\"' }}"
+    user_data: "{{ user_data }}"
     volumes:
     - device_name: /dev/sda1
       ebs:

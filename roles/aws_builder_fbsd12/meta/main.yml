@@ -4,6 +4,7 @@ dependencies:
   # fbsd 12, from https://www.freebsd.org/releases/12.1R/announce.html
   ami: "ami-0a44f10b2c6deb365"
   user_data: "{{ lookup('template', 'configinit') }}" 
+  python_bin: "/usr/local/bin/python3.7"
   labels:
   - freebsd12
   - freebsd

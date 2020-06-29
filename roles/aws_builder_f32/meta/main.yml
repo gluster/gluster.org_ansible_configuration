@@ -1,4 +1,5 @@
 ---
+allow_duplicates: true
 dependencies:
 - role: aws_builder
   # f32, from https://alt.fedoraproject.org/cloud/

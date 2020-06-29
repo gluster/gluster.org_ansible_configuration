@@ -1,4 +1,5 @@
 ---
+allow_duplicates: true
 dependencies:
 - role: aws_builder
   # fbsd 12, from https://www.freebsd.org/releases/12.1R/announce.html

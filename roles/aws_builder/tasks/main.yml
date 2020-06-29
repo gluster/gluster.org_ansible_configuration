@@ -52,6 +52,16 @@
       - int_aws_gluster_org
       - jenkins_builders_aws
 
+  - name: Clean the known host file
+    known_hosts:
+      name: "{{ item }}"
+      state: absent
+    loop:
+    - "{{ hostname }}"
+    - "{{ public_ip }}"
+    delegate_to: localhost
+    ignore_errors: True
+
   - command: "ssh -o 'PreferredAuthentications=publickey' -o 'StrictHostKeyChecking=no' {{ public_ip }} id"
     delegate_to: localhost
     ignore_errors: True

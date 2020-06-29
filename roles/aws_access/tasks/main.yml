@@ -2,3 +2,13 @@
 - iam_group:
     name: Developers
     state: present
+
+- iam_group:
+    name: softserve
+    state: present
+
+- iam_group:
+    name: gluster-janitors 
+    state: present
+
+

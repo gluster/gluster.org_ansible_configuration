@@ -8,20 +8,36 @@
   - role: aws_zones
   - role: aws_logs
 
+
+# keep that in separate play
+# there is some variable leaking issues that do break
+# the role in a weird way
+- hosts: aws_provisioner
+  roles:
   - role: aws_builder_c8
     hostname: builder-c8-1.int.aws.gluster.org
 
+- hosts: aws_provisioner
+  roles:
   - role: aws_builder_c8
     hostname: builder-c8-2.int.aws.gluster.org
 
+- hosts: aws_provisioner
+  roles:
   - role: aws_builder_c7
     hostname: builder-c7-1.int.aws.gluster.org
 
+- hosts: aws_provisioner
+  roles:
   - role: aws_builder_f32
     hostname: builder-f32-1.int.aws.gluster.org
 
+- hosts: aws_provisioner
+  roles:
   - role: aws_builder_f32
     hostname: builder-f32-2.int.aws.gluster.org
 
+- hosts: aws_provisioner
+  roles:
   - role: aws_builder_fbsd12
     hostname: builder-fbsd12-1.int.aws.gluster.org

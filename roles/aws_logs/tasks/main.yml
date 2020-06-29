@@ -49,7 +49,7 @@
     name: "logs_aws_storage"
     instance: "{{ instance }}"
     region: "{{ aws_region }}"
-    volume_size: 6
+    volume_size: "6"
     #this parameter is ignored, it go on nvme1n1
     device_name: sdd
 

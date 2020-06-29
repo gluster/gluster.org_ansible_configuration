@@ -11,11 +11,18 @@
 - iam_group:
     name: Developers
     state: present
+    users:
+    - sahina
 
 - iam_group:
     name: softserve
     state: present
+    users:
+    - softserve
 
 - iam_group:
     name: gluster-janitors 
     state: present
+    users:
+    - misc
+    - deepshikha

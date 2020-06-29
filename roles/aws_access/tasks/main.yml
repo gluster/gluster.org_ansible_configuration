@@ -4,6 +4,9 @@
     state: present
   loop:
   - softserve
+  - misc
+  - deepshika
+  - sahina
 
 - iam_group:
     name: Developers

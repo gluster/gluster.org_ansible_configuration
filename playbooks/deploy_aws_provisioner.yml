@@ -2,6 +2,7 @@
 - hosts: aws_provisioner
   roles:
   - role: aws_provisioner
+  - role: aws_access
   - role: aws_security_group
   - role: aws_ssh_keys
   - role: aws_zones

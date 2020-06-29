@@ -1,0 +1,4 @@
+---
+- iam_group:
+    name: Developers
+    state: present

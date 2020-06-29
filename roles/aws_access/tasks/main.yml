@@ -32,3 +32,5 @@
     - deepshikha
     managed_policy:
     - arn:aws:iam::aws:policy/AdministratorAccess
+    purge_policy: True
+    purge_users: True

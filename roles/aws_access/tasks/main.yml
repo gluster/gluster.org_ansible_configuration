@@ -1,4 +1,10 @@
 ---
+- iam_user:
+    name: "{{ item }}"
+    state: present
+  loop:
+  - softserve
+
 - iam_group:
     name: Developers
     state: present
@@ -10,5 +16,3 @@
 - iam_group:
     name: gluster-janitors 
     state: present
-
-

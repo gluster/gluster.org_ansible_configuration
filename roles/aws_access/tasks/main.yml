@@ -19,6 +19,10 @@
     state: present
     users:
     - softserve
+    managed_policy:
+    - arn:aws:iam::aws:policy/AmazonEC2FullAccess
+    purge_policy: True
+    purge_users: True
 
 - iam_group:
     name: gluster-janitors 
@@ -26,3 +30,5 @@
     users:
     - misc
     - deepshikha
+    managed_policy:
+    - arn:aws:iam::aws:policy/AdministratorAccess

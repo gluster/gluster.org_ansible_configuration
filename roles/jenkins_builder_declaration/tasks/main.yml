@@ -28,6 +28,10 @@
     state: present
   loop: "{{ r['keys'].keys() }}"
 
-- name:
+- name: Remove the previous host 
+  shell: "jenkins-cli delete-node {{ builder_hostname }}" 
+  when: config.changed
+
+- name: Add the new one
   shell: "cat {{ directory }}/{{ builder_hostname }}.xml | jenkins-cli create-node {{ builder_hostname }}"
   when: config.changed

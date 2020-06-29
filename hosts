@@ -103,6 +103,7 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@logs.aws.gluster.
 builder[200:210].int.aws.gluster.org
 builder-c8-[1:2].int.aws.gluster.org
 builder-c7-1.int.aws.gluster.org
+builder-f32-[1:2].int.aws.gluster.org
 
 [jenkins_builders_rht]
 freebsd10.3.int.rht.gluster.org
@@ -206,6 +207,7 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gl
 [int_aws_gluster_org]
 builder[200:210].int.aws.gluster.org
 builder-c8-[1:2].int.aws.gluster.org
+builder-f32-[1:2].int.aws.gluster.org
 builder-c7-1.int.aws.gluster.org
 
 [int_aws_gluster_org:vars]

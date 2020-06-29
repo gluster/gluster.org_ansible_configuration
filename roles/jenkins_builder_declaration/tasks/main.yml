@@ -31,6 +31,7 @@
 - name: Remove the previous host 
   shell: "jenkins-cli delete-node {{ builder_hostname }}" 
   when: config.changed
+  ignore_errors: True
 
 - name: Add the new one
   shell: "cat {{ directory }}/{{ builder_hostname }}.xml | jenkins-cli create-node {{ builder_hostname }}"

@@ -48,3 +48,5 @@
   name: entropy
 - src: git+https://gitlab.com/osas/ansible-role-sasldb.git
   name: sasldb
+- src: git+https://gitlab.com/osas/ansible-role-chrony.git
+  name: chrony

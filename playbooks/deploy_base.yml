@@ -13,10 +13,11 @@
   - base
   - role: selinux
     when: ansible_system == 'Linux' and ansible_distribution != 'Debian'
-  # not working on EL 8 for now
   - role: ntp
     when: ansible_os_family == 'RedHat' and ansible_distribution_major_version|int != 8
-
+  - role: chrony
+    servers: "{{ ntp_servers }}"
+    when: ansible_os_family == 'RedHat' and ansible_distribution_major_version|int >= 8
   - role: shell_timeout
     when: ansible_system == 'Linux'
   - unattended_updates

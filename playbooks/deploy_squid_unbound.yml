@@ -14,3 +14,4 @@
     - int.rht.gluster.org
     - int.aws.gluster.org
   - unbound_munin
+  - logrotate_compress 

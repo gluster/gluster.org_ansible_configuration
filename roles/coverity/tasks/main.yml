@@ -1,0 +1,41 @@
+---
+- file:
+    name: /opt/coverity_version
+    state: touch
+
+- shell: cat /opt/coverity_version
+  register: coverity_installed_version
+  changed_when: False
+
+- shell:
+    cmd: "curl -s https://scan.coverity.com/download/cxx/linux64 -d 'token={{ coverity_token }}&project=gluster/glusterfs' -o /opt/cov-analysis-linux64.tar.gz"
+    # we need a POST, get_url is not enough
+    warn: False
+#  no_log: True
+  when: coverity_installed_version.stdout != coverity_version
+
+- file:
+    name: "/opt/coverity-{{ coverity_version }}"
+    state: directory
+
+- unarchive:
+    remote_src: True
+    dest: "/opt/coverity-{{ coverity_version }}"
+    src: /opt/cov-analysis-linux64.tar.gz
+    extra_opts: "--strip-components=1"
+  when: coverity_installed_version.stdout != coverity_version
+
+- name: 
+  file: 
+    name: /opt/cov-analysis-linux64.tar.gz
+    state: absent
+ 
+- name: 
+  file:
+    dest: /opt/coverity
+    src: "/opt/coverity-{{ coverity_version }}"
+    state: link
+
+- copy:
+    dest: /opt/coverity_version
+    content: "{{ coverity_version }}"

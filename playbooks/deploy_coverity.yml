@@ -1,0 +1,5 @@
+---
+- hosts: coverity
+  roles:
+  - role: coverity
+    coverity_version: "2019.03"

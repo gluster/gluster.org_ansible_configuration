@@ -255,3 +255,8 @@ debian_builders
 
 [softserve]
 softserve.int.rht.gluster.org
+
+[coverity]
+builder1.int.rht.gluster.org
+builder2.int.rht.gluster.org
+

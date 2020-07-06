@@ -1,5 +1,5 @@
 ---
-- hosts: coverity
+- hosts: coverity_runners
   roles:
   - role: coverity
     coverity_version: "2019.03"

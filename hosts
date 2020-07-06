@@ -256,7 +256,7 @@ debian_builders
 [softserve]
 softserve.int.rht.gluster.org
 
-[coverity]
+[coverity_runners]
 builder1.int.rht.gluster.org
 builder2.int.rht.gluster.org
 

@@ -1,6 +1,6 @@
-- name: Check that we declare the right hostname
-  fail:
-    msg: "Wrong hostname"
+- name: Add the zone if missing
+  set_fact:
+    hostname: "{{ hostname }}.{{ zone }}"
   when: "not (hostname | regex_search(zone + '$'))"
 
 - name: Create builder instance

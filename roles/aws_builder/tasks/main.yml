@@ -1,11 +1,11 @@
-- name: Add the zone if missing
-  set_fact:
-    hostname: "{{ hostname }}.{{ zone }}"
-  when: "not (hostname | regex_search(zone + '$'))"
+- name: Check that we declare the right hostname
+  fail:
+    msg: "Wrong hostname"
+  when: "." in hostname
 
 - name: Create builder instance
   ec2_instance:
-    name: "{{ hostname }}"
+    name: "{{ fqdn }}"
     key_name: "ansible_bastion_keypair" 
 #    vpc_subnet_id: "{{ vpc }}"
     instance_type: "{{ vm_type }}"
@@ -25,7 +25,7 @@
 - name: Add the DNS
   route53:
     state: present
-    record: "{{ hostname }}"
+    record: "{{ fqdn }}"
     zone: "{{ zone }}"
     type: A
     ttl: 7200
@@ -45,7 +45,7 @@
       host: "{{ public_ip }}"
 
   - add_host:
-      hostname: "{{ hostname }}"
+      hostname: "{{ fqdn }}"
       ansible_host: "{{ public_ip }}"
       ansible_python_interpreter: "{{ python_bin | default(omit) }}"
       groups:
@@ -57,7 +57,7 @@
       name: "{{ item }}"
       state: absent
     loop:
-    - "{{ hostname }}"
+    - "{{ fqdn }}"
     - "{{ public_ip }}"
     delegate_to: localhost
     ignore_errors: True
@@ -67,20 +67,20 @@
     ignore_errors: True
 
   - setup:
-    delegate_to: "{{ hostname }}"
+    delegate_to: "{{ fqdn }}"
 
   - import_role:
       name: base
-    delegate_to: "{{ hostname }}"
+    delegate_to: "{{ fqdn }}"
 
   - import_role:
       name: jenkins_builder
-    delegate_to: "{{ hostname }}"
+    delegate_to: "{{ fqdn }}"
 
   - import_role:
       name: jenkins_builder_declaration
     vars:
       ip: "{{ public_ip }}"
       credentials: "{{ aws_credentials }}"
-      builder_hostname: "{{ hostname }}"
+      builder_hostname: "{{ fqdn }}"
     delegate_to: "{{ jenkins_master }}"

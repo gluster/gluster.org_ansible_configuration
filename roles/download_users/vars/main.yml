@@ -2,7 +2,7 @@ users:
   # date -d '+ 3 months' '+%s'
   sacharya:
     # 1592486966 = jeu. juin 18 15:29:46 CEST 2020
-    expires: 1592486966
+    expires: 1605969654
   kkeithle:
     expires: 1609591997
   spamecha:

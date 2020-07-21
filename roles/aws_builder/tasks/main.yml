@@ -1,7 +1,7 @@
 - name: Check that we declare the right hostname
   fail:
     msg: "Wrong hostname"
-  when: "." in hostname
+  when: hostname | regex_search('\.')
 
 - name: Create builder instance
   ec2_instance:

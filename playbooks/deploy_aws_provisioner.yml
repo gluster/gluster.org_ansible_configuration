@@ -15,7 +15,7 @@
 - hosts: aws_provisioner
   roles:
   - role: aws_builder_c8
-    hostname: builder-c8-1.int.aws.gluster.org
+    hostname: builder-c8-1
 
 - hosts: aws_provisioner
   roles:

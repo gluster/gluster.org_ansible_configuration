@@ -146,6 +146,13 @@
 # requested on https://bugzilla.redhat.com/show_bug.cgi?id=1609347
   - argp-standalone
 
+- name: Install python3 on recent FreeBSD
+  package:
+    state: present
+    name:
+    - python3
+  when: ansible_system == 'FreeBSD' and ansible_distribution_major_version|int > 12
+ 
 - name: Remove package that cause trouble with the regression suite
   package:
     state: absent

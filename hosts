@@ -64,11 +64,17 @@ cage_externally_facing
 [munin]
 munin.int.rht.gluster.org
 
-[freebsd:vars]
+[freebsd10:vars]
 ansible_python_interpreter=/usr/local/bin/python
 
-[freebsd]
+[freebsd10]
 freebsd10.3.int.rht.gluster.org
+
+[freebsd12:vars]
+ansible_python_interpreter=/usr/local/bin/python3.7
+
+[freebsd12]
+builder-fbsd12-1.int.aws.gluster.org
 
 [python3:vars]
 ansible_python_interpreter=/usr/bin/python3
@@ -104,6 +110,7 @@ builder[200:210].int.aws.gluster.org
 builder-c8-[1:2].int.aws.gluster.org
 builder-c7-1.int.aws.gluster.org
 builder-f32-[1:2].int.aws.gluster.org
+builder-fbsd12-1.int.aws.gluster.org
 
 [jenkins_builders_rht]
 freebsd10.3.int.rht.gluster.org

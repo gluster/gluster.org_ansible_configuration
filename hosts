@@ -40,6 +40,7 @@ supercolony.rht.gluster.org
 
 [jenkins_builders_lcov]
 # to be synced from jenkins
+builder-c7-2.int.aws.gluster.org
 builder-c7-1.int.aws.gluster.org
 
 builder18.int.rht.gluster.org
@@ -108,7 +109,7 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@logs.aws.gluster.
 [jenkins_builders_aws]
 builder[200:210].int.aws.gluster.org
 builder-c8-[1:2].int.aws.gluster.org
-builder-c7-1.int.aws.gluster.org
+builder-c7-[1:2].int.aws.gluster.org
 builder-f32-[1:2].int.aws.gluster.org
 builder-fbsd12-1.int.aws.gluster.org
 
@@ -215,7 +216,7 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gl
 builder[200:210].int.aws.gluster.org
 builder-c8-[1:2].int.aws.gluster.org
 builder-f32-[1:2].int.aws.gluster.org
-builder-c7-1.int.aws.gluster.org
+builder-c7-[1:2].int.aws.gluster.org
 
 [int_aws_gluster_org:vars]
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@logs.aws.gluster.org"'

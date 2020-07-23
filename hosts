@@ -217,6 +217,7 @@ builder[200:210].int.aws.gluster.org
 builder-c8-[1:2].int.aws.gluster.org
 builder-f32-[1:2].int.aws.gluster.org
 builder-c7-[1:2].int.aws.gluster.org
+builder-fbsd12-1.int.aws.gluster.org
 
 [int_aws_gluster_org:vars]
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@logs.aws.gluster.org"'

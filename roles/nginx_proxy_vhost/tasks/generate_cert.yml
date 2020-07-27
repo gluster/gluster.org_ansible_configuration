@@ -24,5 +24,5 @@
     provider: acme
     acme_challenge_path: "{{ acme_webroot }}"
     acme_accountkey_path: "{{ acme_key }}"
-    force: "{{ not validity_check.valid_at.ten_days }}"
   notify: Reload certificates everywhere
+  when: not validity_check.valid_at.ten_days

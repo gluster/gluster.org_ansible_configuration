@@ -1,5 +1,5 @@
 - name: Create the data file
-  command: fallocate -l 10G /var/data
+  command: fallocate -l 2G /var/data
   args:
     creates: /var/data
 

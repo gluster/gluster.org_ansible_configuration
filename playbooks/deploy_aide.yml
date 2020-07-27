@@ -1,8 +1,0 @@
----
-- hosts: download01.rax.gluster.org
-- hosts: aide.int.rht.gluster.org
-  roles:
-  - role: aide
-    remote_server: download01.rax.gluster.org
-    remote_dir: /var/www/html
-    local_disk: /dev/vdb

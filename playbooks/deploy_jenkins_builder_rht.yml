@@ -47,19 +47,7 @@
     number: 19
 
   - role: guest_jenkins_builder_int_rht
-    number: 45
-    distribution: Fedora
-    version: 28
-  - role: guest_jenkins_builder_int_rht
     number: 46
-    distribution: Fedora
-    version: 28
-  - role: guest_jenkins_builder_int_rht
-    number: 47
-    distribution: Fedora
-    version: 28
-  - role: guest_jenkins_builder_int_rht
-    number: 48
     distribution: Fedora
     version: 28
   - role: guest_jenkins_builder_int_rht
@@ -148,6 +136,9 @@
     number: 50
     distribution: Debian
     version: stable
+  - role: rht_builder_deb10
+    ip:
+    hostname: builder-deb10-1
 
 - hosts: jenkins_builders_rht
   tasks:

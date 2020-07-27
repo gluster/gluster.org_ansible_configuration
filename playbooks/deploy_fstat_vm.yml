@@ -3,20 +3,6 @@
   roles:
   - role: guest_virt_install
     vars:
-      name: fstat.rht.gluster.org
-    system_disk_size: 10
-    mem_size: 1024
-    distribution: Centos
-    version: 7
-    bridge: "{{ bridge_public }}"
-    network:
-      ip: 8.43.85.173/24
-      gateway: 8.43.85.254
-
-- hosts: haplometrosis.rht.gluster.org
-  roles:
-  - role: guest_virt_install
-    vars:
       name: fstat.int.rht.gluster.org
     system_disk_size: 10
     mem_size: 2048

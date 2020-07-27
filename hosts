@@ -65,6 +65,10 @@ cage_externally_facing
 [munin]
 munin.int.rht.gluster.org
 
+[freebsd:children]
+freebsd10
+freebsd12
+
 [freebsd10:vars]
 ansible_python_interpreter=/usr/local/bin/python
 

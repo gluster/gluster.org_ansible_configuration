@@ -38,22 +38,22 @@
   - role: nginx_proxy_vhost
     domain: fstat.gluster.org
     backends:
-    - fstat.rht.gluster.org
+    - fstat.int.rht.gluster.org
 
   - role: nginx_proxy_vhost
     domain: failurestat.gluster.org
     backends:
-    - fstat.rht.gluster.org
+    - fstat.int.rht.gluster.org
 
   - role: nginx_proxy_vhost
     domain: softserve.gluster.org
     backends:
     - softserve.int.rht.gluster.org
 
-  - role: nginx_proxy_vhost
-    domain: fstat.test.gluster.org
-    backends:
-    - fstat.int.rht.gluster.org
+#  - role: nginx_proxy_vhost
+#    domain: fstat.test.gluster.org
+#    backends:
+#    - fstat.int.rht.gluster.org
 
   - role: nginx_proxy_vhost
     domain: planet.gluster.org

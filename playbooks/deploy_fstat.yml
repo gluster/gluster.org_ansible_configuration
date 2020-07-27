@@ -1,5 +1,5 @@
 ---
-- hosts: fstat.rht.gluster.org
+- hosts: fstat.int.rht.gluster.org
   roles:
   - role: fstat
   - role: swap_file

@@ -108,6 +108,7 @@
 # needed for smoke testing on Fedora
 # https://bugzilla.redhat.com/show_bug.cgi?id=1623487
     - python3-pylint # not present on Centos 8, so Fedora only
+    - python3-flake8 #used for python linting
     - git-clang-format
     - libtsan
   when: ansible_system == 'Linux' and (ansible_distribution == 'Fedora')

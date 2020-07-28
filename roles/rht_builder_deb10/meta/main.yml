@@ -1,0 +1,8 @@
+---
+allow_duplicates: true
+dependencies:
+- role: rht_builder
+  distribution: Debian 
+  version: buster
+  labels:
+  - debian10

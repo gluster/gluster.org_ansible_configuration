@@ -1,0 +1,17 @@
+dependencies:
+- role: guest_virt_install
+  vars:
+    name: "{{ builder_hostname }}"
+  system_disk_size: 30
+  volgroup: "{{ vm_storage_vg }}"
+  mem_size: 2048
+  num_cpus: 2
+  bridge: "{{ bridge_common }}"
+  sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+  network:
+    ip: "{{ builder_ip }}/24"
+    gateway: 172.24.1.181
+    nameservers:
+    - 172.24.1.60
+    - 172.24.1.61
+  

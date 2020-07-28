@@ -1,0 +1,2 @@
+builder_ip: "172.24.1.{{ ip }}"
+builder_hostname: "{{ hostname }}.int.rht.gluster.org"

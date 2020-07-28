@@ -1,2 +1,3 @@
 builder_ip: "172.24.1.{{ ip }}"
 builder_hostname: "{{ hostname }}.int.rht.gluster.org"
+jenkins_master: "jenkins-el7.rht.gluster.org"

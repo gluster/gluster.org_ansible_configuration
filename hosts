@@ -23,7 +23,6 @@ virt_hosts
 firewall_rht
 
 [cage_externally_facing]
-fstat.rht.gluster.org
 softserve.rht.gluster.org
 postgresql.rht.gluster.org
 gerrit-stage.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8.43.85.174:2222 root@myrmicinae.rht.gluster.org"'
@@ -155,7 +154,7 @@ supercolony.rht.gluster.org
 postgresql.rht.gluster.org
 
 [fstat]
-fstat.rht.gluster.org
+fstat.int.rht.gluster.org
 
 [sentry]
 sentry.int.rht.gluster.org

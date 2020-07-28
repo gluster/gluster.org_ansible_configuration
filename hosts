@@ -102,6 +102,7 @@ builder-c8-2.int.aws.gluster.org
 
 [debian]
 builder50.int.rht.gluster.org
+builder-deb10-1.int.rht.gluster.org
 
 [jenkins_builders_rht:vars]
 location=rht
@@ -130,6 +131,7 @@ builder[40:49].int.rht.gluster.org
 
 [debian_builders]
 builder50.int.rht.gluster.org
+builder-deb10-1.int.rht.gluster.org
 
 [aws]
 logs.aws.gluster.org
@@ -196,6 +198,7 @@ openvpn0[1:2].int.rht.gluster.org
 signer.int.rht.gluster.org
 freebsd10.3.int.rht.gluster.org
 builder[0:50].int.rht.gluster.org
+builder-deb10-1.int.rht.gluster.org
 
 backups.int.rht.gluster.org
 aide.int.rht.gluster.org

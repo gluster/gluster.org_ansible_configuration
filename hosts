@@ -8,9 +8,6 @@ ant-queen.int.rht.gluster.org
 [backups]
 backups.int.rht.gluster.org
 
-[webbuilder]
-webbuilder.int.rht.gluster.org
-
 [virt_hosts]
 formicary.rht.gluster.org
 myrmicinae.rht.gluster.org
@@ -96,7 +93,6 @@ builder[30:39].int.rht.gluster.org
 chrono.rht.gluster.org
 openvpn01.int.rht.gluster.org
 openvpn02.int.rht.gluster.org
-webbuilder.int.rht.gluster.org
 builder-c8-1.int.aws.gluster.org
 builder-c8-2.int.aws.gluster.org
 
@@ -168,9 +164,6 @@ sentry.int.rht.gluster.org
 proxy01.int.rht.gluster.org
 proxy02.int.rht.gluster.org
 
-[signer]
-signer.int.rht.gluster.org
-
 [aide]
 aide.int.rht.gluster.org
 
@@ -195,7 +188,6 @@ openvpn_cage
 openvpn0[1:2].int.rht.gluster.org
 
 [int_rht_gluster_org]
-signer.int.rht.gluster.org
 freebsd10.3.int.rht.gluster.org
 builder[0:50].int.rht.gluster.org
 builder-deb10-1.int.rht.gluster.org
@@ -205,7 +197,6 @@ aide.int.rht.gluster.org
 ant-queen.int.rht.gluster.org
 bugziller.int.rht.gluster.org
 http.int.rht.gluster.org
-webbuilder.int.rht.gluster.org
 squid0[1:2].int.rht.gluster.org
 proxy0[1:2].int.rht.gluster.org
 nagios.int.rht.gluster.org
@@ -247,9 +238,7 @@ builder50.int.rht.gluster.org
 freebsd10.3.int.rht.gluster.org
 ant-queen.int.rht.gluster.org
 munin.int.rht.gluster.org
-webbuilder.int.rht.gluster.org
 http.int.rht.gluster.org
-signer.int.rht.gluster.org
 bugziller.int.rht.gluster.org
 
 # group for server whose monitoring (munin/nagios) come from inside

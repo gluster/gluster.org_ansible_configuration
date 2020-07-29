@@ -137,7 +137,7 @@
     distribution: Debian
     version: stable
   - role: rht_builder_deb10
-    ip: 91
+    lan_ip: 91
     hostname: builder-deb10-1
 
 - hosts: jenkins_builders_rht

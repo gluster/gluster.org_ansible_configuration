@@ -8,6 +8,7 @@
     region: "{{ aws_region }}"
     filters:
       "tag:Owner": "gluster-infra"
+      instance-state-name: "running"
   register: vms
 
 - name: Add the VMs to the zone

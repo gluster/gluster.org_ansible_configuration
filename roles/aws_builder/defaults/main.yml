@@ -1,2 +1,2 @@
 labels: []
-user_data: "{{ lookup('file', 'cloud-config.yml') + '\nfqdn: \"' + hostname + '\"' }}"
+user_data: "{{ lookup('file', 'cloud-config.yml') + '\nfqdn: \"' + fqdn + '\"' }}"

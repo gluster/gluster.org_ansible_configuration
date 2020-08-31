@@ -102,10 +102,6 @@
     number: 44
     distribution: Fedora
     version: 30
-  - role: guest_jenkins_builder_int_rht
-    number: 50
-    distribution: Debian
-    version: stable
   - role: rht_builder_deb10
     lan_ip: 91
     hostname: builder-deb10-1

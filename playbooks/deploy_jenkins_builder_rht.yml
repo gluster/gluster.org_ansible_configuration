@@ -25,14 +25,7 @@
     distribution: Fedora
     version: 30
 
-  - role: rht_builder_f32
-    lan_ip: 92
-    hostname: builder-f32-1
-  - role: rht_builder_f32
-    lan_ip: 93
-    hostname: builder-f32-2
-
-
+ 
 - hosts: pleometrosis.rht.gluster.org
   vars: 
     # default value for builders
@@ -113,6 +106,13 @@
   - role: rht_builder_deb10
     lan_ip: 91
     hostname: builder-deb10-1
+  - role: rht_builder_f32
+    lan_ip: 92
+    hostname: builder-f32-1
+  - role: rht_builder_f32
+    lan_ip: 93
+    hostname: builder-f32-2
+
 
 - hosts: jenkins_builders_rht
   tasks:

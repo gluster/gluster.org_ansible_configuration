@@ -15,31 +15,11 @@
     number: 3
   - role: guest_jenkins_builder_int_rht
     number: 4
-  - role: guest_jenkins_builder_int_rht
-    number: 10
-  - role: guest_jenkins_builder_int_rht
-    number: 11
-  - role: guest_jenkins_builder_int_rht
-    number: 12
-  - role: guest_jenkins_builder_int_rht
-    number: 13
-  - role: guest_jenkins_builder_int_rht
-    number: 14
-  - role: guest_jenkins_builder_int_rht
-    number: 15
-  - role: guest_jenkins_builder_int_rht
-    number: 16
-  - role: guest_jenkins_builder_int_rht
-    number: 17
-  - role: guest_jenkins_builder_int_rht
-    number: 18
-  - role: guest_jenkins_builder_int_rht
-    number: 19
 
   - role: guest_jenkins_builder_int_rht
     number: 46
     distribution: Fedora
-    version: 28
+    version: 30
   - role: guest_jenkins_builder_int_rht
     number: 49
     distribution: Fedora

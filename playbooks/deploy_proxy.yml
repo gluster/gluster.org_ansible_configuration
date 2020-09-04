@@ -84,6 +84,12 @@
     domain: sentry.gluster.org
     backends:
     - sentry.int.rht.gluster.org:9000
+
+  - role: nginx_proxy_vhost
+    domain: lists.gluster.org
+    backends:
+    - supercolony.rht.gluster.org
+
 #
 # removed, since that part no longer work and I didn't
 # leave enough comment to understand how I fixed it

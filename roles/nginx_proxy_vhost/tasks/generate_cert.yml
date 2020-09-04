@@ -9,12 +9,18 @@
     privatekey_path: "{{ privatekey_path }}"
     commonName: "{{ domain }}"
 
+- name: Verify if the file exist
+  stat:
+    path:  "{{ certificate_path }}"
+  register: cert_check
+ 
 - name: Check certificate validity for {{ domain }}
   openssl_certificate_info:
     path: "{{ certificate_path }}"
     valid_at: 
       ten_days: "+10d"
   register: validity_check
+  when: cert_check.stat.exists 
 
 - name: Create or renew certificate for {{ domain }}
   openssl_certificate:
@@ -25,4 +31,4 @@
     acme_challenge_path: "{{ acme_webroot }}"
     acme_accountkey_path: "{{ acme_key }}"
   notify: Reload certificates everywhere
-  when: not validity_check.valid_at.ten_days
+  when: not cert_check.stat.exists or not validity_check.valid_at.ten_days

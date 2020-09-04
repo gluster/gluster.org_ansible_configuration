@@ -1,8 +1,8 @@
 ---
 dependencies:
 - role: httpd
-  force_tls: True
-  use_tls: True
+#  force_tls: True
+#  use_tls: True
   redirects:
   - src: '^/$'
     target: '/mailman/listinfo'

@@ -1,0 +1,11 @@
+- copy:
+    src: zone_updater.py
+    dest: /usr/local/bin/zone_updater.py
+    mode: 0755
+
+- cron:
+    name: "update route53 zone"
+    minute: "*/5"
+    job: "/usr/local/bin/zone_updater.py"
+    user: _ansible_admin
+ 

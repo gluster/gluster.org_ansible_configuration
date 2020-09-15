@@ -7,7 +7,7 @@
   - role: aws_ssh_keys
   - role: aws_zones
   - role: aws_logs
-
+  - role: aws_zone_updater
 
 # keep that in separate play
 # there is some variable leaking issues that do break

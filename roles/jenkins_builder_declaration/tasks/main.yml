@@ -16,14 +16,14 @@
 - name: Get the ssh keys
   ssh_keyscan:
     name: "{{ builder_hostname }}"
-    ip: "{{ ip }}"
+    ip: "{{ host }}"
   register: r
 
 
 - name: Add the key to jenkins know hosts
   known_hosts:
     name: "{{ builder_hostname }}"
-    key: "{{ builder_hostname }},{{ ip }} {{ item }} {{ r['keys'][item] }}  # automatically added by Ansible"
+    key: "{{ builder_hostname }},{{ host }} {{ item }} {{ r['keys'][item] }}  # automatically added by Ansible"
     path: "~jenkins/.ssh/known_hosts"
     state: present
   loop: "{{ r['keys'].keys() }}"

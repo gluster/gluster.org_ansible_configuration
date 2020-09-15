@@ -7,7 +7,7 @@
   <mode>EXCLUSIVE</mode>
   <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
   <launcher class="hudson.plugins.sshslaves.SSHLauncher">
-    <host>{{ ip }}</host>
+    <host>{{ host }}</host>
     <port>22</port>
     <credentialsId>{{ credentials }}</credentialsId>
     <launchTimeoutSeconds>210</launchTimeoutSeconds>

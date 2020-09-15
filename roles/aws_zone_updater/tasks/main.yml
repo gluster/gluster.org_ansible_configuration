@@ -7,5 +7,5 @@
     name: "update route53 zone"
     minute: "*/5"
     job: "/usr/local/bin/zone_updater.py"
-    user: _ansible_admin
+    user: ansible_admin
  

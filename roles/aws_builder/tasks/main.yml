@@ -18,7 +18,7 @@
     volumes:
     - device_name: /dev/sda1
       ebs:
-        volume_size: 16
+        volume_size: 24
         delete_on_termination: true
   register: instance
 

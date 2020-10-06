@@ -3,6 +3,6 @@ allow_duplicates: true
 dependencies:
 - role: aws_builder
   # centos 8
-  ami: "ami-09ce9977c3c8200c7" 
+  ami: "ami-000e7ce4dd68e7a11" 
   labels:
   - centos8

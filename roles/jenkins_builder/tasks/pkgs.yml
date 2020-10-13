@@ -18,17 +18,10 @@
     - libtool
     - bison
     
-- name: Enable SCL
-  package:
-    state: present
-    name: centos-release-scl
-  when: '"jenkins_builders_rht" in group_names and ansible_distribution == "CentOS" and ansible_distribution_major_version == "7"'
-
 - name: Add packages specific to rht builders
   package:
     state: present
     name:
-    - python27
     - python-libcloud
     - python-docopt
   when: '"jenkins_builders_rht" in group_names and ansible_distribution == "CentOS" and ansible_distribution_major_version == "7"'

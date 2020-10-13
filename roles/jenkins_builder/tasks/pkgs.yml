@@ -85,6 +85,9 @@
 - include: pkgs_job_lcov.yml
   when: '"jenkins_builders_lcov" in group_names'
 
+- include: pkgs_job_shellcheck.yml
+  when: '"jenkins_builders_shellcheck" in group_names'
+
 - name: Install jenkins builder Fedora and Centos 8 packages
   package:
     state: present

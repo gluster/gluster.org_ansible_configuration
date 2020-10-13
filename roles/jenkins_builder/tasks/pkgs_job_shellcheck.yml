@@ -3,5 +3,5 @@
   package:
     state: present
     name:
-    - shellcheck
+    - ShellCheck
 

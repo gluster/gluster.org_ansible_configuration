@@ -31,6 +31,14 @@
     line: "supersede domain-name-servers 8.8.8.8;"
   when: dhclient.stat.exists 
 
+# since dhcp setting are applied only on next reboot 
+- name: Make sure 8.8.8.8 is in resolve.conf
+  lineinfile:
+    state: present
+    dest: /etc/resolv.conf
+    line: "nameserver 8.8.8.8"
+    regexp: "^nameserver.*"
+
 - name: Make sure that search do not come to interfer
   copy:
     dest: /etc/dhcp/dhclient.d/comment_search.sh

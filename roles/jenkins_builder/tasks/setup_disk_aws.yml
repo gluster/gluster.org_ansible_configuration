@@ -13,4 +13,4 @@
     path: /d
     src: /var/data
     fstype: xfs
-    state: present
+    state: mounted

@@ -90,7 +90,7 @@
     backends:
     - supercolony.rht.gluster.org
 
-#
-# removed, since that part no longer work and I didn't
-# leave enough comment to understand how I fixed it
-#  - role: proxy_service_ordering
+  - role: nginx_proxy_vhost
+    domain: hooks.gluster.org
+    backends:
+    - ghwebhooks.int.rht.gluster.org

@@ -1,6 +1,12 @@
 ---
 - hosts: http.int.rht.gluster.org
   vars:
+    website_domain: hooks.gluster.org
+  roles:
+  - role: ghwebhooks
+
+- hosts: http.int.rht.gluster.org
+  vars:
     website_domain: planet.gluster.org
   roles:
   - role: scp_http_int
@@ -43,3 +49,5 @@
     - src: '^/$'
       target: '/gluster-bugs.html'
       match: True
+
+

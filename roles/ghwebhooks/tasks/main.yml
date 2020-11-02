@@ -1,0 +1,26 @@
+---
+- package:
+    name: python36-flask
+    state: installed
+
+- name: Setup the selinux boolean for proxying
+  seboolean:
+    name: httpd_can_network_connect
+    state: yes
+    persistent: yes
+
+- copy: 
+    dest: /srv/ghwebhooks.py
+    src: ghwebhooks.py
+  notify: Restart ghwebhooks
+
+- template:
+    dest: /etc/systemd/system/ghwebhooks.service
+    src: ghwebhooks.service
+  notify: Restart ghwebhooks
+
+- systemd:
+    state: started
+    daemon_reload: True
+    name: ghwebhooks
+    enabled: True

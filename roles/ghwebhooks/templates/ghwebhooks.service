@@ -1,0 +1,18 @@
+[Unit]
+Description=Github webhooks server
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/flask-3 run
+Environment=FLASK_APP=ghwebhooks.py
+{% if secret is defined %}
+Environment=SECRET={{ secret }}
+{% endif %}
+WorkingDirectory=/srv/
+User=nobody
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
+

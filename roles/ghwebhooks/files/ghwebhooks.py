@@ -34,7 +34,7 @@ def respond():
     if j['action'] != 'created':
         return Response(status=200)
 
-    if j['repository'] != "gluster/project-infrastructure":
+    if j['repository']['full_name'] != "gluster/project-infrastructure":
         return Response(status=200)
 
     print(j)

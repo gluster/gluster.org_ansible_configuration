@@ -9,6 +9,7 @@
   - deepshikha.pub
   - ant-queen-2019.pub
   - deepshikha_backup.pub 
+  - rakshitha.pub
  
 - name: Remove old keys
   authorized_key:

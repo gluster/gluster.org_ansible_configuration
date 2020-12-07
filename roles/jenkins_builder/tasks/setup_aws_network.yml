@@ -59,7 +59,7 @@
       state: absent
 
   - name: Disable dhcp for C8
-    shell: nmcli con modify eth0 ipv4.ignore-auto-dns true
+    shell: "nmcli con modify 'System eth0' ipv4.ignore-auto-dns true"
 
 - name: Make sure that search do not come to interfer
   copy:

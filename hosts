@@ -87,8 +87,15 @@ builder[30:39].int.rht.gluster.org
 chrono.rht.gluster.org
 openvpn01.int.rht.gluster.org
 openvpn02.int.rht.gluster.org
+
+[python3_c8_aws]
 builder-c8-1.int.aws.gluster.org
 builder-c8-2.int.aws.gluster.org
+
+[python3_c8_aws:vars]
+ansible_python_interpreter=/usr/libexec/platform-python3.6
+
+
 
 [debian]
 builder50.int.rht.gluster.org

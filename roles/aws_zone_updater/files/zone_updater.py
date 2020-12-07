@@ -13,10 +13,11 @@ response = ec2.describe_instances()
 for r in response['Reservations']:
     for i in r['Instances']:
         name = i['Tags'][0]['Value']
-        ip = i['PublicIpAddress']
-        if name.endswith('int.aws.gluster.org'):
-            name = name.split('.')[0] + '.aws.gluster.org'
-            servers[name] = ip
+        if 'PublicIpAddress' in i:
+            ip = i['PublicIpAddress']
+            if name.endswith('int.aws.gluster.org'):
+                name = name.split('.')[0] + '.aws.gluster.org'
+                servers[name] = ip
 
 if debug:
     print(servers)

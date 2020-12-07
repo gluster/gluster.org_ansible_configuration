@@ -40,8 +40,7 @@
     regexp: "^nameserver.*"
 
 - name: Disable DNS for DHCP on centos 8
-  when: ansible_os_family == 'RedHat' and ansible_distribution_major_version|int == 8 
-  when: 
+  when: ansible_distribution == 'CentOS' and ansible_distribution_major_version == '8'
   block:
   - name: Add 8.8.8.8 to NetworkManager on C8
     nmcli:

@@ -25,7 +25,7 @@ firewall_rht
 [cage_externally_facing]
 postgresql.rht.gluster.org
 gerrit-stage.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8.43.85.174:2222 root@myrmicinae.rht.gluster.org"'
-jenkins-stage.rht.gluster.org
+#jenkins-stage.rht.gluster.org
 jenkins-el7.rht.gluster.org
 
 #build.gluster.org

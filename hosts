@@ -39,15 +39,8 @@ builder-c7-3.int.aws.gluster.org
 builder-c7-2.int.aws.gluster.org
 builder-c7-1.int.aws.gluster.org
 
-builder200.int.aws.gluster.org
-builder201.int.aws.gluster.org
-builder202.int.aws.gluster.org
-builder203.int.aws.gluster.org
-builder204.int.aws.gluster.org
-builder206.int.aws.gluster.org
-builder208.int.aws.gluster.org
-builder210.int.aws.gluster.org
-
+[jenkins_builders_lcov:children]
+old_aws_builder
 
 [jenkins_builders_shellcheck:children]
 jenkins_builders_aws_f32

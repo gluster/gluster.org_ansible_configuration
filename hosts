@@ -110,7 +110,6 @@ location=aws
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@logs.aws.gluster.org"'
 
 [jenkins_builders_aws]
-builder[200:210].int.aws.gluster.org
 builder-c8-[1:2].int.aws.gluster.org
 builder-c7-[1:3].int.aws.gluster.org
 builder-fbsd12-1.int.aws.gluster.org
@@ -118,7 +117,7 @@ builder-fbsd12-1.int.aws.gluster.org
 [jenkins_builders_aws:children]
 jenkins_builders_aws_f33
 jenkins_builders_aws_f32
-
+old_aws_builder
 
 [jenkins_builders_aws_f32]
 builder-f32-[1:2].int.aws.gluster.org
@@ -223,7 +222,6 @@ openvpn0[1:2].int.rht.gluster.org
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gluster.org"'
 
 [int_aws_gluster_org]
-builder[200:210].int.aws.gluster.org
 builder-c8-[1:2].int.aws.gluster.org
 builder-f33-1.int.aws.gluster.org
 builder-f32-[1:2].int.aws.gluster.org
@@ -232,6 +230,9 @@ builder-fbsd12-1.int.aws.gluster.org
 
 [int_aws_gluster_org:vars]
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@logs.aws.gluster.org"'
+
+[int_aws_gluster_org:children]
+old_aws_builder
 
 # group for servers using the proxy as a test
 [set_proxy]
@@ -277,3 +278,16 @@ softserve.int.rht.gluster.org
 builder1.int.rht.gluster.org
 builder2.int.rht.gluster.org
 
+# to be removed later
+[old_aws_builder]
+builder200.int.aws.gluster.org
+builder201.int.aws.gluster.org
+builder202.int.aws.gluster.org
+builder203.int.aws.gluster.org
+builder204.int.aws.gluster.org
+builder205.int.aws.gluster.org
+builder206.int.aws.gluster.org
+builder207.int.aws.gluster.org
+builder208.int.aws.gluster.org
+builder209.int.aws.gluster.org
+builder210.int.aws.gluster.org

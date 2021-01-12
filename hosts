@@ -151,7 +151,7 @@ gerrit-stage.rht.gluster.org
 
 [jenkins_master]
 #build.gluster.org
-jenkins-stage.rht.gluster.org
+#jenkins-stage.rht.gluster.org
 jenkins-el7.rht.gluster.org
 
 [download]

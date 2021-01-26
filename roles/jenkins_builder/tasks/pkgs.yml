@@ -73,6 +73,7 @@
     - gdb
     # required for nfs testing, for 'host'
     - bind-utils 
+    - libtirpc-devel # needed to build ipv6 support
   when: ansible_system == 'Linux'
 # libuuid-devel seems to be missing ?
 

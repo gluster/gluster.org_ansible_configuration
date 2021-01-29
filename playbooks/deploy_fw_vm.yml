@@ -19,12 +19,4 @@
       ip: 8.43.85.180/24
       gateway: 8.43.85.254
 
-# test firewall, no HA
-- hosts: myrmicinae.rht.gluster.org
-  roles:
-  - role: guest_firewall_rht
-    vars:
-      name: chrono.rht.gluster.org
-    network:
-      ip: 8.43.85.172/24
-      gateway: 8.43.85.254
+

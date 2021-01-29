@@ -5,7 +5,6 @@
     vars:
       name: masa.rht.gluster.org
     network: 
-      bootproto: static
       ip: 8.43.85.179/24
       gateway: 8.43.85.254
 
@@ -15,7 +14,6 @@
     vars:
       name: mune.rht.gluster.org
     network: 
-      bootproto: static
       ip: 8.43.85.180/24
       gateway: 8.43.85.254
 

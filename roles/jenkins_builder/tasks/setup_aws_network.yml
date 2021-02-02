@@ -11,7 +11,7 @@
   lineinfile:
     state: present
     dest: /etc/hosts
-    line: "{{ansible_default_ipv4['address'] }} {{ ansible_fqdn }}"
+    line: "{{ansible_default_ipv4['address'] }} {{ inventory_hostname }}"
     insertbefore: BOF
 
 - name: Remove the IPV6 entry

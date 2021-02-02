@@ -80,7 +80,9 @@
 - name: Remove packages breaking testsuite
   package:
     state: absent
+    name:
     - libtirpc-devel # needed to build ipv6 support
+  when: ansible_system == 'Linux'
 
 - include: pkgs_job_cppcheck.yml
   when: ansible_system == 'Linux'

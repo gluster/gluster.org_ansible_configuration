@@ -39,6 +39,12 @@
 
 - hosts: aws_provisioner
   roles:
+  - role: aws_builder_c7
+    hostname: builder-c7-4
+
+
+- hosts: aws_provisioner
+  roles:
   - role: aws_builder_f32
     hostname: builder-f32-1
 

@@ -1,7 +1,6 @@
 ---
-- src: https://github.com/mscherer/ansible-role-ansible_bastion
+- src: https://github.com/OSAS/ansible-role-ansible_bastion
   name: bastion
-  version: remove_ansible.cfg
 - src: git+https://gitlab.com/OSAS/ansible-role-tor.git
   name: tor
 - src: git+https://gitlab.com/OSAS/ansible-role-shell_timeout.git

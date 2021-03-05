@@ -15,13 +15,9 @@
     number: 4
 
   - role: guest_jenkins_builder_int_rht
-    number: 46
-    distribution: Fedora
-    version: 30
-  - role: guest_jenkins_builder_int_rht
     number: 49
     distribution: Fedora
-    version: 30
+    version: 32
 
  
 - hosts: pleometrosis.rht.gluster.org

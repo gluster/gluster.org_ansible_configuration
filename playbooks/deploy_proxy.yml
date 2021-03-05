@@ -87,6 +87,10 @@
 
   - role: nginx_proxy_vhost
     domain: lists.gluster.org
+    custom_config: | 
+      if ($http_user_agent ~* "axios/") {
+        return 500;
+      }
     backends:
     - supercolony.rht.gluster.org
 

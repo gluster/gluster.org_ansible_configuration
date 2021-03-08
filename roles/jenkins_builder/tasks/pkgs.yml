@@ -103,6 +103,7 @@
     - libtirpc-devel
     - libuuid-devel
     - rpcgen
+    - liburing-devel
   when: ansible_system == 'Linux' and (ansible_distribution == 'Fedora' or ansible_distribution == 'CentOS' and ansible_distribution_major_version == "8")
 
 - name: Install jenkins builder Fedora packages

@@ -77,6 +77,7 @@ proxy01.int.rht.gluster.org
 proxy02.int.rht.gluster.org
 squid01.int.rht.gluster.org
 squid02.int.rht.gluster.org
+builder49.int.rht.gluster.org
 builder[40:44].int.rht.gluster.org
 builder[30:39].int.rht.gluster.org
 openvpn01.int.rht.gluster.org
@@ -121,6 +122,7 @@ builder-f33-1.int.aws.gluster.org
 [jenkins_builders_rht]
 builder[0:44].int.rht.gluster.org
 builder-f32-[1:2].int.rht.gluster.org
+builder49.int.rht.gluster.org
 
 [jenkins_builders:children]
 jenkins_builders_rht
@@ -191,6 +193,7 @@ openvpn_cage
 openvpn0[1:2].int.rht.gluster.org
 
 [int_rht_gluster_org]
+builder49.int.rht.gluster.org
 builder[0:44].int.rht.gluster.org
 builder-deb10-1.int.rht.gluster.org
 

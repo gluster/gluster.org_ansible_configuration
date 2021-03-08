@@ -29,8 +29,9 @@
   name: unattended_updates
 - src: git+https://gitlab.com/osas/ansible-role-postgrey.git
   name: postgrey
-- src: git+https://gitlab.com/osas/ansible-role-guest_virt_install.git
+- src: git+https://gitlab.com/misc/ansible-role-guest_virt_install.git
   name: guest_virt_install
+  version: fix_el7
 - src: git+https://gitlab.com/osas/ansible-role-xinetd.git
   name: xinetd
 - src: git+https://gitlab.com/misc/ansible-role-postgresql.git

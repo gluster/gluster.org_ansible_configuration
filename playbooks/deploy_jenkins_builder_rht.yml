@@ -41,12 +41,6 @@
   - role: guest_jenkins_builder_int_rht
     number: 26
   - role: guest_jenkins_builder_int_rht
-    number: 27
-  - role: guest_jenkins_builder_int_rht
-    number: 28
-  - role: guest_jenkins_builder_int_rht
-    number: 29
-  - role: guest_jenkins_builder_int_rht
     number: 30
     version: 8
   - role: guest_jenkins_builder_int_rht
@@ -100,9 +94,15 @@
   - role: rht_builder_deb10
     lan_ip: 91
     hostname: builder-deb10-1
+
+- hosts: pleometrosis.rht.gluster.org
+  roles:
   - role: rht_builder_f32
     lan_ip: 92
     hostname: builder-f32-1
+
+- hosts: pleometrosis.rht.gluster.org
+  roles:
   - role: rht_builder_f32
     lan_ip: 93
     hostname: builder-f32-2

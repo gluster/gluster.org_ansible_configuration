@@ -1,5 +1,6 @@
 ---
 dependencies:
 - role: sasldb
+  db_group: postfix
   user_create: 
   - "{{ github_smtp_user }}"

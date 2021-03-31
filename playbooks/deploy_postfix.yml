@@ -43,3 +43,5 @@
     - review.gluster.org
     - build.gluster.org
     mail_domain: gluster.org
+    blocked_ip_range:
+    - 188.72.187.0/24

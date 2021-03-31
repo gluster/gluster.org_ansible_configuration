@@ -41,6 +41,12 @@
   notify: postalias virtual
   when: devnull_domains is defined
 
+- name: Set virtual aliases
+  template:
+     dest: /etc/postfix/client_a_access
+     src: client_a_access
+  notify: postmap client_a_access
+
 - name: install SASL configuration
   copy:
     src: smtpd.conf

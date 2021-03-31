@@ -35,6 +35,10 @@ smtpd_sasl_type = cyrus
 smtpd_sasl_application_name = smtpd
 smtpd_sasl_local_domain = $mydomain
 
+# added for march 2021 spam wave
+smtpd_client_restrictions = warn_if_reject
+  check_client_a_access hash:/etc/postfix/client_a_access
+  permit
 
 smtpd_recipient_restrictions = permit_mynetworks
   reject_unauth_destination

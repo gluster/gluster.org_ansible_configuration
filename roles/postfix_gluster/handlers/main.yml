@@ -18,3 +18,8 @@
   command: postmap virtual.aliases
   args:
     chdir: /etc/postfix
+
+- name: postmap client_a_access
+  command: postmap client_a_access
+  args:
+    chdir: /etc/postfix

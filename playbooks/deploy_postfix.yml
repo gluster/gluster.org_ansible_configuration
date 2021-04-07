@@ -36,6 +36,8 @@
   - role: postfix_gluster
     blacklists:
     - b.barracudacentral.org
+    - dnsbl-3.uceprotect.net
+    - dnsbl-2.uceprotect.net
     # see private repo for the vars, on hostvars/supercolony
     # since emails are private
     email_aliases: "{{ mail_aliases }}"

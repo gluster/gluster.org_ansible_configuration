@@ -13,3 +13,14 @@
       ip: 8.43.85.172/24
       gateway: 8.43.85.254
 
+- hosts: lists-el7.rht.gluster.org
+  tasks:
+  - filesystem:
+      dev: /dev/vdb
+      fstype: xfs
+  - mount:
+      path: /var/lib/mailman
+      src: /dev/vdb
+      fstype: xfs
+      state: mounted
+

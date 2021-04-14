@@ -35,62 +35,16 @@
   - role: guest_jenkins_builder_int_rht
     number: 23
   - role: guest_jenkins_builder_int_rht
-    number: 24
-  - role: guest_jenkins_builder_int_rht
-    number: 25
-  - role: guest_jenkins_builder_int_rht
-    number: 26
-  - role: guest_jenkins_builder_int_rht
     number: 30
     version: 8
   - role: guest_jenkins_builder_int_rht
     number: 31
-    version: 8
-  - role: guest_jenkins_builder_int_rht
-    number: 32
-    version: 8
-  - role: guest_jenkins_builder_int_rht
-    number: 33
-    version: 8
-  - role: guest_jenkins_builder_int_rht
-    number: 34
-    version: 8
-  - role: guest_jenkins_builder_int_rht
-    number: 35
-    version: 8
-  - role: guest_jenkins_builder_int_rht
-    number: 36
-    version: 8
-  - role: guest_jenkins_builder_int_rht
-    number: 37
-    version: 8
-  - role: guest_jenkins_builder_int_rht
-    number: 38
-    version: 8
-  - role: guest_jenkins_builder_int_rht
-    number: 39
     version: 8
 
   - role: guest_jenkins_builder_int_rht
     number: 40
     distribution: Fedora
     version: 28
-  - role: guest_jenkins_builder_int_rht
-    number: 41
-    distribution: Fedora
-    version: 28
-  - role: guest_jenkins_builder_int_rht
-    number: 42
-    distribution: Fedora
-    version: 28
-  - role: guest_jenkins_builder_int_rht
-    number: 43
-    distribution: Fedora
-    version: 28
-  - role: guest_jenkins_builder_int_rht
-    number: 44
-    distribution: Fedora
-    version: 30
   - role: rht_builder_deb10
     lan_ip: 91
     hostname: builder-deb10-1

@@ -4,7 +4,7 @@
   # then we use md5sum, which reduce it to the equivalent of a 128 bits password, 
   # ie 16 chars for a smart bruteforce
   # or a 36 chars password for no smart brute force
-  command: /usr/lib/mailman/bin/newlist {{ item }} list-admin@{{ mail_domain }} {{ ansible_date_time.iso8601_micro | shuffle | join |hash('md5') }}
+  command: /usr/lib/mailman/bin/newlist -q {{ item }} list-admin@{{ mail_domain }} {{ ansible_date_time.iso8601_micro | shuffle | join |hash('md5') }}
   args:
     creates: /var/lib/mailman/lists/{{ item }}/config.pck
   with_items: "{{ mailing_lists }}"

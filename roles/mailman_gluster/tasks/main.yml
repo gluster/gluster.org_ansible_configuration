@@ -10,13 +10,13 @@
     src: mm_cfg.py
   notify: restart mailman
 
+- include: create_lists.yml
+
 - name: Ensure the mailman service is started
   service:
     name: mailman
     state: started
     enabled: yes
-
-- include: create_lists.yml
 
 - include: ban_command.yml
 

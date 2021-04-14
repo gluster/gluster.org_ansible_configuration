@@ -1,5 +1,5 @@
 ---
-- hosts: supercolony.rht.gluster.org
+- hosts: lists
   vars:
     # the variable is used for postfix_gluster and mailman
     mailing_lists:

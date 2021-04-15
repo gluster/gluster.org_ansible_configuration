@@ -93,9 +93,14 @@
       }
     backends:
     - lists-el7.rht.gluster.org
-    #- supercolony.rht.gluster.org
 
   - role: nginx_proxy_vhost
     domain: hooks.gluster.org
     backends:
     - ghwebhooks.int.rht.gluster.org
+
+  - role: nginx_proxy_vhost
+    domain: community.gluster.org
+    backends:
+    - redirector.int.rht.gluster.org
+

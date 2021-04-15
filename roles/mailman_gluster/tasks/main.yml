@@ -34,3 +34,4 @@
     src: /etc/httpd/conf.d/mailman.conf
     dest: "{{ _vhost_confdir }}/mailman.conf"
     state: link
+  notify: verify config and restart httpd

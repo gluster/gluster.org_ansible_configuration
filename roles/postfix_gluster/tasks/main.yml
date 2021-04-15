@@ -52,3 +52,11 @@
     src: smtpd.conf
     dest: /etc/sasl2/smtpd.conf
 
+- name: Open firewall for Postfix
+  firewalld:
+    service: smtp
+    permanent: True
+    state: enabled
+    immediate: yes
+
+

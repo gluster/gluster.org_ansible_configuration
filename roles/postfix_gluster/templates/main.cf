@@ -10,7 +10,7 @@ append_dot_mydomain = no
 #delay_warning_time = 4h
 
 readme_directory = /usr/share/doc/postfix-2.6.6/README_FILES
-mynetworks = 127.0.0.0/8
+mynetworks = 127.0.0.0/8 [::1]/128
 myorigin = {{mail_domain }} 
 mydestination = {{ ansible_fqdn }}, {{ ansible_domain }}, localhost, {{ mail_domain }}
 #relayhost = 
@@ -18,7 +18,7 @@ mailbox_command = procmail -a "$EXTENSION"
 mailbox_size_limit = 0
 recipient_delimiter = +
 inet_interfaces = all
-inet_protocols = ipv4
+#inet_protocols = ipv4
 myhostname = {{ ansible_fqdn }}
 
 alias_maps = hash:/etc/postfix/external.aliases

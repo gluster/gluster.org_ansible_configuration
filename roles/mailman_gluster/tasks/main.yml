@@ -28,3 +28,9 @@
 
 - include: dnsbl_blacklist.yml
   when: dnsbl_mailman|bool
+
+- name: Add the config for mailman on the vhost
+  file:
+    src: /etc/httpd/conf.d/mailman.conf
+    dest: "{{ _vhost_confdir }}/mailman.conf"
+    state: link

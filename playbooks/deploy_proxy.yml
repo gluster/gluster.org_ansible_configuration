@@ -104,3 +104,8 @@
     backends:
     - redirector.int.rht.gluster.org
 
+  - role: nginx_proxy_vhost
+    domain: gluster.org
+    backends:
+    - redirector.int.rht.gluster.org
+

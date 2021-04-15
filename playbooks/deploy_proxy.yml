@@ -92,7 +92,8 @@
         return 500;
       }
     backends:
-    - supercolony.rht.gluster.org
+    - lists-el7.rht.gluster.org
+    #- supercolony.rht.gluster.org
 
   - role: nginx_proxy_vhost
     domain: hooks.gluster.org

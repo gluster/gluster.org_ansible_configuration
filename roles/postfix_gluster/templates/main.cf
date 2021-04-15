@@ -28,6 +28,15 @@ alias_maps = hash:/etc/postfix/external.aliases
 
 smtpd_helo_required = yes
 
+# http://steam.io/2013/04/01/postfix-rate-limiting/
+# reduce rate for new server
+# while the initial number are just guess, it should be 
+# good enough for a start
+# remove that around 2022
+smtp_destination_concurrency_limit = 2
+smtp_destination_rate_delay = 1s
+smtp_extra_recipient_limit = 10
+
 # Auth settings
 smtpd_sasl_auth_enable = yes
 smtpd_sasl_security_options = noanonymous

@@ -153,7 +153,7 @@ download.rht.gluster.org
 supercolony.rht.gluster.org
 
 [lists]
-supercolony.rht.gluster.org
+#supercolony.rht.gluster.org
 lists-el7.rht.gluster.org
 
 [postgresql]

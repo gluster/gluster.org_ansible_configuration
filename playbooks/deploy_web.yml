@@ -4,12 +4,12 @@
     website_domain: supercolony.gluster.org
     redirect:    https://www.gluster.org/
 
-  - role: httpd
-    website_domain: gluster.org
-    server_aliases:
-    - community.gluster.org
+#  - role: httpd
+#    website_domain: gluster.org
+#    server_aliases:
+#    - community.gluster.org
 #    - www.gluster.org
-    redirect:    https://www.gluster.org/
+#    redirect:    https://www.gluster.org/
 # disabled while the server is on EL6 (and no certbot)
 #    use_letsencrypt: True
 

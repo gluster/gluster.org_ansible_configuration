@@ -41,10 +41,6 @@
     number: 31
     version: 8
 
-  - role: guest_jenkins_builder_int_rht
-    number: 40
-    distribution: Fedora
-    version: 28
   - role: rht_builder_deb10
     lan_ip: 91
     hostname: builder-deb10-1

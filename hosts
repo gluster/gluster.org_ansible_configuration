@@ -122,9 +122,10 @@ builder-f33-1.int.aws.gluster.org
 builder-f34-1.int.aws.gluster.org
 
 [jenkins_builders_rht]
-builder[0:31].int.rht.gluster.org
+builder[0:23].int.rht.gluster.org
 builder-f32-[1:2].int.rht.gluster.org
 builder49.int.rht.gluster.org
+builder[30:31].int.rht.gluster.org
 
 [jenkins_builders:children]
 jenkins_builders_rht
@@ -194,7 +195,8 @@ openvpn0[1:2].int.rht.gluster.org
 
 [int_rht_gluster_org]
 builder49.int.rht.gluster.org
-builder[0:31].int.rht.gluster.org
+builder[30:31].int.rht.gluster.org
+builder[0:23].int.rht.gluster.org
 builder-deb10-1.int.rht.gluster.org
 
 backups.int.rht.gluster.org

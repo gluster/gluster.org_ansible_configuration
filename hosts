@@ -217,6 +217,7 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gl
 
 [int_aws_gluster_org]
 builder-c8-[1:2].int.aws.gluster.org
+builder-f34-1.int.aws.gluster.org
 builder-f33-1.int.aws.gluster.org
 builder-f32-[1:2].int.aws.gluster.org
 builder-c7-[1:4].int.aws.gluster.org

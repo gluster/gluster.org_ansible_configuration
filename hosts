@@ -78,7 +78,6 @@ proxy02.int.rht.gluster.org
 squid01.int.rht.gluster.org
 squid02.int.rht.gluster.org
 builder49.int.rht.gluster.org
-builder[40:44].int.rht.gluster.org
 builder[30:39].int.rht.gluster.org
 openvpn01.int.rht.gluster.org
 openvpn02.int.rht.gluster.org
@@ -120,7 +119,7 @@ builder-f33-1.int.aws.gluster.org
 
 
 [jenkins_builders_rht]
-builder[0:44].int.rht.gluster.org
+builder[0:39].int.rht.gluster.org
 builder-f32-[1:2].int.rht.gluster.org
 builder49.int.rht.gluster.org
 
@@ -128,8 +127,6 @@ builder49.int.rht.gluster.org
 jenkins_builders_rht
 jenkins_builders_aws
 
-[container_pipeline_builders]
-builder[40:44].int.rht.gluster.org
 
 [debian_builders]
 builder-deb10-1.int.rht.gluster.org
@@ -194,7 +191,7 @@ openvpn0[1:2].int.rht.gluster.org
 
 [int_rht_gluster_org]
 builder49.int.rht.gluster.org
-builder[0:44].int.rht.gluster.org
+builder[0:39].int.rht.gluster.org
 builder-deb10-1.int.rht.gluster.org
 
 backups.int.rht.gluster.org
@@ -234,10 +231,6 @@ old_aws_builder
 builder6.int.rht.gluster.org
 builder7.int.rht.gluster.org
 builder8.int.rht.gluster.org
-builder41.int.rht.gluster.org
-builder42.int.rht.gluster.org
-builder43.int.rht.gluster.org
-builder44.int.rht.gluster.org
 ant-queen.int.rht.gluster.org
 munin.int.rht.gluster.org
 http.int.rht.gluster.org

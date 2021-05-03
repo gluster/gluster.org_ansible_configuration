@@ -69,6 +69,7 @@ ansible_python_interpreter=/usr/bin/python3
 [python3:children]
 jenkins_builders_aws_f32
 jenkins_builders_aws_f33
+jenkins_builders_aws_f34
 
 [python3]
 masa.rht.gluster.org
@@ -117,6 +118,8 @@ builder-f32-[1:2].int.aws.gluster.org
 [jenkins_builders_aws_f33]
 builder-f33-1.int.aws.gluster.org
 
+[jenkins_builders_aws_f34]
+builder-f34-1.int.aws.gluster.org
 
 [jenkins_builders_rht]
 builder[0:39].int.rht.gluster.org

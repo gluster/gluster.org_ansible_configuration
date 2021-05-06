@@ -122,7 +122,8 @@ builder-f33-1.int.aws.gluster.org
 builder-f34-1.int.aws.gluster.org
 
 [jenkins_builders_rht]
-builder[0:23].int.rht.gluster.org
+builder[0:4].int.rht.gluster.org
+builder[20:23].int.rht.gluster.org
 builder-f32-[1:2].int.rht.gluster.org
 builder49.int.rht.gluster.org
 builder[30:31].int.rht.gluster.org
@@ -196,7 +197,8 @@ openvpn0[1:2].int.rht.gluster.org
 [int_rht_gluster_org]
 builder49.int.rht.gluster.org
 builder[30:31].int.rht.gluster.org
-builder[0:23].int.rht.gluster.org
+builder[0:4].int.rht.gluster.org
+builder[20:23].int.rht.gluster.org
 builder-deb10-1.int.rht.gluster.org
 
 backups.int.rht.gluster.org
@@ -233,9 +235,6 @@ old_aws_builder
 
 # group for servers using the proxy as a test
 [set_proxy]
-builder6.int.rht.gluster.org
-builder7.int.rht.gluster.org
-builder8.int.rht.gluster.org
 ant-queen.int.rht.gluster.org
 munin.int.rht.gluster.org
 http.int.rht.gluster.org

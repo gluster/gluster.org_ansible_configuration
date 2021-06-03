@@ -1,0 +1,26 @@
+- hosts: formicary.rht.gluster.org
+  roles:
+  - role: guest_virt_install
+    vars:
+      name: lists-el7.rht.gluster.org
+    system_disk_size: 20
+    data_disk_size: 15
+    mem_size: 2048
+    distribution: Centos
+    version: 7
+    bridge: "{{ bridge_public }}"
+    network:
+      ip: 8.43.85.172/24
+      gateway: 8.43.85.254
+
+- hosts: lists-el7.rht.gluster.org
+  tasks:
+  - filesystem:
+      dev: /dev/vdb
+      fstype: xfs
+  - mount:
+      path: /var/lib/mailman
+      src: /dev/vdb
+      fstype: xfs
+      state: mounted
+

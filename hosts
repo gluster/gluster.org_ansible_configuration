@@ -24,7 +24,6 @@ firewall_rht
 
 [cage_externally_facing]
 postgresql.rht.gluster.org
-gerrit-stage.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8.43.85.174:2222 root@myrmicinae.rht.gluster.org"'
 #jenkins-stage.rht.gluster.org
 jenkins-el7.rht.gluster.org
 
@@ -69,6 +68,7 @@ ansible_python_interpreter=/usr/bin/python3
 [python3:children]
 jenkins_builders_aws_f32
 jenkins_builders_aws_f33
+jenkins_builders_aws_f34
 
 [python3]
 masa.rht.gluster.org
@@ -77,8 +77,8 @@ proxy01.int.rht.gluster.org
 proxy02.int.rht.gluster.org
 squid01.int.rht.gluster.org
 squid02.int.rht.gluster.org
-builder[40:44].int.rht.gluster.org
-builder[30:39].int.rht.gluster.org
+builder49.int.rht.gluster.org
+builder[30:31].int.rht.gluster.org
 openvpn01.int.rht.gluster.org
 openvpn02.int.rht.gluster.org
 
@@ -112,22 +112,25 @@ jenkins_builders_aws_f32
 old_aws_builder
 
 [jenkins_builders_aws_f32]
-builder-f32-[1:2].int.aws.gluster.org
+builder-f32-[1:3].int.aws.gluster.org
 
 [jenkins_builders_aws_f33]
 builder-f33-1.int.aws.gluster.org
 
+[jenkins_builders_aws_f34]
+builder-f34-1.int.aws.gluster.org
 
 [jenkins_builders_rht]
-builder[0:44].int.rht.gluster.org
+builder[0:4].int.rht.gluster.org
+builder[20:23].int.rht.gluster.org
 builder-f32-[1:2].int.rht.gluster.org
+builder49.int.rht.gluster.org
+builder[30:31].int.rht.gluster.org
 
 [jenkins_builders:children]
 jenkins_builders_rht
 jenkins_builders_aws
 
-[container_pipeline_builders]
-builder[40:44].int.rht.gluster.org
 
 [debian_builders]
 builder-deb10-1.int.rht.gluster.org
@@ -135,9 +138,6 @@ builder-deb10-1.int.rht.gluster.org
 [aws]
 logs.aws.gluster.org
 
-[gerrit]
-#dev.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8.43.85.171:21 root@myrmicinae.rht.gluster.org"'
-gerrit-stage.rht.gluster.org
 
 [jenkins_master]
 #build.gluster.org
@@ -151,8 +151,8 @@ download.rht.gluster.org
 supercolony.rht.gluster.org
 
 [lists]
-supercolony.rht.gluster.org
-
+#supercolony.rht.gluster.org
+lists-el7.rht.gluster.org
 
 [postgresql]
 postgresql.rht.gluster.org
@@ -191,7 +191,10 @@ openvpn_cage
 openvpn0[1:2].int.rht.gluster.org
 
 [int_rht_gluster_org]
-builder[0:44].int.rht.gluster.org
+builder49.int.rht.gluster.org
+builder[30:31].int.rht.gluster.org
+builder[0:4].int.rht.gluster.org
+builder[20:23].int.rht.gluster.org
 builder-deb10-1.int.rht.gluster.org
 
 backups.int.rht.gluster.org
@@ -214,8 +217,9 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gl
 
 [int_aws_gluster_org]
 builder-c8-[1:2].int.aws.gluster.org
+builder-f34-1.int.aws.gluster.org
 builder-f33-1.int.aws.gluster.org
-builder-f32-[1:2].int.aws.gluster.org
+builder-f32-[1:3].int.aws.gluster.org
 builder-c7-[1:4].int.aws.gluster.org
 builder-fbsd12-1.int.aws.gluster.org
 
@@ -227,13 +231,6 @@ old_aws_builder
 
 # group for servers using the proxy as a test
 [set_proxy]
-builder6.int.rht.gluster.org
-builder7.int.rht.gluster.org
-builder8.int.rht.gluster.org
-builder41.int.rht.gluster.org
-builder42.int.rht.gluster.org
-builder43.int.rht.gluster.org
-builder44.int.rht.gluster.org
 ant-queen.int.rht.gluster.org
 munin.int.rht.gluster.org
 http.int.rht.gluster.org

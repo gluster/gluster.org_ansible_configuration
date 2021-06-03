@@ -20,7 +20,7 @@
   roles:
   - role: nagios_monitored_nrpe_selinux
 
-- hosts: supercolony.rht.gluster.org
+- hosts: lists
   roles:
   - role: nagios_monitored_nrpe_process
     nagios_server: nagios.int.rht.gluster.org

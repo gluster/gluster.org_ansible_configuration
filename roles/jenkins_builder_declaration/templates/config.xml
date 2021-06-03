@@ -5,7 +5,10 @@
   <remoteFS>/home/jenkins/root</remoteFS>
   <numExecutors>1</numExecutors>
   <mode>EXCLUSIVE</mode>
-  <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
+  <retentionStrategy class="hudson.slaves.RetentionStrategy$Demand">
+    <inDemandDelay>0</inDemandDelay>
+    <idleDelay>10</idleDelay>
+  </retentionStrategy>
   <launcher class="hudson.plugins.sshslaves.SSHLauncher">
     <host>{{ host }}</host>
     <port>22</port>

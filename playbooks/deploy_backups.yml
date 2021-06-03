@@ -21,13 +21,4 @@
       size: "1G"
       server: "postgresql.rht.gluster.org"
       user: root
-    - directory: /var/backups/mariadb/
-      age_max: "30D"
-      size: "1G"
-      server: "supercolony.rht.gluster.org"
-      user: root
-    - directory: /var/www/html
-      age_max: "60D"
-      size: "1G"
-      server: "supercolony.rht.gluster.org"
-      user: root     
+

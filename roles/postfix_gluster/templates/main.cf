@@ -10,7 +10,7 @@ append_dot_mydomain = no
 #delay_warning_time = 4h
 
 readme_directory = /usr/share/doc/postfix-2.6.6/README_FILES
-mynetworks = 127.0.0.0/8
+mynetworks = 127.0.0.0/8 [::1]/128
 myorigin = {{mail_domain }} 
 mydestination = {{ ansible_fqdn }}, {{ ansible_domain }}, localhost, {{ mail_domain }}
 #relayhost = 
@@ -18,7 +18,7 @@ mailbox_command = procmail -a "$EXTENSION"
 mailbox_size_limit = 0
 recipient_delimiter = +
 inet_interfaces = all
-inet_protocols = ipv4
+#inet_protocols = ipv4
 myhostname = {{ ansible_fqdn }}
 
 alias_maps = hash:/etc/postfix/external.aliases
@@ -28,6 +28,15 @@ alias_maps = hash:/etc/postfix/external.aliases
 
 smtpd_helo_required = yes
 
+# http://steam.io/2013/04/01/postfix-rate-limiting/
+# reduce rate for new server
+# while the initial number are just guess, it should be 
+# good enough for a start
+# remove that around 2022
+smtp_destination_concurrency_limit = 2
+smtp_destination_rate_delay = 1s
+smtp_extra_recipient_limit = 10
+
 # Auth settings
 smtpd_sasl_auth_enable = yes
 smtpd_sasl_security_options = noanonymous
@@ -35,6 +44,10 @@ smtpd_sasl_type = cyrus
 smtpd_sasl_application_name = smtpd
 smtpd_sasl_local_domain = $mydomain
 
+# added for march 2021 spam wave
+smtpd_client_restrictions = warn_if_reject
+  check_client_access hash:/etc/postfix/client_a_access
+  permit
 
 smtpd_recipient_restrictions = permit_mynetworks
   reject_unauth_destination

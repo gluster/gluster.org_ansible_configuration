@@ -50,4 +50,13 @@
       target: '/gluster-bugs.html'
       match: True
 
-
+- hosts: http.int.rht.gluster.org
+  vars:
+    website_domain: redirector.int.rht.gluster.org
+  roles:
+  - role: httpd
+    server_aliases:
+    - gluster.org
+    - community.gluster.org
+    - supercolony.gluster.org
+    redirect: https://www.gluster.org/

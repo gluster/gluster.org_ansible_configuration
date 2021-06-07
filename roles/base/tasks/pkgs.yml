@@ -42,6 +42,7 @@
     - strace
     - lshw
     - rsync
+    - logrotate # make sure btmp do not grow too much on recent Fedora
   when: ansible_system == 'Linux'
 
 - package:

@@ -19,14 +19,6 @@
   - python3-policycoreutils
   when: ansible_distribution == 'Fedora'
 
-# remove because we use ntpd
-- package:
-    state: absent
-    name: "{{ item }}"
-  with_items:
-  - chrony
-  when: ansible_distribution == 'Fedora'
-
 - package:
     state: present
     name:

@@ -4,4 +4,5 @@
   vars:
     ip: "{{ builder_ip }}"
     credentials: "0b8a8266-55fb-46c8-b25a-7fb21342b5d1"
+    host: "{{ builder_hostname }}" 
   delegate_to: "{{ jenkins_master }}"

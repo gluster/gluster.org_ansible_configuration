@@ -1,0 +1,9 @@
+---
+allow_duplicates: true
+dependencies:
+- role: rht_builder
+  distribution: Centos
+  version: 7
+  labels:
+  - centos8
+  - centos8-cage

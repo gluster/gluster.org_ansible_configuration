@@ -1,5 +1,5 @@
 - set_fact:
-    vg_root: "{{ ansible_lvm['lvs']['root']['vg'] }}"
+    vg_root: "{{ ansible_lvm['lvs']['root']['vg'] | replace('-', '--') }}"
 
 - name: Create the logical volume partition
   lvol:

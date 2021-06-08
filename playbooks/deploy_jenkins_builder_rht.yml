@@ -11,8 +11,6 @@
     number: 1
   - role: guest_jenkins_builder_int_rht
     number: 2
-  - role: guest_jenkins_builder_int_rht
-    number: 4
 
   - role: guest_jenkins_builder_int_rht
     number: 49

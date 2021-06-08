@@ -121,7 +121,7 @@ builder-f33-1.int.aws.gluster.org
 builder-f34-1.int.aws.gluster.org
 
 [jenkins_builders_rht]
-builder[0:4].int.rht.gluster.org
+builder[0:2].int.rht.gluster.org
 builder[20:23].int.rht.gluster.org
 builder-f32-[1:2].int.rht.gluster.org
 builder49.int.rht.gluster.org
@@ -193,7 +193,7 @@ openvpn0[1:2].int.rht.gluster.org
 [int_rht_gluster_org]
 builder49.int.rht.gluster.org
 builder[30:31].int.rht.gluster.org
-builder[0:4].int.rht.gluster.org
+builder[0:2].int.rht.gluster.org
 builder[20:23].int.rht.gluster.org
 builder-deb10-1.int.rht.gluster.org
 
@@ -266,5 +266,3 @@ builder200.int.aws.gluster.org
 builder202.int.aws.gluster.org
 builder204.int.aws.gluster.org
 builder206.int.aws.gluster.org
-builder208.int.aws.gluster.org
-builder210.int.aws.gluster.org

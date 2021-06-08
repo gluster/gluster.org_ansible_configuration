@@ -6,3 +6,4 @@ dependencies:
   version: 32
   labels:
   - fedora32
+  - fedora32-cage

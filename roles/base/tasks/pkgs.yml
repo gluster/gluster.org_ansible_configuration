@@ -24,9 +24,14 @@
     name:
     - lsof
     - screen
-    - htop
     - nmap
     - socat
+
+- package:
+    state: present
+    name:
+    - htop
+  when: ansible_architecture != 's390x'
 
 - package:
     state: present

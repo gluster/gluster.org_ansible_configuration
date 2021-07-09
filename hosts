@@ -264,7 +264,7 @@ builder1.int.rht.gluster.org
 builder2.int.rht.gluster.org
 
 [s390x]
-builder-el7-s390x-1.ibm-l1.gluster.org
+builder-el8-s390x-1.ibm-l1.gluster.org
 
 # to be removed later
 [old_aws_builder]

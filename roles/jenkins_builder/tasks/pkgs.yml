@@ -88,7 +88,7 @@
     state: absent
     name:
     - libtirpc-devel # needed to build ipv6 support
-  when: ansible_system == 'Linux'
+  when: ansible_system == 'Linux' and ansible_distribution_major_version == "7"
 
 - include: pkgs_job_cppcheck.yml
   when: ansible_system == 'Linux'

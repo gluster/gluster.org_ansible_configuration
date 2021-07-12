@@ -16,13 +16,7 @@
     - autoconf
     - libtool
     - bison
-
-- name: Install jenkins builder standard packages from EPEL
-  package:
-    state: present
-    name:
     - dbench # needed for run-tests
-  when: ansible_architecture != 's390x'
 
 - name: Add packages specific to rht builders
   package:

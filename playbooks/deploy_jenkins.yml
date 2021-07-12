@@ -2,10 +2,6 @@
   roles:
   - jenkins_builder
 
-- hosts: container_pipeline_builders
-  roles:
-  - container_pipeline_builder
-
 - hosts: debian_builders
   roles:
   - debian_package_builder

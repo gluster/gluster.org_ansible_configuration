@@ -18,7 +18,7 @@
     name: "{{ builder_hostname }}"
     ip: "{{ host }}"
   register: r
-
+  check_mode: no
 
 - name: Add the key to jenkins know hosts
   known_hosts:

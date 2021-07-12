@@ -42,7 +42,7 @@
   when: ansible_os_family == 'RedHat'
 
 - import_tasks: setup_auth.yml
-  when: location == 'aws'
+  when: location == 'aws' or location == 'ibm'
 
 #- name: Start and enable rpc-statd
 #  service:

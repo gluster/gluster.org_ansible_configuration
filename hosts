@@ -127,6 +127,9 @@ builder-f32-[1:2].int.rht.gluster.org
 builder49.int.rht.gluster.org
 builder[30:31].int.rht.gluster.org
 
+[jenkins_builders_ibm:vars]
+location=ibm
+
 [jenkins_builders_ibm:children]
 s390x
 

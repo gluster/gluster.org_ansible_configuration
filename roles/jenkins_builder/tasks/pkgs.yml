@@ -26,6 +26,13 @@
     - python-docopt
   when: '"jenkins_builders_rht" in group_names and ansible_distribution == "CentOS" and ansible_distribution_major_version == "7"'
 
+- name: Add glustefs-selinux package
+  package:
+    state: latest
+    name:
+    - glusterfs-selinux
+  when: '"jenkins_builders_rht" in group_names and ansible_distribution == "CentOS" and ansible_distribution_major_version == "8"'
+
 - name: Install jenkins builder Linux packages
   package:
     state: present

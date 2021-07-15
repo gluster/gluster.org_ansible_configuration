@@ -42,6 +42,10 @@
   - role: rht_builder_deb10
     lan_ip: 91
     hostname: builder-deb10-1
+  - role: rht_builder_ubuntu2004
+    lan_ip: 94
+    hostname: builder-ubuntu2004-1
+
 
 - hosts: pleometrosis.rht.gluster.org
   roles:

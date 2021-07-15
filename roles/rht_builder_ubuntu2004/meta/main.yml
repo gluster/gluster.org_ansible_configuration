@@ -1,0 +1,8 @@
+---
+allow_duplicates: true
+dependencies:
+- role: rht_builder
+  distribution: Ubuntu 
+  version: focal
+  labels:
+  - ubuntu2004

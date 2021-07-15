@@ -93,6 +93,7 @@ ansible_python_interpreter=/usr/libexec/platform-python3.6
 
 [debian]
 builder-deb10-1.int.rht.gluster.org
+builder-ubuntu2004-1.int.rht.gluster.org
 
 [jenkins_builders_rht:vars]
 location=rht

@@ -5,3 +5,9 @@
 - hosts: debian_builders
   roles:
   - debian_package_builder
+
+- hosts: ubuntu_builders
+  roles:
+  - debian_package_builder
+
+

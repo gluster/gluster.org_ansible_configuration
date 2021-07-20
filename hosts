@@ -142,6 +142,9 @@ jenkins_builders_ibm
 [debian_builders]
 builder-deb10-1.int.rht.gluster.org
 
+[ubuntu_builders]
+builder-ubuntu2004-1.int.rht.gluster.org
+
 [aws]
 logs.aws.gluster.org
 
@@ -259,6 +262,7 @@ ant-queen.int.rht.gluster.org
 bugziller
 jenkins_builders_rht
 debian_builders
+ubuntu_builders
 
 [softserve]
 softserve.int.rht.gluster.org

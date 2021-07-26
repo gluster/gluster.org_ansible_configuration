@@ -10,5 +10,8 @@
       - 22
       cidr_ip: 0.0.0.0/0
       rule_desc: allow all on port 22
-
-
+    - proto: icmp
+      cidr_ip: 0.0.0.0/0
+      rule_desc: allow icmp echo for icmp
+      from_port: 8
+      to_port: -1

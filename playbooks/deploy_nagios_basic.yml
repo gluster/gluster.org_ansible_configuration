@@ -56,7 +56,7 @@
   roles:
   - role: nagios_monitored_nrpe_connect_ssh
     ssh_targets:
-    - name: review.gluster.org
+    - name: github.com
 
 - hosts: proxy
   vars:

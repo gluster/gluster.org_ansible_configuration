@@ -252,7 +252,6 @@ bugziller.int.rht.gluster.org
 int_rht_gluster_org
 
 [not_monitored:children]
-int_aws_gluster_org
 
 [aws_provisioner]
 ant-queen.int.rht.gluster.org

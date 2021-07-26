@@ -43,6 +43,9 @@
       - 443
       cidr_ip: 0.0.0.0/0
       rule_desc: allow all for web
+    - proto: icmp
+      cidr_ip: 0.0.0.0/0
+      rule_desc: allow all for icmp
 
 - name: Add a block device 
   ec2_vol:

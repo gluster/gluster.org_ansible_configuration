@@ -43,10 +43,13 @@
       - 443
       cidr_ip: 0.0.0.0/0
       rule_desc: allow all for web
+
     - proto: icmp
       cidr_ip: 0.0.0.0/0
       rule_desc: allow all for icmp
-
+      # allow icmp ping only
+      from_port: 8
+      to_port: -1
 - name: Add a block device 
   ec2_vol:
     name: "logs_aws_storage"

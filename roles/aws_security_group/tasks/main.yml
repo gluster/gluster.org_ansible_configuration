@@ -15,3 +15,9 @@
       rule_desc: allow icmp echo for icmp
       from_port: 8
       to_port: -1
+    - proto: tcp
+      ports:
+      - 5666
+      - 4949
+      cidr_ip: 8.43.85.181/24
+      rule_desc: allow nrpe/munin from the cage

@@ -79,8 +79,6 @@ squid01.int.rht.gluster.org
 squid02.int.rht.gluster.org
 builder49.int.rht.gluster.org
 builder[30:31].int.rht.gluster.org
-openvpn01.int.rht.gluster.org
-openvpn02.int.rht.gluster.org
 
 [python3_c8_aws]
 builder-c8-1.aws.gluster.org
@@ -191,15 +189,6 @@ mune.rht.gluster.org
 squid01.int.rht.gluster.org
 squid02.int.rht.gluster.org
 
-[openvpn]
-logs.aws.gluster.org
-
-[openvpn:children]
-openvpn_cage
-
-[openvpn_cage]
-openvpn0[1:2].int.rht.gluster.org
-
 [int_rht_gluster_org]
 builder49.int.rht.gluster.org
 builder[30:31].int.rht.gluster.org
@@ -220,7 +209,6 @@ postgresql.int.rht.gluster.org
 softserve.int.rht.gluster.org
 fstat.int.rht.gluster.org
 sentry.int.rht.gluster.org
-openvpn0[1:2].int.rht.gluster.org
 
 [int_rht_gluster_org:vars]
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gluster.org"'

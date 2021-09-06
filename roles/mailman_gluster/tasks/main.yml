@@ -38,6 +38,6 @@
 
 - name: Set the admin password
   copy:
-    content: "{{ mailman_site_password | hash('sha1') }}"
+    content: "{{ mailman_site_password | hash('sha1') + '\n' }}"
     dest: /etc/mailman/adm.pw
-  when: mailman_site_password is defined  
+  when: mailman_site_password is defined

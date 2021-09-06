@@ -11,7 +11,7 @@ lzuckerman:     semiosis
 gerrithub:      ndevos
 events:         vijay,miperez
 
-privacy:        tlc
+privacy:        root
 #switch to events ? TODO
 cfp:            root
 workshop:       root

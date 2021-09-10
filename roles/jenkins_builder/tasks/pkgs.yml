@@ -75,6 +75,7 @@
     - bind-utils
     #required for tmalloc
     - gperftools-devel
+    - gperftools-libs
   when: ansible_system == 'Linux'
 # libuuid-devel seems to be missing ?
 

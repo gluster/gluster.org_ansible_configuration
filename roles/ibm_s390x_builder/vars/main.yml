@@ -1,0 +1,5 @@
+builder_hostname: "{{ inventory_hostname }}"
+jenkins_master: "jenkins-el7.rht.gluster.org"
+labels:
+- s390x
+- ibm-l1

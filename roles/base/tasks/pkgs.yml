@@ -19,22 +19,19 @@
   - python3-policycoreutils
   when: ansible_distribution == 'Fedora'
 
-# remove because we use ntpd
-- package:
-    state: absent
-    name: "{{ item }}"
-  with_items:
-  - chrony
-  when: ansible_distribution == 'Fedora'
-
 - package:
     state: present
     name:
     - lsof
     - screen
-    - htop
     - nmap
     - socat
+
+- package:
+    state: present
+    name:
+    - htop
+  when: ansible_architecture != 's390x'
 
 - package:
     state: present
@@ -42,6 +39,7 @@
     - strace
     - lshw
     - rsync
+    - logrotate # make sure btmp do not grow too much on recent Fedora
   when: ansible_system == 'Linux'
 
 - package:

@@ -38,7 +38,7 @@
     - b.barracudacentral.org
 # too much false positive
 #    - dnsbl-3.uceprotect.net
-    - dnsbl-2.uceprotect.net
+#    - dnsbl-2.uceprotect.net
     # see private repo for the vars, on hostvars/supercolony
     # since emails are private
     email_aliases: "{{ mail_aliases }}"

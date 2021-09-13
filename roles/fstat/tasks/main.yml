@@ -95,7 +95,8 @@
     hour: "1"
     job: "SENTRY_DSN=\"{{fstat_config['sentry_dsn']}}\" /fstat/env/bin/python /fstat/code/manage.py process_jobs -n 3 -j {{item.job}}"
   with_items:
-    - {name: 'centos', job: 'centos7-regression'}
-    - {name: 'regression-test-burn-in', job: 'regression-test-burn-in'}
-    - {name: 'regression-test-with-multiplex', job: 'regression-test-with-multiplex'}
+    - {name: 'centos7', job: 'gh_centos7-regression'}
+    - {name: 'centos8', job: 'centos8-regression'}
+    - {name: 'regression-test-burn-in', job: 'gh_regression-test-burn-in'}
+    - {name: 'regression-test-with-multiplex', job: 'gh_regression-test-with-multiplex'}
     - {name: 'line-coverage', job: 'line-coverage'}

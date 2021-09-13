@@ -10,14 +10,14 @@
     state: present
     name:
     - git # needed for checkout
-    - dbench # needed for run-tests
     - yajl
     - sudo
     - automake
     - autoconf
     - libtool
     - bison
-    
+    - dbench # needed for run-tests
+
 - name: Add packages specific to rht builders
   package:
     state: present
@@ -72,7 +72,10 @@
     # required for pstack, used to be pulled by rpm-build
     - gdb
     # required for nfs testing, for 'host'
-    - bind-utils 
+    - bind-utils
+    #required for tmalloc
+    - gperftools-devel
+    - gperftools-libs
   when: ansible_system == 'Linux'
 # libuuid-devel seems to be missing ?
 
@@ -82,7 +85,7 @@
     state: absent
     name:
     - libtirpc-devel # needed to build ipv6 support
-  when: ansible_system == 'Linux'
+  when: ansible_system == 'Linux' and ansible_distribution_major_version == "7"
 
 - include: pkgs_job_cppcheck.yml
   when: ansible_system == 'Linux'
@@ -104,7 +107,7 @@
     - libuuid-devel
     - rpcgen
     - liburing-devel
-  when: ansible_system == 'Linux' and (ansible_distribution == 'Fedora' or ansible_distribution == 'CentOS' and ansible_distribution_major_version == "8")
+  when: ansible_system == 'Linux' and ansible_os_family == 'RedHat' and ansible_distribution_major_version|int >= 8
 
 - name: Install jenkins builder Fedora packages
   package:

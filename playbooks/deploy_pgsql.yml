@@ -35,6 +35,7 @@
       address: "172.24.1.65/32"
     - name: "sentry"
       address: "172.24.1.67/32"
+  - role: postgresql_backups
   tasks:
   - name: Open firewall for the internal range only
     firewalld:

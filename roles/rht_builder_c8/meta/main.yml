@@ -2,8 +2,8 @@
 allow_duplicates: true
 dependencies:
 - role: rht_builder
-  distribution: Fedora
-  version: 32
+  distribution: Centos
+  version: 7
   labels:
-  - fedora32
-  - fedora32-cage
+  - centos8
+  - centos8-cage

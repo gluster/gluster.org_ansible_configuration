@@ -30,14 +30,14 @@ jenkins-el7.rht.gluster.org
 #build.gluster.org
 gerrit-prod.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8.43.85.171:2222 root@myrmicinae.rht.gluster.org"'
 download.rht.gluster.org
-supercolony.rht.gluster.org
+#supercolony.rht.gluster.org
 
 [jenkins_builders_lcov]
 # to be synced from jenkins
-builder-c7-4.int.aws.gluster.org
-builder-c7-3.int.aws.gluster.org
-builder-c7-2.int.aws.gluster.org
-builder-c7-1.int.aws.gluster.org
+builder-c7-4.aws.gluster.org
+builder-c7-3.aws.gluster.org
+builder-c7-2.aws.gluster.org
+builder-c7-1.aws.gluster.org
 
 [jenkins_builders_lcov:children]
 old_aws_builder
@@ -60,7 +60,7 @@ freebsd12
 ansible_python_interpreter=/usr/local/bin/python3.7
 
 [freebsd12]
-builder-fbsd12-1.int.aws.gluster.org
+builder-fbsd12-1.aws.gluster.org
 
 [python3:vars]
 ansible_python_interpreter=/usr/bin/python3
@@ -79,12 +79,10 @@ squid01.int.rht.gluster.org
 squid02.int.rht.gluster.org
 builder49.int.rht.gluster.org
 builder[30:31].int.rht.gluster.org
-openvpn01.int.rht.gluster.org
-openvpn02.int.rht.gluster.org
 
 [python3_c8_aws]
-builder-c8-1.int.aws.gluster.org
-builder-c8-2.int.aws.gluster.org
+builder-c8-1.aws.gluster.org
+builder-c8-2.aws.gluster.org
 
 [python3_c8_aws:vars]
 ansible_python_interpreter=/usr/libexec/platform-python3.6
@@ -93,6 +91,7 @@ ansible_python_interpreter=/usr/libexec/platform-python3.6
 
 [debian]
 builder-deb10-1.int.rht.gluster.org
+builder-ubuntu2004-1.int.rht.gluster.org
 
 [jenkins_builders_rht:vars]
 location=rht
@@ -102,9 +101,9 @@ location=aws
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@logs.aws.gluster.org"'
 
 [jenkins_builders_aws]
-builder-c8-[1:2].int.aws.gluster.org
-builder-c7-[1:4].int.aws.gluster.org
-builder-fbsd12-1.int.aws.gluster.org
+builder-c8-[1:2].aws.gluster.org
+builder-c7-[1:4].aws.gluster.org
+builder-fbsd12-1.aws.gluster.org
 
 [jenkins_builders_aws:children]
 jenkins_builders_aws_f33
@@ -112,28 +111,37 @@ jenkins_builders_aws_f32
 old_aws_builder
 
 [jenkins_builders_aws_f32]
-builder-f32-[1:3].int.aws.gluster.org
+builder-f32-[1:3].aws.gluster.org
 
 [jenkins_builders_aws_f33]
-builder-f33-1.int.aws.gluster.org
+builder-f33-1.aws.gluster.org
 
 [jenkins_builders_aws_f34]
-builder-f34-1.int.aws.gluster.org
+builder-f34-1.aws.gluster.org
 
 [jenkins_builders_rht]
-builder[0:4].int.rht.gluster.org
+builder[0:2].int.rht.gluster.org
 builder[20:23].int.rht.gluster.org
 builder-f32-[1:2].int.rht.gluster.org
 builder49.int.rht.gluster.org
 builder[30:31].int.rht.gluster.org
 
+[jenkins_builders_ibm:vars]
+location=ibm
+
+[jenkins_builders_ibm:children]
+s390x
+
 [jenkins_builders:children]
 jenkins_builders_rht
 jenkins_builders_aws
-
+jenkins_builders_ibm
 
 [debian_builders]
 builder-deb10-1.int.rht.gluster.org
+
+[ubuntu_builders]
+builder-ubuntu2004-1.int.rht.gluster.org
 
 [aws]
 logs.aws.gluster.org
@@ -147,8 +155,8 @@ jenkins-el7.rht.gluster.org
 [download]
 download.rht.gluster.org
 
-[web]
-supercolony.rht.gluster.org
+#[web]
+#supercolony.rht.gluster.org
 
 [lists]
 #supercolony.rht.gluster.org
@@ -181,19 +189,10 @@ mune.rht.gluster.org
 squid01.int.rht.gluster.org
 squid02.int.rht.gluster.org
 
-[openvpn]
-logs.aws.gluster.org
-
-[openvpn:children]
-openvpn_cage
-
-[openvpn_cage]
-openvpn0[1:2].int.rht.gluster.org
-
 [int_rht_gluster_org]
 builder49.int.rht.gluster.org
 builder[30:31].int.rht.gluster.org
-builder[0:4].int.rht.gluster.org
+builder[0:2].int.rht.gluster.org
 builder[20:23].int.rht.gluster.org
 builder-deb10-1.int.rht.gluster.org
 
@@ -210,18 +209,12 @@ postgresql.int.rht.gluster.org
 softserve.int.rht.gluster.org
 fstat.int.rht.gluster.org
 sentry.int.rht.gluster.org
-openvpn0[1:2].int.rht.gluster.org
 
 [int_rht_gluster_org:vars]
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gluster.org"'
 
+# used for VM creation
 [int_aws_gluster_org]
-builder-c8-[1:2].int.aws.gluster.org
-builder-f34-1.int.aws.gluster.org
-builder-f33-1.int.aws.gluster.org
-builder-f32-[1:3].int.aws.gluster.org
-builder-c7-[1:4].int.aws.gluster.org
-builder-fbsd12-1.int.aws.gluster.org
 
 [int_aws_gluster_org:vars]
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@logs.aws.gluster.org"'
@@ -242,7 +235,6 @@ bugziller.int.rht.gluster.org
 int_rht_gluster_org
 
 [not_monitored:children]
-int_aws_gluster_org
 
 [aws_provisioner]
 ant-queen.int.rht.gluster.org
@@ -252,6 +244,7 @@ ant-queen.int.rht.gluster.org
 bugziller
 jenkins_builders_rht
 debian_builders
+ubuntu_builders
 
 [softserve]
 softserve.int.rht.gluster.org
@@ -260,11 +253,12 @@ softserve.int.rht.gluster.org
 builder1.int.rht.gluster.org
 builder2.int.rht.gluster.org
 
+[s390x]
+builder-el8-s390x-1.ibm-l1.gluster.org
+
 # to be removed later
 [old_aws_builder]
 builder200.int.aws.gluster.org
 builder202.int.aws.gluster.org
 builder204.int.aws.gluster.org
 builder206.int.aws.gluster.org
-builder208.int.aws.gluster.org
-builder210.int.aws.gluster.org

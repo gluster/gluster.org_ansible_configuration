@@ -11,8 +11,6 @@
     number: 1
   - role: guest_jenkins_builder_int_rht
     number: 2
-  - role: guest_jenkins_builder_int_rht
-    number: 4
 
   - role: guest_jenkins_builder_int_rht
     number: 49
@@ -44,6 +42,10 @@
   - role: rht_builder_deb10
     lan_ip: 91
     hostname: builder-deb10-1
+  - role: rht_builder_ubuntu2004
+    lan_ip: 94
+    hostname: builder-ubuntu2004-1
+
 
 - hosts: pleometrosis.rht.gluster.org
   roles:
@@ -69,7 +71,7 @@
   - name: Make sure the filesystem is resized
     filesystem:
       fstype: ext4
-      dev: "/dev/mapper/vg_root_{{ ansible_fqdn }}-root"
+      dev: "/dev/mapper/vg_root_{{ ansible_fqdn | replace('-', '--') }}-root"
       resizefs: True
     when: ansible_system == 'Linux'
 

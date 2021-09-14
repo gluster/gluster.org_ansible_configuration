@@ -154,6 +154,8 @@
   - e2fsprogs-libuuid
 # requested on https://bugzilla.redhat.com/show_bug.cgi?id=1609347
   - argp-standalone
+# requested for tmalloc (https://github.com/gluster/project-infrastructure/issues/140)
+  - google-perftools
 
 - name: Install python3 on recent FreeBSD
   package:

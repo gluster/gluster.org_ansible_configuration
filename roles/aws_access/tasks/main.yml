@@ -7,6 +7,7 @@
   - misc
   - deepshikha
   - sahina
+  - rakshitha
 
 - iam_group:
     name: Developers
@@ -30,6 +31,7 @@
     users:
     - misc
     - deepshikha
+    - rakshitha
     managed_policy:
     - arn:aws:iam::aws:policy/AdministratorAccess
     purge_policy: True

@@ -19,5 +19,5 @@
       ports:
       - 5666
       - 4949
-      cidr_ip: 8.43.85.181/24
+      cidr_ip: 8.43.85.181/32
       rule_desc: allow nrpe/munin from the cage

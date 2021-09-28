@@ -12,6 +12,9 @@ route53 = boto3.client('route53', region_name=region)
 response = ec2.describe_instances()
 for r in response['Reservations']:
     for i in r['Instances']:
+        # this can happen when a host is being erased
+        if not 'Tags' in i:
+            continue
         name = i['Tags'][0]['Value']
         if 'PublicIpAddress' in i:
             ip = i['PublicIpAddress']

@@ -57,7 +57,7 @@ munin.int.rht.gluster.org
 freebsd12
 
 [freebsd12:vars]
-ansible_python_interpreter=/usr/local/bin/python3.7
+ansible_python_interpreter=/usr/local/bin/python3.8
 
 [freebsd12]
 builder-fbsd12-1.aws.gluster.org

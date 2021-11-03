@@ -17,6 +17,6 @@
 
 - include_tasks: add_requires.yml
   vars: 
-    unit: glusterd.service
-    requires: NetworkManager-wait-online.service
+    unit: srv-letsencrypt.mount
+    requires: network-online.target
 

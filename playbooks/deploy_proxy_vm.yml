@@ -5,7 +5,7 @@
     vars:
       name: proxy01.rht.gluster.org
     distribution: Fedora
-    version: 28
+    version: 35
     network:
       ip: 8.43.85.182/24
       gateway: 8.43.85.254
@@ -16,7 +16,7 @@
     vars:
       name: proxy02.rht.gluster.org
     distribution: Fedora
-    version: 28
+    version: 35
     network:
       ip: 8.43.85.183/24
       gateway: 8.43.85.254

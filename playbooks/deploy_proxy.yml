@@ -20,6 +20,8 @@
     group: proxy
     interface: eth1
 
+  - role: proxy_service_ordering
+
   - role: nginx_proxy_vhost
     domain: docs.gluster.org
     backends:

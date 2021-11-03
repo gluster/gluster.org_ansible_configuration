@@ -8,12 +8,13 @@
 - include_tasks: add_requires.yml
   vars: 
     unit: keepalived.service
-    bindsto: nginx.service
+    requires: nginx.service
+    bindsto: True
 
 - include_tasks: add_requires.yml
   vars: 
     unit: nginx.service
-    mount: /srv/letsencrypt
+    requires: srv-letsencrypt.mount
 
 - include_tasks: add_requires.yml
   vars: 

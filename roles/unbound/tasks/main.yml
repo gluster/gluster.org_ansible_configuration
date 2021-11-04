@@ -25,6 +25,12 @@
     state: enabled
     immediate: yes
 
+- name: Stop systemd-resolved
+  service:
+    name: systemd-resolved
+    state: stopped
+    enabled: False
+
 - name: Start the unbound service
   service:
     name: unbound

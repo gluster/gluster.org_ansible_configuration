@@ -28,6 +28,8 @@
     replicas: 2
     cluster: "{{ groups[group]|map('extract', hostvars, ['ansible_' + interface, 'ipv4', 'address']) | list  }}"
   run_once: true
+  # for some reason, this module fail if the cluster is running
+  ignore_errors: True
 
 - name: Create the mount
   file:

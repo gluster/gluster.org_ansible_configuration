@@ -15,9 +15,9 @@
   vars: 
     unit: nginx.service
     requires: srv-letsencrypt.mount
+    mount: /srv/letsencrypt
 
 - include_tasks: add_requires.yml
   vars: 
     unit: srv-letsencrypt.mount
     requires: network-online.target
-

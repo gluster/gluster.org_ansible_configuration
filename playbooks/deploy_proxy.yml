@@ -23,11 +23,6 @@
   - role: proxy_service_ordering
 
   - role: nginx_proxy_vhost
-    domain: docs.gluster.org
-    backends:
-    - gluster.readthedocs.io
-
-  - role: nginx_proxy_vhost
     domain: bits.gluster.org
     backends:
     - bits.int.rht.gluster.org

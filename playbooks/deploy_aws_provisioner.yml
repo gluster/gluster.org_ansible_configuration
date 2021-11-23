@@ -73,7 +73,10 @@
   - role: aws_builder_f34
     hostname: builder-f34-1
 
-
+- hosts: aws_provisioner
+  roles:
+  - role: aws_builder_f35
+    hostname: builder-f35-1
 
 - hosts: aws_provisioner
   roles:

@@ -1,0 +1,10 @@
+---
+allow_duplicates: true
+dependencies:
+- role: aws_builder
+  # f33, from https://alt.fedoraproject.org/cloud/
+  # take us-east-2 (Ohio) value
+  ami: "ami-0d40a8446eb0b14c1"
+  vm_type: a1.large
+  labels:
+  - fedora34-aarch64

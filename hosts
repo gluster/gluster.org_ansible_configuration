@@ -106,8 +106,10 @@ builder-c7-[1:4].aws.gluster.org
 builder-fbsd12-1.aws.gluster.org
 
 [jenkins_builders_aws:children]
+jenkins_builders_aws_f34
 jenkins_builders_aws_f33
 jenkins_builders_aws_f32
+
 old_aws_builder
 
 [jenkins_builders_aws_f32]

@@ -76,6 +76,8 @@
     #required for tmalloc
     - gperftools-devel
     - gperftools-libs
+    # required for asan job
+    - libasan
   when: ansible_system == 'Linux'
 # libuuid-devel seems to be missing ?
 

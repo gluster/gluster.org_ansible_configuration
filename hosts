@@ -45,6 +45,7 @@ old_aws_builder
 [jenkins_builders_shellcheck:children]
 jenkins_builders_aws_f32
 jenkins_builders_aws_f34
+jenkins_builders_aws_f35
 
 
 [community_cage:children]

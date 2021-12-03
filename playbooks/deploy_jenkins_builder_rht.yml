@@ -6,39 +6,12 @@
     version: 7
   roles:
   - role: guest_jenkins_builder_int_rht
-    number: 0
-  - role: guest_jenkins_builder_int_rht
     number: 1
   - role: guest_jenkins_builder_int_rht
     number: 2
-
-  - role: guest_jenkins_builder_int_rht
-    number: 49
-    distribution: Fedora
-    version: 32
-
  
 - hosts: pleometrosis.rht.gluster.org
-  vars: 
-    # default value for builders
-    distribution: Centos
-    version: 7
   roles:
-  - role: guest_jenkins_builder_int_rht
-    number: 20
-  - role: guest_jenkins_builder_int_rht
-    number: 21
-  - role: guest_jenkins_builder_int_rht
-    number: 22
-  - role: guest_jenkins_builder_int_rht
-    number: 23
-  - role: guest_jenkins_builder_int_rht
-    number: 30
-    version: 8
-  - role: guest_jenkins_builder_int_rht
-    number: 31
-    version: 8
-
   - role: rht_builder_deb10
     lan_ip: 91
     hostname: builder-deb10-1
@@ -75,9 +48,4 @@
       resizefs: True
     when: ansible_system == 'Linux'
 
-# Fedora
-- hosts: builder4[0-9].int.rht.gluster.org
-  roles:
-  - role: swap_file
-    size: 2G
-    path: /var/swap
+

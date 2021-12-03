@@ -130,11 +130,8 @@ builder-f35-1.aws.gluster.org
 
 
 [jenkins_builders_rht]
-builder[0:2].int.rht.gluster.org
-builder[20:23].int.rht.gluster.org
+builder[1:2].int.rht.gluster.org
 builder-f32-[1:2].int.rht.gluster.org
-builder49.int.rht.gluster.org
-builder[30:31].int.rht.gluster.org
 
 [jenkins_builders_ibm:vars]
 location=ibm
@@ -200,10 +197,7 @@ squid01.int.rht.gluster.org
 squid02.int.rht.gluster.org
 
 [int_rht_gluster_org]
-builder49.int.rht.gluster.org
-builder[30:31].int.rht.gluster.org
-builder[0:2].int.rht.gluster.org
-builder[20:23].int.rht.gluster.org
+builder[1:2].int.rht.gluster.org
 builder-deb10-1.int.rht.gluster.org
 
 backups.int.rht.gluster.org
@@ -271,6 +265,3 @@ builder-el8-s390x-3.ibm-l1.gluster.org
 # to be removed later
 [old_aws_builder]
 builder200.int.aws.gluster.org
-builder202.int.aws.gluster.org
-builder204.int.aws.gluster.org
-builder206.int.aws.gluster.org

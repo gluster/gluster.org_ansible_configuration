@@ -80,8 +80,6 @@ proxy01.int.rht.gluster.org
 proxy02.int.rht.gluster.org
 squid01.int.rht.gluster.org
 squid02.int.rht.gluster.org
-builder49.int.rht.gluster.org
-builder[30:31].int.rht.gluster.org
 
 [python3_c8_aws]
 builder-c8-1.aws.gluster.org
@@ -117,7 +115,7 @@ jenkins_builders_aws_f32
 old_aws_builder
 
 [jenkins_builders_aws_f32]
-builder-f32-[1:3].aws.gluster.org
+builder-f32-[1:2].aws.gluster.org
 
 [jenkins_builders_aws_f33]
 builder-f33-1.aws.gluster.org

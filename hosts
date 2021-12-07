@@ -40,9 +40,6 @@ builder-c7-2.aws.gluster.org
 builder-c7-1.aws.gluster.org
 builder-c8-[1:2].aws.gluster.org
 
-[jenkins_builders_lcov:children]
-old_aws_builder
-
 [jenkins_builders_shellcheck:children]
 jenkins_builders_aws_f32
 jenkins_builders_aws_f34
@@ -110,8 +107,6 @@ builder-fbsd12-1.aws.gluster.org
 jenkins_builders_aws_f35
 jenkins_builders_aws_f34
 jenkins_builders_aws_f32
-
-old_aws_builder
 
 [jenkins_builders_aws_f32]
 builder-f32-[1:2].aws.gluster.org
@@ -211,15 +206,6 @@ sentry.int.rht.gluster.org
 [int_rht_gluster_org:vars]
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gluster.org"'
 
-# used for VM creation
-[int_aws_gluster_org]
-
-[int_aws_gluster_org:vars]
-ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@logs.aws.gluster.org"'
-
-[int_aws_gluster_org:children]
-old_aws_builder
-
 # group for servers using the proxy as a test
 [set_proxy]
 ant-queen.int.rht.gluster.org
@@ -256,6 +242,3 @@ builder-el8-s390x-1.ibm-l1.gluster.org
 builder-el8-s390x-2.ibm-l1.gluster.org
 builder-el8-s390x-3.ibm-l1.gluster.org
 
-# to be removed later
-[old_aws_builder]
-builder200.int.aws.gluster.org

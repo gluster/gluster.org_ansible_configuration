@@ -38,6 +38,7 @@ builder-c7-4.aws.gluster.org
 builder-c7-3.aws.gluster.org
 builder-c7-2.aws.gluster.org
 builder-c7-1.aws.gluster.org
+builder-c8-[1:2].aws.gluster.org
 
 [jenkins_builders_lcov:children]
 old_aws_builder

@@ -96,7 +96,7 @@
   when: ansible_system == 'Linux'
 
 - include: pkgs_job_lcov.yml
-  when: '"jenkins_builders_lcov" in group_names'
+  when: ansible_system == 'Linux'
 
 - include: pkgs_job_shellcheck.yml
   when: '"jenkins_builders_shellcheck" in group_names'

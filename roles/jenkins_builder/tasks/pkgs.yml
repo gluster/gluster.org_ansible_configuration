@@ -78,6 +78,8 @@
     - gperftools-libs
     # required for asan job
     - libasan
+    # https://github.com/gluster/glusterfs/pull/3100
+    - xxhash-devel
   when: ansible_system == 'Linux'
 # libuuid-devel seems to be missing ?
 

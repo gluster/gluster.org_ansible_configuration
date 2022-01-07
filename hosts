@@ -112,8 +112,9 @@ jenkins_builders_aws_f32
 builder-f32-[1:2].aws.gluster.org
 
 [jenkins_builders_aws_f34]
-builder-f34-1.aws.gluster.org
+builder-f34-[1:2].aws.gluster.org
 builder-f34-aarch64-1.aws.gluster.org
+
 [jenkins_builders_aws_f35]
 builder-f35-1.aws.gluster.org
 

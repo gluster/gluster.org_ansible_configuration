@@ -8,6 +8,7 @@
   - deepshikha
   - sahina
   - rakshitha
+  - akraitma
 
 - iam_group:
     name: Developers
@@ -36,3 +37,14 @@
     - arn:aws:iam::aws:policy/AdministratorAccess
     purge_policy: True
     purge_users: True
+
+- iam_group:
+    name: downstream-readonly
+    state: present
+    users:
+    - akraitma
+    managed_policy:
+    - arn:aws:iam::aws:policy/ReadOnlyAccess
+    purge_policy: True
+    purge_users: True
+

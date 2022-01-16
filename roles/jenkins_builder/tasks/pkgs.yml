@@ -80,6 +80,7 @@
     - libasan
     # https://github.com/gluster/glusterfs/pull/3100
     - xxhash-devel
+    - xxhash
   when: ansible_system == 'Linux'
 # libuuid-devel seems to be missing ?
 

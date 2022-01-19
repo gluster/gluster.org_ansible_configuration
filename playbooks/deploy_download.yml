@@ -2,7 +2,7 @@
   roles:
   - role: aws-s3_bucket_backup
     prefix: gluster.org
-    project: download_backups
+    project: download-backups
   
 
 - hosts: download

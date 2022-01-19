@@ -1,0 +1,18 @@
+---
+- name: Install rclone 
+  package:
+    name:
+    - rclone
+    state: present
+
+- name: Deploy rclone config
+  template:
+    src: rclone.conf
+    dest: /etc/rclone.conf
+    mode: 0700 
+  no_log: True
+
+- name: Deploy cron config
+  template:
+    src: rclone.cron
+    dest: /etc/cron.d/rclone

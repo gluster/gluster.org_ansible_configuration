@@ -19,4 +19,7 @@
     document_root: /var/www/html
   - role: logrotate_compress
   - role: download_users
-
+  - role: download_backups
+    region: us-east-2
+    access_key: "{{ download_backups_access_key }}"
+    secret_key: "{{ download_backups_secret_key }}"

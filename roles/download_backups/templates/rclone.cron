@@ -1,1 +1,1 @@
-0 6 * * * /usr/bin/rclone --config /etc/rclone.conf sync -L /var/www/html/ s3:gluster.org-download-backups 
+0 6 * * * /usr/bin/rclone --config /etc/rclone.conf sync -l /var/www/html/ s3:gluster.org-download-backups 

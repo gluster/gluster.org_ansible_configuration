@@ -25,3 +25,4 @@ roles/redis
 roles/entropy
 roles/sasldb
 roles/chrony
+roles/aws-s3_bucket_backup

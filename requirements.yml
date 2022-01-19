@@ -51,3 +51,5 @@
   name: sasldb
 - src: git+https://gitlab.com/osas/ansible-role-chrony.git
   name: chrony
+- src: git+https://gitlab.com/osci/ansible-role-aws-s3_bucket_backup.git
+  name: aws-s3_bucket_backup

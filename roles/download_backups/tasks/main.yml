@@ -5,10 +5,16 @@
     - rclone
     state: present
 
+- name: Add the user for backups
+  user:
+    name: _rclone
+    comment: System user for backup
+
 - name: Deploy rclone config
   template:
     src: rclone.conf
     dest: /etc/rclone.conf
+    owner: _rclone
     mode: 0700 
   no_log: True
 

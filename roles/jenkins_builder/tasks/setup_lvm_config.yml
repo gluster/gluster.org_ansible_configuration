@@ -4,6 +4,7 @@
     name: archive 
     section: backup 
     value: '0'
+  when: ansible_distribution_major_version|int = 7
 
 - name: Raise memory limit for activation
   lvm_config:

@@ -76,6 +76,8 @@
   - import_role:
       name: jenkins_builder
     delegate_to: "{{ fqdn }}"
+ 
+  - meta: flush_handlers 
 
   - import_role:
       name: jenkins_builder_declaration

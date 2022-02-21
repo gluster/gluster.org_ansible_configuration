@@ -112,6 +112,8 @@
     - libuuid-devel
     - rpcgen
     - liburing-devel
+    # since the lib no longer pull the binary, fix  https://github.com/gluster/project-infrastructure/issues/159
+    - openssl
   when: ansible_system == 'Linux' and ansible_os_family == 'RedHat' and ansible_distribution_major_version|int >= 8
 
 - name: Install jenkins builder Fedora packages

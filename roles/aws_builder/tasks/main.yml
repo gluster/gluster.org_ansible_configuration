@@ -13,7 +13,7 @@
     network:
       assign_public_ip: true
     image_id: "{{ ami }}"
-    region: "{{ aws_region }}"
+    region: "{{ aws_infra_region }}"
     user_data: "{{ user_data }}"
     volumes:
     - device_name: /dev/sda1

@@ -6,7 +6,6 @@
 
 - name: Associate the log server with the public IP
   ec2_eip:
-    region: "{{ aws_region }}"
     device_id: "{{ instance }}"
     ip: 18.219.45.211
 
@@ -25,7 +24,6 @@
     name: ansible-gluster-openvpn-sg
     description: Ansible managed security group for logs nodes
     vpc_id: "{{ vpc_id }}"
-    region: "{{ aws_region }}"
     rules:
     - proto: tcp
       ports:
@@ -48,7 +46,6 @@
   ec2_vol:
     name: "logs_aws_storage"
     instance: "{{ instance }}"
-    region: "{{ aws_region }}"
     volume_size: "6"
     #this parameter is ignored, it go on nvme1n1
     device_name: sdd

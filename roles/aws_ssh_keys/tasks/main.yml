@@ -1,5 +1,4 @@
 - ec2_key:
     name: ansible_bastion_keypair
     key_material: "{{ lookup('file', '/home/ansible_admin/.ssh/id_rsa.pub') }}"
-    aws_region: "{{ aws_region }}" 
 

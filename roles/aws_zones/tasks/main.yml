@@ -5,7 +5,6 @@
 
 - name: Get lists of existing VMs
   ec2_instance_info:
-    region: "{{ aws_region }}"
     filters:
       "tag:Owner": "gluster-infra"
       instance-state-name: "running"

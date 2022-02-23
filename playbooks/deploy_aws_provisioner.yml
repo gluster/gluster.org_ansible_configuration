@@ -1,5 +1,8 @@
 ---
 - hosts: aws_provisioner
+  module_defaults:
+    group/aws:
+      region: "{{ aws_infra_region }}"
   roles:
   - role: aws_provisioner
   - role: aws_access

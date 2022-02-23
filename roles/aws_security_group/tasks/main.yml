@@ -3,7 +3,6 @@
     name: ansible-gluster-builders-sg
     description: Ansible managed security group for builders
     vpc_id: "{{ vpc_id }}"
-    region: "{{ aws_region }}"
     rules:
     - proto: tcp
       ports:
@@ -26,7 +25,6 @@
     name: ansible-gluster-softserve-sg
     description: Ansible managed security group for softserve builders
     vpc_id: "{{ vpc_id }}"
-    region: "{{ aws_region }}"
     rules:
     - proto: tcp
       ports:

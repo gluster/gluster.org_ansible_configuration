@@ -1,3 +1,5 @@
 aws_region: us-east-2
+aws_infra_region: "{{ aws_region }}"
+aws_softserve_region: "{{ aws_region }}"
 # was externally created
 vpc_id: vpc-732e221b

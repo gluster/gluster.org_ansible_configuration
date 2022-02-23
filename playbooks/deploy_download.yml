@@ -1,7 +1,7 @@
 - hosts: aws_provisioner
   module_defaults:
     group/aws:
-      region: "{{ aws_region }}"
+      region: "{{ aws_infra_region }}"
   roles:
   - role: aws-s3_bucket_backup
     prefix: gluster.org
@@ -20,6 +20,6 @@
   - role: logrotate_compress
   - role: download_users
   - role: download_backups
-    region: us-east-2
+    region: "{{ aws_infra_region }}"
     access_key: "{{ download_backups_access_key }}"
     secret_key: "{{ download_backups_secret_key }}"

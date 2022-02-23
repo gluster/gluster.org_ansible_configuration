@@ -18,6 +18,8 @@
     ttl: 7200
     value: 18.219.45.211
     wait: yes
+    # see comment in aws_zones role
+    region: "{{ foo | default(omit) }}"
 
 - name: Create the security group for the 
   ec2_group:

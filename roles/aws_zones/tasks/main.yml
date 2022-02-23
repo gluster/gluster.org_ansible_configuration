@@ -19,8 +19,8 @@
     ttl: 7200
     value: "{{ item.private_ip_address }}"
     overwrite: true
-  # needed, since module_defaults add region, except
-  # region mean something different for route53 and the others modules
-  module_defaults:
-    region: {}
+    # needed, since module_defaults add region, except
+    # region mean something different for route53 and the others modules
+    # should be fixed in a newer version if ansible (eg, not 2.x)
+    region: "{{ foo | default(omit) }}"
   loop: "{{ vms.instances }}"

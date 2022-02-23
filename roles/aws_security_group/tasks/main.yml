@@ -14,7 +14,7 @@
       - 22
       cidr_ip: 8.43.85.184/32
       rule_desc: allow jenkins on port 22
-     - proto: icmp
+    - proto: icmp
       cidr_ip: 0.0.0.0/0
       rule_desc: allow icmp echo for icmp
       from_port: 8

@@ -8,7 +8,7 @@ jclift:         justin
 
 deb.packages:   semiosis
 lzuckerman:     semiosis
-gerrithub:      ndevos
+gerrithub:      root
 events:         vijay,miperez
 
 privacy:        root

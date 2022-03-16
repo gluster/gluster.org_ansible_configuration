@@ -7,5 +7,9 @@
 
 - name: Restart softserve backend
   service:
-    name: softserve
+    name: "{{ item }}"
     state: restarted
+    enabled: yes
+   with_items:
+     - softserve
+     - softserve-celery

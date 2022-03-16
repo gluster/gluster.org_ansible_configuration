@@ -108,6 +108,9 @@
 
 - name: Start the softserve service
   service:
-    name: softserve
-    enabled: True
+    name: "{{ item }}"
+    enabled: yes
     state: started
+  with_items:
+    - softserve
+    - softserve-celery

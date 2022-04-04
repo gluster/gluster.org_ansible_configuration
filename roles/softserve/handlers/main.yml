@@ -10,6 +10,6 @@
     name: "{{ item }}"
     state: restarted
     enabled: yes
-   with_items:
-     - softserve
-     - softserve-celery
+  with_items:
+    - softserve
+    - softserve-celery

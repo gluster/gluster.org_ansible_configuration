@@ -172,9 +172,6 @@ sentry.int.rht.gluster.org
 proxy01.int.rht.gluster.org
 proxy02.int.rht.gluster.org
 
-[aide]
-aide.int.rht.gluster.org
-
 [bugziller]
 bugziller.int.rht.gluster.org
 
@@ -191,7 +188,6 @@ builder[1:2].int.rht.gluster.org
 builder-deb10-1.int.rht.gluster.org
 
 backups.int.rht.gluster.org
-aide.int.rht.gluster.org
 ant-queen.int.rht.gluster.org
 bugziller.int.rht.gluster.org
 http.int.rht.gluster.org

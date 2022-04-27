@@ -5,7 +5,7 @@
     vars:
       name: download.rht.gluster.org
     system_disk_size: 20
-    data_disk_size: 80
+    data_disk_size: 100
     mem_size: 2048
     distribution: Centos
     version: 7

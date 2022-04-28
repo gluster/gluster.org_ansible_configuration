@@ -36,6 +36,8 @@
   - role: postfix_gluster
     blacklists:
     - b.barracudacentral.org
+    - all.s5h.net
+    - z.mailspike.net
 # too much false positive
 #    - dnsbl-3.uceprotect.net
 #    - dnsbl-2.uceprotect.net

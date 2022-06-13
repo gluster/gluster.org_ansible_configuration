@@ -9,7 +9,7 @@
   name: httpd
 - src: https://github.com/OSAS/ansible-role-openssh
   name: openssh
-- src: https://github.com/OSAS/ansible-role-selinux
+- src: git+https://gitlab.com/osci/ansible-role-selinux.git
   name: selinux
 - src: https://github.com/OSAS/ansible-role-web_builder
   name: builder

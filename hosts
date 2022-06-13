@@ -96,7 +96,7 @@ location=rht
 
 [jenkins_builders_aws:vars]
 location=aws
-ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@logs.aws.gluster.org"'
+#ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@logs.aws.gluster.org"'
 
 [jenkins_builders_aws]
 builder-c8-[1:2].aws.gluster.org

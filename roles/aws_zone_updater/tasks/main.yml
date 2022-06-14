@@ -6,6 +6,6 @@
 - cron:
     name: "update route53 zone"
     minute: "*/5"
-    job: "python /usr/local/bin/zone_updater.py"
+    job: "/usr/libexec/platform-python3.6 /usr/local/bin/zone_updater.py"
     user: ansible_admin
  

@@ -21,7 +21,7 @@
 - authorized_key:
     user: root
     key: "{{ georep_pub_key.stdout }}"
-    key_options: 'from="127.0.0.1"'
+    key_options: ''
   name: Add authorized_key for georep tests
 
 # see https://bugzilla.redhat.com/show_bug.cgi?id=1532591

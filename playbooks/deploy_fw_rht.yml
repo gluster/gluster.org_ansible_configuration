@@ -26,3 +26,4 @@
     sync_interface: "{{ interco_fw_interface }}"
     group: firewall_rht
   - role: nftables
+  - role: rsyslog

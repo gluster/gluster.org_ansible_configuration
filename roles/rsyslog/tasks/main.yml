@@ -1,0 +1,17 @@
+---
+- name: Install the required package
+  package:
+    name: rsyslog
+    state: present
+
+# see https://bugzilla.redhat.com/show_bug.cgi?id=1992153
+- name: Install also logrotate config on F36
+  package:
+    name: rsyslog-logrotate
+  when: ansible_distribution == 'Fedora' and ansible_distribution_major_version|int >= 36
+
+- name: Start rsyslogd
+  service:
+    name: rsyslog
+    enabled: True
+    state: started

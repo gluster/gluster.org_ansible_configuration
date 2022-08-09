@@ -14,10 +14,10 @@
   copy:
     dest: '/etc/sudoers.d/{{ item.key }}'
     content: "{{ item.key }} ALL= ALL"
-  when: item.value.expires < ansible_date_time.epoch
+  when: item.value.expires|int < ansible_date_time.epoch|int
 
 - name: Remove sudo config
   file:
     path: '/etc/sudoers.d/{{ item.key }}'
     state: absent
-  when: item.value.expires > ansible_date_time.epoch
+  when: item.value.expires|int > ansible_date_time.epoch|int

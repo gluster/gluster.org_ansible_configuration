@@ -8,7 +8,7 @@
   authorized_key:
     key: "{{ lookup('file', item.key + '.pub') }}"
     user: '{{ item.key }}'
-  when: item.value.expires < ansible_date_time.epoch
+  when: item.value.expires|int < ansible_date_time.epoch|int
 
 - name: Add sudo configuration
   copy:

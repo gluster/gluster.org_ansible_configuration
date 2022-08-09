@@ -1,6 +1,6 @@
 - name: Create user 
   user:
-    state: "{% if item.value.expires|int < ansible_date_time.epoch|int %}present{% else %}absent{% endif %}"
+    state: "{% if item.value.expires|int > ansible_date_time.epoch|int %}present{% else %}absent{% endif %}"
     name: '{{ item.key }}'
     expires: '{{ item.value.expires }}'
 
@@ -8,16 +8,16 @@
   authorized_key:
     key: "{{ lookup('file', item.key + '.pub') }}"
     user: '{{ item.key }}'
-  when: item.value.expires|int < ansible_date_time.epoch|int
+  when: item.value.expires|int > ansible_date_time.epoch|int
 
 - name: Add sudo configuration
   copy:
     dest: '/etc/sudoers.d/{{ item.key }}'
     content: "{{ item.key }} ALL= ALL"
-  when: item.value.expires|int < ansible_date_time.epoch|int
+  when: item.value.expires|int > ansible_date_time.epoch|int
 
 - name: Remove sudo config
   file:
     path: '/etc/sudoers.d/{{ item.key }}'
     state: absent
-  when: item.value.expires|int > ansible_date_time.epoch|int
+  when: item.value.expires|int < ansible_date_time.epoch|int

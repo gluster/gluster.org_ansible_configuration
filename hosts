@@ -100,7 +100,7 @@ location=aws
 
 [jenkins_builders_aws]
 builder-c8-[1:2].aws.gluster.org
-builder-c7-[1:4].aws.gluster.org
+builder-c7-[1:5].aws.gluster.org
 builder-fbsd12-1.aws.gluster.org
 
 [jenkins_builders_aws:children]

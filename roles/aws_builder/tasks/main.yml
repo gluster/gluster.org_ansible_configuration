@@ -38,7 +38,7 @@
   block:
   - amazon.aws.ec2_instance_info:
       instance_ids:
-      - "{{ instance.instances[O].instance_id }}"
+      - "{{ instance.instance_ids[0] }}"
       region: "{{ aws_infra_region }}"
     register: instance_info
 

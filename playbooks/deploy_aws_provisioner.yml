@@ -50,6 +50,12 @@
   - role: aws_builder_c7
     hostname: builder-c7-4
 
+- hosts: aws_provisioner
+  roles:
+  - role: aws_builder_c7
+    hostname: builder-c7-5
+
+
 
 - hosts: aws_provisioner
   roles:

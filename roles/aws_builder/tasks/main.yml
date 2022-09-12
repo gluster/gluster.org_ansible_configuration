@@ -36,6 +36,9 @@
 - name: Prepare the new VM
   when: instance.changed
   block:
+  - pause:
+      seconds: 10
+
   - amazon.aws.ec2_instance_info:
       instance_ids:
       - "{{ instance.instance_ids[0] }}"

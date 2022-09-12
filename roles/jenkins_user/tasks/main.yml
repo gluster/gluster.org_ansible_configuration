@@ -8,7 +8,7 @@
   package:
     state: present
     name:
-    - java-1.8.0-openjdk
+    - java-11-openjdk
   when: ansible_distribution == 'RedHat' or ansible_distribution == 'CentOS' or ansible_distribution == 'Fedora'
 
 - package:

@@ -36,8 +36,14 @@
 - name: Prepare the new VM
   when: instance.changed
   block:
+  - amazon.aws.ec2_instance_info:
+      instance_ids:
+      - "{{ instance.instances[O].instance_id }}"
+      region: "{{ aws_infra_region }}"
+    register: instance_info
+
   - set_fact:
-      public_ip: "{{ instance.instances[0].public_ip_address }}"
+      public_ip: "{{ instance_info.public_ip_address }}"
       location: aws
 
   - wait_for:

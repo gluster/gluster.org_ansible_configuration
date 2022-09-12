@@ -14,7 +14,7 @@
 - package:
     state: present
     name:
-    - openjdk8-jre
+    - openjdk11-jre
   name: Install jenkins builder FreeBSD packages
   when: ansible_system == 'FreeBSD'
 

@@ -28,11 +28,15 @@
     state: present
   loop: "{{ r['keys'].keys() }}"
 
-- name: Remove the previous host 
-  shell: "jenkins-cli delete-node {{ builder_hostname }}" 
-  when: config.changed
+- name: Check if the node already exist
+  shell: "jenkins-cli get-node {{ builder_hostname }}" 
   ignore_errors: True
+  register: get_node
+
+- name: Update the host if already present
+  shell: "cat {{ directory }}/{{ builder_hostname }}.xml | jenkins-cli update-node {{ builder_hostname }}"
+  when: config.changed and get_node.rc == 0
 
 - name: Add the new one
   shell: "cat {{ directory }}/{{ builder_hostname }}.xml | jenkins-cli create-node {{ builder_hostname }}"
-  when: config.changed
+  when: config.changed or get_node.rc != 0

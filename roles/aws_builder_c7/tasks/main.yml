@@ -10,7 +10,7 @@
   register: amis
 - set_fact:
     ami: "{{ (amis.images|last).image_id }}"
-    label: centos7
+    labels: centos7
 
 - import_role:
     name: aws_builder

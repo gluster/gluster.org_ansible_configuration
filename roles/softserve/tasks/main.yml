@@ -33,6 +33,7 @@
     version: HEAD
     update: yes
     force: yes
+  notify: Restart softserve backend
 
 - name: Add tmpfiles snippet
   template:

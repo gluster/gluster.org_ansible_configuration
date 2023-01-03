@@ -2,4 +2,4 @@
 - hosts: coverity_runners
   roles:
   - role: coverity
-    coverity_version: "2020.09"
+    coverity_version: "2022.06"

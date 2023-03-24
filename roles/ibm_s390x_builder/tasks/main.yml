@@ -7,3 +7,5 @@
     credentials: "ff0c98c8-84da-48be-b84c-be122b7592c4"
     host: "{{ builder_hostname }}" 
   delegate_to: "{{ jenkins_master }}"
+
+- include: iptables.yml

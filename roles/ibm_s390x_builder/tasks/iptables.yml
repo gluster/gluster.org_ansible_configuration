@@ -1,0 +1,7 @@
+# fix the default firewall, by default, it break
+#
+- name: Fix the default firewall
+  lineinfile:
+    path: /etc/sysconfig/iptables.save
+    insertafter: '^:OUTPUT ACCEPT.*\n'
+    line: "-A INPUT -s 127.0.0.0/8 -j ACCEPT\n-A INPUT -s {{ ansible_default_ipv4['address'] }}/32 -j ACCEPT"

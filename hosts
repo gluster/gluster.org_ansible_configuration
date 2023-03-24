@@ -165,9 +165,6 @@ postgresql.rht.gluster.org
 [fstat]
 fstat.int.rht.gluster.org
 
-[sentry]
-sentry.int.rht.gluster.org
-
 [proxy]
 proxy01.int.rht.gluster.org
 proxy02.int.rht.gluster.org

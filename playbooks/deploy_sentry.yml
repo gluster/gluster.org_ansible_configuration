@@ -1,4 +1,0 @@
----
-- hosts: sentry
-  roles:
-  - sentry

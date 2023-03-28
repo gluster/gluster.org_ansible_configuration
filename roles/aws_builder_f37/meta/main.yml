@@ -1,0 +1,9 @@
+---
+allow_duplicates: true
+dependencies:
+- role: aws_builder
+  # f35, from https://alt.fedoraproject.org/cloud/
+  # take us-east-2 (Ohio) value
+  ami: "ami-0d9ef71e892f861c6"
+  labels:
+  - fedora37

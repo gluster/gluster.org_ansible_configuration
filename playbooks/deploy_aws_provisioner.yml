@@ -89,6 +89,12 @@
 
 - hosts: aws_provisioner
   roles:
+  - role: aws_builder_f37
+    hostname: builder-f37-1
+
+
+- hosts: aws_provisioner
+  roles:
   - role: aws_builder_aarch64_f34
     hostname: builder-f34-aarch64-1
 

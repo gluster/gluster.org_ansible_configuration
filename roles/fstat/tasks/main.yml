@@ -100,3 +100,5 @@
     - {name: 'regression-test-burn-in', job: 'gh_regression-test-burn-in'}
     - {name: 'regression-test-with-multiplex', job: 'gh_regression-test-with-multiplex'}
     - {name: 'line-coverage', job: 'line-coverage'}
+    - {name: 'centos8-s390-regression', job: 'centos8-s390-regression'}
+    - {name: 'gh-regression-on-demand-full-run', job: 'gh-regression-on-demand-full-run'}

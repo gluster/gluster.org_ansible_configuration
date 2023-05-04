@@ -1,9 +1,9 @@
 - name: Create the data file
   modprobe:
-    persistent: present
+    # not supported on the version of ansible we use for now
+    # https://github.com/ansible-collections/community.general/commit/29f5033737a7fd86349ff3daab7d7ee7db66ad00
+    #    persistent: present
     name: zram
-  args:
-    creates: /dev/zram0
 
 - name: Format data file to xfs
   filesystem:

@@ -6,7 +6,10 @@
   when: ansible_system == 'Linux' and location == 'aws'
 
 - include: setup_disk_{{ location }}.yml
-  when: ansible_system == 'Linux' and location
+  when: ansible_system == 'Linux' and location and 'jenkins_builders_zram_test' not in group_names
+
+- include: setup_disk_zram.yml
+  when: ansible_system == 'Linux' and 'jenkins_builders_zram_test' in group_names
 
 - include: setup_lvm_config.yml
   when: ansible_system == 'Linux'

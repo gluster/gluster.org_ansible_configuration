@@ -236,3 +236,5 @@ builder-el8-s390x-1.ibm-l1.gluster.org
 builder-el8-s390x-2.ibm-l1.gluster.org
 builder-el8-s390x-3.ibm-l1.gluster.org
 
+[jenkins_builders_zram_test]
+

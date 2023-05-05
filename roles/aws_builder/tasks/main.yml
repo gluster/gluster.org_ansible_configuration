@@ -37,7 +37,7 @@
   when: instance.changed
   block:
   - pause:
-      seconds: 25
+      seconds: 35
 
   - amazon.aws.ec2_instance_info:
       instance_ids:

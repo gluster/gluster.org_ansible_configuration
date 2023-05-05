@@ -6,7 +6,8 @@
     filters:
       architecture: "x86_64"
       # from centos wiki, for centos 7
-      product-code: "aw0evgkw8e5c1q413zgy5pjce"
+      # see https://wiki.centos.org/Cloud/AWS
+      product-code: "cvugziknvmxgqna9noibqnnsy"
   register: amis
 - set_fact:
     ami: "{{ (amis.images|last).image_id }}"

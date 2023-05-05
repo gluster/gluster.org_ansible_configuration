@@ -44,7 +44,10 @@
       - "{{ instance.instance_ids[0] }}"
       region: "{{ aws_infra_region }}"
     register: instance_info
-
+  
+  - debug:
+      var: instance_info    
+      
   - set_fact:
       public_ip: "{{ instance_info.instances[0].network_interfaces[0].association.public_ip }}"
       location: aws

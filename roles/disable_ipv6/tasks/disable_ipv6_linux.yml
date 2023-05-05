@@ -6,6 +6,7 @@
     regexp: ^IPV6INIT=
     line: IPV6INIT=no
   name: "Disable ipv6 in ifcfg"
+  when: ansible_distribution_major_version|int < 37
 
 - lineinfile:
     dest: /etc/sysconfig/network

@@ -1,14 +1,25 @@
-- name: Create the data file
+- name: Make sure the module is loaded
+  copy:
+    dest: /etc/modules-load.d/zram
+    content: "zram"
+
+- name: Have udev create the device
+  copy:
+    content: "ACTION==\"add\", KERNEL==\"zram0\", ATTR{comp_algorithm}=\"zstd\", ATTR{disksize}=\"4G\", RUN=\"/usr/bin/mkfs.xfs /dev/%k\", TAG+=\"systemd\""
+    dest: /etc/udev/rules.d/99-zram.rules
+  notify: Reload udev
+
+- name: Make sure udev is reloaded
+  ansible.builtin.meta: flush_handlers
+
+
+- name: Load the module
   modprobe:
     # not supported on the version of ansible we use for now
     # https://github.com/ansible-collections/community.general/commit/29f5033737a7fd86349ff3daab7d7ee7db66ad00
     #    persistent: present
     name: zram
 
-- name: Format data file to xfs
-  filesystem:
-    fstype: xfs
-    dev: /dev/zram0
 
 - name: Mount /d
   mount:

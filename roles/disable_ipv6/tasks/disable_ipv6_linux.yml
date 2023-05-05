@@ -29,8 +29,11 @@
   - net.ipv6.conf.all.disable_ipv6
   - net.ipv6.conf.default.disable_ipv6
   name: Disable ipv6 in sysctl
-  notify:
-  - run dracut
+  register: sysctl
+ 
+- name: Run dracut
+  command:  dracut -v -f -H
+  when: sysctl.changed
 
 # use "install ipv6 /bin/true", since that's what ip6tables check to see if
 # ipv6 is disabled. See reload function on /etc/init.d/ip6tables on RHEL 6.

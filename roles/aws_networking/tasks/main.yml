@@ -11,7 +11,7 @@
     vpc_id: "{{ vpc_res.vpc.id }}"
     cidr: "172.30.1.0/24"
     assign_instances_ipv6: true
-    ipv6_cidr: "{{ vpc.ipv6_cidr_block_association_set[0].ipv6_cidr_block }}"
+    ipv6_cidr: "{{ vpc_res.ipv6_cidr_block_association_set[0].ipv6_cidr_block }}"
   register: subnet_res
   
 - debug:

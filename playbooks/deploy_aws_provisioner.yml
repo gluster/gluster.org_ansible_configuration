@@ -5,6 +5,7 @@
       region: "{{ aws_infra_region }}"
   roles:
   - role: aws_provisioner
+  - role: aws_networking
   - role: aws_access
   - role: aws_security_group
   - role: aws_ssh_keys

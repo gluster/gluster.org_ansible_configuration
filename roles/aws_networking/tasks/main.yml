@@ -1,0 +1,22 @@
+---
+- name: "Create the initial VPC"
+  amazon.aws.ec2_vpc_net:
+    name: "Production VPC"
+    # this is the 1st unallocated block from the previous VPC
+    cidr_block: "172.30.0.0/16"
+    ipv6_cidr: true
+  register: vpc_res
+
+- debug:
+    var: vpc_res
+
+#- amazon.aws.ec2_vpc_subnet:
+#    vpc_id: "{{ vpc_res.vpc_id }}"
+#    cidr: "172.30.1.0/24"
+#    assign_instances_ipv6: true
+#  register: subnet_res
+#  
+#- debug:
+#    var: subnet_res
+#
+#

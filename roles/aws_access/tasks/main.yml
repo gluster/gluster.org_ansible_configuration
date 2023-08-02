@@ -1,5 +1,5 @@
 ---
-- iam_user:
+- amazon.aws.iam_user:
     name: "{{ item }}"
     state: present
   loop:
@@ -10,13 +10,13 @@
   - rakshitha
   - akraitma
 
-- iam_group:
+- community.aws.iam_group:
     name: Developers
     state: present
     users:
     - sahina
 
-- iam_group:
+- community.aws.iam_group:
     name: softserve
     state: present
     users:
@@ -26,7 +26,7 @@
     purge_policy: True
     purge_users: True
 
-- iam_group:
+- community.aws.iam_group:
     name: gluster-janitors 
     state: present
     users:
@@ -38,7 +38,7 @@
     purge_policy: True
     purge_users: True
 
-- iam_group:
+- community.aws.iam_group:
     name: downstream-readonly
     state: present
     users:

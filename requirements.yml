@@ -1,4 +1,9 @@
 ---
+collections:
+- name: amazon.aws
+- name: community.aws
+
+roles:
 - src: https://github.com/OSAS/ansible-role-ansible_bastion
   name: bastion
 - src: git+https://gitlab.com/OSAS/ansible-role-tor.git

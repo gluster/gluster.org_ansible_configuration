@@ -16,6 +16,3 @@
     assign_instances_ipv6: true
     ipv6_cidr: "{{ ipv6_range }}"
   register: subnet_res
-  
-- debug:
-    var: subnet_res

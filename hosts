@@ -34,8 +34,6 @@ download.rht.gluster.org
 
 [jenkins_builders_lcov]
 # to be synced from jenkins
-builder-c7-4.aws.gluster.org
-builder-c7-3.aws.gluster.org
 builder-c7-2.aws.gluster.org
 builder-c7-1.aws.gluster.org
 builder-c8-[1:2].aws.gluster.org
@@ -100,7 +98,7 @@ location=aws
 
 [jenkins_builders_aws]
 builder-c8-[1:2].aws.gluster.org
-builder-c7-[1:6].aws.gluster.org
+builder-c7-[1:2].aws.gluster.org
 builder-fbsd12-1.aws.gluster.org
 
 [jenkins_builders_aws:children]

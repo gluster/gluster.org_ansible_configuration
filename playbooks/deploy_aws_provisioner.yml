@@ -20,7 +20,7 @@
   - role: aws_builder_c8
     hostname: builder-c8-1
     # hardcode for now, for migration testing
-    subnet_id: "subnet-0c216f24d559f68c4"
+    subnet_id: "subnet-080fcf900a04f5095"
 
 - hosts: aws_provisioner
   roles:

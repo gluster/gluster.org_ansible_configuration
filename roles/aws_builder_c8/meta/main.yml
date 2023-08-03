@@ -3,6 +3,6 @@ allow_duplicates: true
 dependencies:
 - role: aws_builder
   # centos 8 stream from https://wiki.centos.org/Cloud/AWS
-  ami: "ami-045b0a05944af45c1" 
+  ami: "ami-0ffbdee6ae3169e6c" 
   labels:
   - centos8

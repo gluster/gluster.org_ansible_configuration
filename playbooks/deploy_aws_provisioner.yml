@@ -7,7 +7,6 @@
   - role: aws_provisioner
   - role: aws_networking
   - role: aws_access
-  - role: aws_security_group
   - role: aws_ssh_keys
   - role: aws_zones
   - role: aws_logs

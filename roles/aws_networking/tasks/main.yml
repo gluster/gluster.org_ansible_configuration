@@ -15,7 +15,6 @@
   amazon.aws.ec2_vpc_igw:
     vpc_id: "{{ vpc_id }}"
 
-# it need to be created after the gateway, so the route is configured by default
 - name: Create the subnet
   amazon.aws.ec2_vpc_subnet:
     vpc_id: "{{ vpc_id }}"
@@ -26,6 +25,17 @@
 
 - set_fact:
     subnet_id: "{{ subnet_res.subnet.id }}"
+
+- name: Set up public subnet route table
+  amazon.aws.ec2_vpc_route_table:
+    vpc_id: "{{ vpc_id }}"
+    subnets:
+      - "{{ subnet_id }}"
+    routes:
+      - dest: 0.0.0.0/0
+        gateway_id: "{{ igw.gateway_id }}"
+      - dest: ::/0
+        gateway_id: "{{ igw.gateway_id }}"
 
 - name: Create security group for builders
   amazon.aws.ec2_group:

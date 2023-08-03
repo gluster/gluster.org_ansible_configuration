@@ -9,9 +9,10 @@
 
 - set_fact:
     ipv6_range: "{{ vpc_res.vpc.ipv6_cidr_block_association_set[0].ipv6_cidr_block | ansible.utils.ipsubnet('64','1')  }}"
+    vpc_id: "{{ vpc_res.vpc.id }}"
 
 - amazon.aws.ec2_vpc_subnet:
-    vpc_id: "{{ vpc_res.vpc.id }}"
+    vpc_id: "{{ vpc_id }}"
     cidr: "172.30.1.0/24"
     assign_instances_ipv6: true
     ipv6_cidr: "{{ ipv6_range }}"
@@ -19,3 +20,8 @@
 
 - set_fact:
     subnet_id: "{{ subnet_res.subnet.id }}"
+
+- name: Create the gateway
+  amazon.aws.ec2_vpc_igw:
+    name: "Production gateway"
+    vpc_id: "{{ vpc_id }}"

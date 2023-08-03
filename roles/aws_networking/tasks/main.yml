@@ -14,6 +14,7 @@
 - name: Create the gateway
   amazon.aws.ec2_vpc_igw:
     vpc_id: "{{ vpc_id }}"
+  register: igw
 
 - name: Create the subnet
   amazon.aws.ec2_vpc_subnet:

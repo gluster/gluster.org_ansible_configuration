@@ -23,5 +23,4 @@
 
 - name: Create the gateway
   amazon.aws.ec2_vpc_igw:
-    name: "Production gateway"
     vpc_id: "{{ vpc_id }}"

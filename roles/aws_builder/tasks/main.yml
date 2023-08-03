@@ -7,7 +7,7 @@
   ec2_instance:
     name: "{{ fqdn }}"
     key_name: "ansible_bastion_keypair" 
-    vpc_subnet_id: "{{ subnet_id | |default(omit) }}"
+    vpc_subnet_id: "{{ subnet_id |default(omit) }}"
     instance_type: "{{ vm_type }}"
     security_group: "{{ sg_group }}"
     network:

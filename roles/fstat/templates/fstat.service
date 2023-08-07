@@ -8,7 +8,6 @@ Type=simple
 WorkingDirectory=/fstat/code/
 ExecStart=/fstat/env/bin/gunicorn -w 4 fstat:app
 User={{ user }}
-Environment=SENTRY_DSN={{ fstat_config['sentry_dsn'] }}
 PrivateTmp=true
 
 [Install]

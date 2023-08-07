@@ -78,11 +78,6 @@
     - download.rht.gluster.org
 
   - role: nginx_proxy_vhost
-    domain: sentry.gluster.org
-    backends:
-    - sentry.int.rht.gluster.org:9000
-
-  - role: nginx_proxy_vhost
     domain: lists.gluster.org
     custom_config: | 
       if ($http_user_agent ~* "axios/") {

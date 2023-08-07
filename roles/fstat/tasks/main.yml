@@ -93,7 +93,7 @@
     name: fstat {{item.name}}
     minute: "0"
     hour: "1"
-    job: "SENTRY_DSN=\"{{fstat_config['sentry_dsn']}}\" /fstat/env/bin/python /fstat/code/manage.py process_jobs -n 3 -j {{item.job}}"
+    job: "/fstat/env/bin/python /fstat/code/manage.py process_jobs -n 3 -j {{item.job}}"
   with_items:
     - {name: 'centos7', job: 'gh_centos7-regression'}
     - {name: 'centos8', job: 'centos8-regression'}

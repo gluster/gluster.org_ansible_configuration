@@ -9,7 +9,6 @@ PIDFile=/run/softserve/softserve.pid
 WorkingDirectory={{ destination }}/code
 ExecStart={{ destination }}/env/bin/gunicorn --pid /run/softserve/softserve.pid -w 4 softserve:app
 User={{ user }}
-Environment=SENTRY_DSN={{ softserve_config['sentry_dsn'] }}
 PrivateTmp=true
 
 [Install]

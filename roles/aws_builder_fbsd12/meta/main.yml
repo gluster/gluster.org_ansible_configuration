@@ -3,9 +3,9 @@ allow_duplicates: true
 dependencies:
 - role: aws_builder
   # fbsd 12, from https://www.freebsd.org/releases/12.1R/announce.html
-  ami: "ami-0a44f10b2c6deb365"
+  ami: "ami-0bc1c6cab643df266"
   user_data: "{{ lookup('template', 'configinit') }}" 
-  python_bin: "/usr/local/bin/python3.8"
+  python_bin: "/usr/local/bin/python3.9"
   labels:
   - freebsd12
   - freebsd

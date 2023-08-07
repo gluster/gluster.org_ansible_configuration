@@ -1,8 +1,17 @@
 import boto3
+import argparse
 
-zone_id = 'Z3RC2FKCAES5SW'
-region = 'us-east-2'
-debug = 1
+parser = argparse.ArgumentParser(prog='Zone Updater',
+                                 description='Update route53 with our current VMs')
+parser.add_argument('-d', '--debug',
+                    action='store_true')
+parser.add_argument('-z', '--zone', default='Z3RC2FKCAES5SW')
+parser.add_argument('-r', '--region', default='us-east-2')
+
+args = parser.parse_args()
+region = args.region
+zone_id = args.zone
+
 
 servers = {}
 records_ok = []
@@ -27,7 +36,7 @@ for r in response['Reservations']:
                 ip6 = i['NetworkInterfaces'][0]['Ipv6Addresses'][0]['Ipv6Address']
                 servers[name]['6'] = ip6
 
-if debug:
+if args.debug:
     print(servers)
 
 records = response = route53.list_resource_record_sets(
@@ -40,7 +49,7 @@ for r in records['ResourceRecordSets']:
         if hostname in servers.keys():
             if r['ResourceRecords'][0]['Value'] == servers[hostname]:
                 records_ok.append(hostname)
-if debug:
+if args.debug:
     print(records_ok)
 for s in servers:
     if not s in records_ok:
@@ -71,5 +80,5 @@ for s in servers:
         },
         HostedZoneId=zone_id,
         )
-        if debug:
+        if args.debug:
             print(response)

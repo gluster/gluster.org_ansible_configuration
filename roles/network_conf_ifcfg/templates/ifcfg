@@ -8,7 +8,15 @@ UUID="{{ (ansible_fqdn + interface) | to_uuid }}"
 BOOTPROTO=static
 TYPE=Ethernet
 IPV4_FAILURE_FATAL=no
+{% if ip6 is defined %}
+IPV6INIT=yes
+IPV6ADDR={{ ip6 }}
+{% if ip6_gw is defined %}
+IPV6_DEFAULTGW={{ ip6_gw }}
+{% endif %}
+{% else %}
 IPV6INIT=no
+{% endif %}
 IPADDR="{{ ip | ipaddr('address') }}"
 PREFIX="{{ ip | ipaddr('prefix') }}"
 {% if zone is defined %}

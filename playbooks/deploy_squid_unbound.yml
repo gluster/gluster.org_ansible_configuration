@@ -2,7 +2,6 @@
   roles:
   - role: keepalived
     master: squid01.int.rht.gluster.org
-    notify_script: "/usr/libexec/keepalived/wrapper_conntrackd.sh"
     group: squid_unbound
     vip:
       public:

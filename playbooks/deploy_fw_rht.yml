@@ -13,6 +13,7 @@
   - role: keepalived
     master: masa
     group: firewall_rht
+    notify_script: "/usr/libexec/keepalived/wrapper_conntrackd.sh"
     vip:
       public:
         interface: "{{ public_interface }}"

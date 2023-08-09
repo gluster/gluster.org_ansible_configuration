@@ -4,6 +4,7 @@
   - role: keepalived
     master: proxy01.rht.gluster.org
     group: proxy
+    notify_script: "/usr/libexec/keepalived/wrapper_conntrackd.sh"
     vip:
       public:
         interface: eth0

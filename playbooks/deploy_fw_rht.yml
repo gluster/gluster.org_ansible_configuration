@@ -1,7 +1,7 @@
 ---
 - hosts: firewall_rht
   vars:
-    outgoing_ip: 8.43.85.181
+    outgoing_ip_v4: 8.43.85.181
     use_firewalld: False
   roles:
   - role: network_conf_ifcfg

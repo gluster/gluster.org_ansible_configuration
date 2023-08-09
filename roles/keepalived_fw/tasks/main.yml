@@ -1,0 +1,11 @@
+---
+- name: Deploy the script to sync conntrack
+  copy:
+    dest: /usr/libexec/keepalived/notify_conntrackd.sh
+    src: notify_conntrackd.sh
+    mode: 0755
+
+- include_role:
+    name: keepalived
+    notify_script: "/usr/libexec/keepalived/notify_conntrackd.sh"
+    

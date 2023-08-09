@@ -10,10 +10,9 @@
   - role: network_conf_ifcfg
     interface: "{{ interco_fw_interface }}"
     ip: "{{ interco_fw_ip }}/24"
-  - role: keepalived
+  - role: keepalived_fw
     master: masa
     group: firewall_rht
-    notify_script: "/usr/libexec/keepalived/wrapper_conntrackd.sh"
     vip:
       public:
         interface: "{{ public_interface }}"

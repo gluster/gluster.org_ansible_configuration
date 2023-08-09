@@ -4,9 +4,3 @@
     dest: /usr/libexec/keepalived/notify_conntrackd.sh
     src: notify_conntrackd.sh
     mode: 0755
-
-- include_role:
-    name: keepalived
-  vars:
-    notify_script: "/usr/libexec/keepalived/notify_conntrackd.sh"
-    

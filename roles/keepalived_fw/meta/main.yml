@@ -1,0 +1,5 @@
+---
+dependencies:
+- role: keepalived
+  notify_script: "/usr/libexec/keepalived/notify_conntrackd.sh"
+

@@ -7,6 +7,6 @@
 
 - include_role:
     name: keepalived
-    vars:
-      notify_script: "/usr/libexec/keepalived/notify_conntrackd.sh"
+  vars:
+    notify_script: "/usr/libexec/keepalived/notify_conntrackd.sh"
     

@@ -24,10 +24,10 @@
     src: keepalived.conf
   notify: Restart keepalived
 
-- name: Deploy the script to sync conntrack
-  copy:
-    dest: /usr/libexec/keepalived/wrapper_conntrackd.sh
-    src: wrapper_conntrackd.sh
+- name: Deploy the script to notify changes
+  template:
+    dest: /usr/libexec/keepalived/notify_script.sh
+    src: notify_script.sh
     mode: 0755
 
 - include_tasks: firewalld.yml

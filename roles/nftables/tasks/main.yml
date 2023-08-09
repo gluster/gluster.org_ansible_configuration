@@ -28,7 +28,7 @@
 
 - name: Enable routing with sysctl
   sysctl:
-    name: "net.ipv{{ item }}.ip_forward"
+    name: "net.ipv{{ item }}.conf.all.forwarding"
     state: present
     value: '1'
   with_items:

@@ -28,9 +28,12 @@
 
 - name: Enable routing with sysctl
   sysctl:
-    name: net.ipv4.ip_forward
+    name: "net.ipv{{ item }}.ip_forward"
     state: present
     value: '1'
+  with_items:
+  - 4
+  - 6
 
 #- name: Remove firewalld
 #  package:

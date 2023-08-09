@@ -18,11 +18,11 @@
         interface: "{{ public_interface }}"
         address: 8.43.85.181
         prefix: 24
+        address_v6: "2620:52:3:1:2023::3/128"
       common:
         interface: "{{ common_interface }}"
         address: 172.24.1.181
         prefix: 24
-        address_v6: "2620:52:3:1:2023::3/128"
   - role: conntrackd
     sync_interface: "{{ interco_fw_interface }}"
     group: firewall_rht

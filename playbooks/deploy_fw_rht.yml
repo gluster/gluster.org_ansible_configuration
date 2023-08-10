@@ -1,6 +1,7 @@
 ---
 - hosts: firewall_rht
   vars:
+    outgoing_ip_v6: 2620:52:3:1:2023::1
     outgoing_ip_v4: 8.43.85.181
     use_firewalld: False
   roles:

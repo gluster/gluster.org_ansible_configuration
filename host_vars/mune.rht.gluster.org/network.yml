@@ -1,4 +1,5 @@
 common_ip: 172.24.1.180
+common_ip6: "fc00::b4"
 common_interface: eth3
 public_ip: 8.43.85.180
 public_interface: eth4

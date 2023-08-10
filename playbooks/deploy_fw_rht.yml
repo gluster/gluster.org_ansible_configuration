@@ -7,6 +7,7 @@
   - role: network_conf_ifcfg
     interface: "{{ common_interface }}"
     ip: "{{ common_ip }}/24"
+    ip6: "{{ common_ip6 }}/120" 
   - role: network_conf_ifcfg
     interface: "{{ interco_fw_interface }}"
     ip: "{{ interco_fw_ip }}/24"
@@ -26,6 +27,10 @@
         interface: "{{ common_interface }}"
         address: 172.24.1.181
         prefix: 24
+      common6:
+        interface: "{{ common_interface }}"
+        address: "fc00::b5"
+        prefix: 120
   - role: conntrackd
     sync_interface: "{{ interco_fw_interface }}"
     group: firewall_rht

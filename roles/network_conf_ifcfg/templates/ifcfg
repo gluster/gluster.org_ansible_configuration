@@ -11,6 +11,7 @@ IPV4_FAILURE_FATAL=no
 {% if ip6 is defined %}
 IPV6INIT=yes
 IPV6ADDR={{ ip6 }}
+IPV6_AUTOCONF=no 
 {% if ip6_gw is defined %}
 IPV6_DEFAULTGW={{ ip6_gw }}
 {% endif %}

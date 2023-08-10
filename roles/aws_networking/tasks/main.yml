@@ -52,6 +52,11 @@
     - proto: tcp
       ports:
       - 22
+      cidr_ipv6: 2620:52:3:1:2023::1/128
+      rule_desc: allow nagios/ant-queen/etc on port 22 (ipv6)
+    - proto: tcp
+      ports:
+      - 22
       cidr_ip: 172.31.32.0/20
       rule_desc: allow the internal servers on port 22
     - proto: tcp
@@ -64,6 +69,13 @@
       rule_desc: allow icmp echo for icmp
       from_port: 8
       to_port: -1
+    - proto: icmpv6
+      cidr_ip: ::/0
+      rule_desc: allow icmp echo for icmp (ipv6)
+      from_port: 8
+      to_port: -1
+
+
     - proto: tcp
       ports:
       - 5666

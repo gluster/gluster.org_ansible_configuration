@@ -29,16 +29,6 @@
 
 - hosts: aws_provisioner
   roles:
-  - role: aws_builder_c7
-    hostname: builder-c7-1
-
-- hosts: aws_provisioner
-  roles:
-  - role: aws_builder_c7
-    hostname: builder-c7-2
-
-- hosts: aws_provisioner
-  roles:
   - role: aws_builder_f32
     hostname: builder-f32-1
 
@@ -67,7 +57,6 @@
   - role: aws_builder_f37
     hostname: builder-f37-1
 
-
 - hosts: aws_provisioner
   roles:
   - role: aws_builder_aarch64_f34
@@ -78,3 +67,15 @@
   roles:
   - role: aws_builder_fbsd12
     hostname: builder-fbsd12-1
+
+# keep them below, as the role interfer with other
+# it still need to be somehow fixed
+- hosts: aws_provisioner
+  roles:
+  - role: aws_builder_c7
+    hostname: builder-c7-1
+
+- hosts: aws_provisioner
+  roles:
+  - role: aws_builder_c7
+    hostname: builder-c7-2

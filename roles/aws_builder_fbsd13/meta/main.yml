@@ -1,0 +1,11 @@
+---
+allow_duplicates: true
+dependencies:
+- role: aws_builder
+  # fbsd 13, from https://www.freebsd.org/releases/13.2R/announce/
+  ami: "ami-07c76851d31489ff6"
+  user_data: "{{ lookup('template', 'configinit') }}" 
+  python_bin: "/usr/local/bin/python3.9"
+  labels:
+  - freebsd13
+  - freebsd

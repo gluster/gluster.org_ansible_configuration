@@ -5,7 +5,7 @@
     vars:
       name: munin.int.rht.gluster.org
     system_disk_size: 13
-    data_disk_size: 10
+    data_disk_sizes: [10]
     mem_size: 2048
     distribution: AlmaLinux
     version: 8

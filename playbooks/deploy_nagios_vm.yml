@@ -3,11 +3,11 @@
   - role: guest_virt_install
     vars:
       name: nagios.int.rht.gluster.org
-    system_disk_size: 10
-    data_disk_size: 1
+    system_disk_size: 14
+    data_disk_size: [1]
     mem_size: 1024
-    distribution: Centos
-    version: 7
+    distribution: AlmaLinux
+    version: 8
     bridge: "{{ bridge_common }}"
     network:
       ip: 172.24.1.63/24

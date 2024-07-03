@@ -4,7 +4,7 @@
   - role: guest_virt_install
     vars:
       name: http.int.rht.gluster.org
-    system_disk_size: 8
+    system_disk_size: 12
     # 5G => bits.g.o
     # 1G => analysis.g.o
     # 1G => nightly.g.o

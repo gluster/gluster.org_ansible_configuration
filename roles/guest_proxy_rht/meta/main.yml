@@ -4,7 +4,7 @@ dependencies:
   bridge: "{{ bridge_public }}"
   volgroup: "{{ vm_storage_vg }}"
   system_disk_size: 10
-  data_disk_size: 1
+  data_disk_sizes: [1]
   mem_size: 1024
   num_cpus: 1
 #  distribution: Centos

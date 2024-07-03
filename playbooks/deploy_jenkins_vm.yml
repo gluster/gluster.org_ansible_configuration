@@ -5,7 +5,7 @@
     vars:
       name: jenkins-stage.rht.gluster.org
     system_disk_size: 10
-    data_disk_size: 151
+    data_disk_sizes: [151]
     mem_size: 4096
     distribution: Centos
     version: 7
@@ -45,7 +45,7 @@
     vars:
       name: jenkins-el7.rht.gluster.org
     system_disk_size: 10
-    data_disk_size: 230
+    data_disk_sizes: [230]
     mem_size: 4096
     distribution: Centos
     version: 7

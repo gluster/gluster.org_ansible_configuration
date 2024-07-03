@@ -4,7 +4,7 @@
     vars:
       name: lists-el7.rht.gluster.org
     system_disk_size: 20
-    data_disk_size: 15
+    data_disk_sizes: [15]
     mem_size: 2048
     distribution: Centos
     version: 7

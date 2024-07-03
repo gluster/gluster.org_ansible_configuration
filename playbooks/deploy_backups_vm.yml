@@ -9,7 +9,7 @@
     # 60G for binary
     # 6G for mls
     # 1G for mysql/wordpress
-    data_disk_size: 75
+    data_disk_sizes: [75]
     mem_size: 1024
     distribution: Centos
     version: 7

@@ -18,7 +18,7 @@
     vars:
       name: gerrit-new.rht.gluster.org
     system_disk_size: 15
-    data_disk_size: 15
+    data_disk_sizes: [15]
     mem_size: 8192
     num_cpus: 4
     distribution: Centos

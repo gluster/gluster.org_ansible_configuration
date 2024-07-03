@@ -4,7 +4,7 @@
     vars:
       name: ant-queen.int.rht.gluster.org
     system_disk_size: 10
-    data_disk_size: 2
+    data_disk_sizes: [2]
     mem_size: 2048
     distribution: AlmaLinux
     version: 8

@@ -10,9 +10,9 @@
     # 1G => nightly.g.o
     # 500G => ci-logs.g.o
     data_disk_sizes: [520]
-    mem_size: 1024
-    distribution: Centos
-    version: 7
+    mem_size: 2048
+    distribution: AlmaLinux
+    version: 8
     bridge: "{{ bridge_common }}"
     network:
       ip: 172.24.1.55/24

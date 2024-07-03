@@ -29,7 +29,7 @@
   - lvol:
       vg: vg_data_munin.int.rht.gluster.org
       lv: var_lib_munin
-      size: 3G
+      size: 4G
   - filesystem:
       fstype: xfs
       dev: /dev/mapper/vg_data_munin.int.rht.gluster.org-var_lib_munin

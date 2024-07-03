@@ -6,8 +6,8 @@
     system_disk_size: 10
     data_disk_size: 2
     mem_size: 2048
-    distribution: Centos
-    version: 8-stream
+    distribution: AlmaLinux
+    version: 8
     bridge: "{{ bridge_common }}"
     network:
       ip: 172.24.1.53/24

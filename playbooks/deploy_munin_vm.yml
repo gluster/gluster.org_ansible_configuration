@@ -7,7 +7,7 @@
     system_disk_size: 13
     data_disk_size: 10
     mem_size: 2048
-    distribution: Almalinux
+    distribution: AlmaLinux
     version: 8
     bridge: "{{ bridge_common }}"
     network:

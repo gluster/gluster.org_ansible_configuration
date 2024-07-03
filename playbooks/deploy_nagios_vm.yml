@@ -4,7 +4,7 @@
     vars:
       name: nagios.int.rht.gluster.org
     system_disk_size: 14
-    data_disk_size: [1]
+    data_disk_sizes: [1]
     mem_size: 1024
     distribution: AlmaLinux
     version: 8

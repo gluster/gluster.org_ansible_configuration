@@ -10,7 +10,7 @@
   notify: restart httpd
 
 - package:
-    name: python-passlib
+    name: python3-passlib
     state: present
 
 - htpasswd:

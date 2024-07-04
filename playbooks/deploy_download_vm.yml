@@ -31,7 +31,7 @@
   - lvol:
       vg: "{{ vg }}"
       lv: "{{ lv }}"
-      size: 75G
+      size: 100G
   - filesystem:
       fstype: "{{ fs }}"
       dev: "{{ dev }}"

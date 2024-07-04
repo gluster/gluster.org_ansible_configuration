@@ -6,7 +6,7 @@
     state: present
     name: "{{ item }}"
   with_items:
-  - java-1.8.0-openjdk
+  - java-11-openjdk
   - python-bugzilla
   - postgresql
   - git

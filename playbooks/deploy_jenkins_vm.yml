@@ -4,7 +4,7 @@
   - role: guest_virt_install
     vars:
       name: jenkins-el7.rht.gluster.org
-    system_disk_size: 10
+    system_disk_size: 15
     data_disk_sizes: [230]
     mem_size: 4096
     distribution: Centos

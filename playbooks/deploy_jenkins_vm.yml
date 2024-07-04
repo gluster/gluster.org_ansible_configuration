@@ -3,46 +3,6 @@
   roles:
   - role: guest_virt_install
     vars:
-      name: jenkins-stage.rht.gluster.org
-    system_disk_size: 10
-    data_disk_sizes: [151]
-    mem_size: 4096
-    distribution: Centos
-    version: 7
-    bridge: "{{ bridge_public }}"
-    network:
-      ip: 8.43.85.177/24
-      gateway: 8.43.85.254
-  - role: guest_add_bridge
-    bridge: "{{ bridge_common }}"
-    name: jenkins-stage.rht.gluster.org
-
-- hosts: jenkins-stage.rht.gluster.org
-  tasks:
-  
-  - filesystem:
-      dev: /dev/vdb
-      fstype: lvm
-  - lvg:
-      vg: vg_data_jenkins-stage.rht.gluster.org
-      pvs: /dev/vdb
-  - lvol:
-      vg: vg_data_jenkins-stage.rht.gluster.org
-      lv: var_lib_jenkins
-      size: 100%VG
-  - filesystem:
-      fstype: xfs
-      dev: /dev/mapper/vg_data_jenkins--stage.rht.gluster.org-var_lib_jenkins
-  - mount:
-      name: /var/lib/jenkins
-      src: /dev/mapper/vg_data_jenkins--stage.rht.gluster.org-var_lib_jenkins
-      fstype: xfs
-      state: mounted
-
-- hosts: myrmicinae.rht.gluster.org
-  roles:
-  - role: guest_virt_install
-    vars:
       name: jenkins-el7.rht.gluster.org
     system_disk_size: 10
     data_disk_sizes: [230]

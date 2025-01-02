@@ -10,7 +10,7 @@
     generate_ssh_key: True
   register: backups_user_info
 
-- include: backup_job.yml
+- include_tasks: backup_job.yml
   vars:
     remote_directory: "{{ item.directory }}"
     remote_user: "{{ item.user }}"

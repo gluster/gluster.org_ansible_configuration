@@ -10,7 +10,7 @@
     src: mm_cfg.py
   notify: restart mailman
 
-- include: create_lists.yml
+- include_tasks: create_lists.yml
 
 - name: Ensure the mailman service is started
   service:
@@ -18,7 +18,7 @@
     state: started
     enabled: yes
 
-- include: ban_command.yml
+- include_tasks: ban_command.yml
 
 - name: Block list creation on the web
   template:
@@ -26,7 +26,7 @@
     dest: "{{ _vhost_confdir }}/block_web_ml.conf"
   notify: verify config and restart httpd
 
-- include: dnsbl_blacklist.yml
+- include_tasks: dnsbl_blacklist.yml
   when: dnsbl_mailman|bool
 
 - name: Add the config for mailman on the vhost

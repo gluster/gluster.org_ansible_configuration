@@ -1,4 +1,4 @@
-- include: coverty_clean.yml
+- include_tasks: coverty_clean.yml
 
 - name: Create the user to upload
   user:

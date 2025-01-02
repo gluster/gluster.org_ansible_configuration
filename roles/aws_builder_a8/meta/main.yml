@@ -1,0 +1,8 @@
+---
+allow_duplicates: true
+dependencies:
+- role: aws_builder
+  # almalinux 8 from https://wiki.almalinux.org/cloud/AWS.html#community-amis
+  ami: "ami-07a213cc5e2268687" 
+  labels:
+  - centos8

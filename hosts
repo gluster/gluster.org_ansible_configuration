@@ -218,6 +218,10 @@ int_rht_gluster_org
 [aws_provisioner]
 ant-queen.int.rht.gluster.org
 
+[aws_provisioner:vars]
+ansible_python_interpreter=/usr/bin/python3.12
+
+
 # group for server having access to the jenkins password
 [jenkins_user:children]
 bugziller

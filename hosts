@@ -37,6 +37,7 @@ download.rht.gluster.org
 builder-c7-2.aws.gluster.org
 builder-c7-1.aws.gluster.org
 builder-c8-[1:2].aws.gluster.org
+builder-a8-[1:2].aws.gluster.org
 
 [jenkins_builders_shellcheck:children]
 jenkins_builders_aws_f32
@@ -79,6 +80,8 @@ squid02.int.rht.gluster.org
 [python3_c8_aws]
 builder-c8-1.aws.gluster.org
 builder-c8-2.aws.gluster.org
+builder-a8-1.aws.gluster.org
+builder-a8-2.aws.gluster.org
 
 [python3_c8_aws:vars]
 ansible_python_interpreter=/usr/libexec/platform-python3.6
@@ -98,6 +101,7 @@ location=aws
 
 [jenkins_builders_aws]
 builder-c8-[1:2].aws.gluster.org
+builder-a8-[1:2].aws.gluster.org
 builder-c7-[1:2].aws.gluster.org
 builder-fbsd12-1.aws.gluster.org
 

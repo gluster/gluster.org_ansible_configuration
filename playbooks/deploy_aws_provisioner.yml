@@ -45,28 +45,13 @@
 
 - hosts: aws_provisioner
   roles:
-  - role: aws_builder_f32
-    hostname: builder-f32-2
-
-- hosts: aws_provisioner
-  roles:
   - role: aws_builder_f34
     hostname: builder-f34-1
 
 - hosts: aws_provisioner
   roles:
-  - role: aws_builder_f34
-    hostname: builder-f34-2
-
-- hosts: aws_provisioner
-  roles:
   - role: aws_builder_f35
     hostname: builder-f35-1
-
-- hosts: aws_provisioner
-  roles:
-  - role: aws_builder_f37
-    hostname: builder-f37-1
 
 - hosts: aws_provisioner
   roles:

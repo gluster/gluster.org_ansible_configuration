@@ -1,5 +1,0 @@
-- hosts: bugziller
-  roles:
-  # TODO make sure that jenkins user is properly setup
-  - role: bugziller
-    user: jenkins

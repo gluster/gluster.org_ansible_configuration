@@ -171,8 +171,6 @@ fstat.int.rht.gluster.org
 proxy01.int.rht.gluster.org
 proxy02.int.rht.gluster.org
 
-[bugziller]
-bugziller.int.rht.gluster.org
 
 [firewall_rht]
 masa.rht.gluster.org
@@ -188,7 +186,6 @@ builder-deb10-1.int.rht.gluster.org
 
 backups.int.rht.gluster.org
 ant-queen.int.rht.gluster.org
-bugziller.int.rht.gluster.org
 http.int.rht.gluster.org
 squid0[1:2].int.rht.gluster.org
 proxy0[1:2].int.rht.gluster.org
@@ -206,7 +203,6 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gl
 ant-queen.int.rht.gluster.org
 munin.int.rht.gluster.org
 http.int.rht.gluster.org
-bugziller.int.rht.gluster.org
 
 # group for server whose monitoring (munin/nagios) come from inside
 # used for IP filtering
@@ -224,7 +220,6 @@ ansible_python_interpreter=/usr/bin/python3.12
 
 # group for server having access to the jenkins password
 [jenkins_user:children]
-bugziller
 jenkins_builders_rht
 debian_builders
 ubuntu_builders

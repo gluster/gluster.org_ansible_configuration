@@ -73,14 +73,4 @@
   - role: aws_builder_fbsd12
     hostname: builder-fbsd12-1
 
-# keep them below, as the role interfer with other
-# it still need to be somehow fixed
-- hosts: aws_provisioner
-  roles:
-  - role: aws_builder_c7
-    hostname: builder-c7-1
 
-- hosts: aws_provisioner
-  roles:
-  - role: aws_builder_c7
-    hostname: builder-c7-2
